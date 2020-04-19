@@ -1,0 +1,3 @@
+{"testCaseName":"Test Cases/DataDriverTesting/DataDrivenFromExcel - Iteration 1","testCaseId":"Test Cases/DataDriverTesting/DataDrivenFromExcel","bindedValues":{"pwd":"\u0027adam123\u0027","username":"\u0027adam\u0027"}}
+{"testCaseName":"Test Cases/DataDriverTesting/DataDrivenFromExcel - Iteration 2","testCaseId":"Test Cases/DataDriverTesting/DataDrivenFromExcel","bindedValues":{"pwd":"\u0027bija123\u0027","username":"\u0027bija\u0027"}}
+{"testCaseName":"Test Cases/DataDriverTesting/DataDrivenFromExcel - Iteration 3","testCaseId":"Test Cases/DataDriverTesting/DataDrivenFromExcel","bindedValues":{"pwd":"\u0027cida123\u0027","username":"\u0027cida\u0027"}}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Test_suit01" time="30.562" tests="2" failures="0" errors="0">
+   <testsuite name="Test_suit01" tests="2" failures="0" errors="0" time="30.562" timestamp="2020-03-15 20:51:32" hostname="Bijaya Chhetri - BijayaChhetri" id="Test Suites/Test_suit01">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform" value=""/>
+         <property name="logFolder" value="C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Reports\\20200315_205119\\Test_suit01\\20200315_205125"/>
+         <property name="logFiles" value="C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Reports\\20200315_205119\\Test_suit01\\20200315_205125\\execution0.log, C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Reports\\20200315_205119\\Test_suit01\\20200315_205125\\IEDriverServer.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="Bijaya Chhetri - BijayaChhetri"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="7.2.1.1"/>
+         <property name="browser" value="IE 11"/>
+         <property name="hostAddress" value="192.168.99.1"/>
+         <property name="sessionId" value="342a3e8b-c93d-4d9e-80fe-9ee06cb70380"/>
+         <property name="seleniumVersion" value="3.141.59"/>
+         <property name="proxyInformation" value="ProxyInformation{proxyOption=NO_PROXY, proxyServerType=HTTP, password=, proxyServerAddress=, proxyServerPort=0, executionList=}"/>
+         <property name="platform" value="Windows 10"/>
+      </properties>
+      <testcase name="Test Cases/facebook" time="22.832" classname="Test Cases/facebook" status="PASSED">
+         <system-out><![CDATA[2020-03-15 20:51:33 - [TEST_CASE][PASSED] - Test Cases/facebook: Test Cases/facebook
+
+2020-03-15 20:51:35 - [TEST_STEP][PASSED] - callTestCase(findTestCase("Base"), ["username":"admin", "pwd":"admin123", "url":"https://www.facebook.com/"], STOP_ON_FAILURE): Call Test Case 'Test Cases/Base' successfully
+
+2020-03-15 20:51:35 - [TEST_CASE][PASSED] - Test Cases/Base: Test Cases/Base
+
+2020-03-15 20:51:35 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+2020-03-15 20:51:36 - [MESSAGE][INFO] - Starting 'IE' driver
+
+2020-03-15 20:51:36 - [MESSAGE][INFO] - Action delay is set to 0 seconds
+
+2020-03-15 20:51:40 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2020-03-15 20:51:40 - [TEST_STEP][PASSED] - navigateToUrl(url): Navigate to 'https://www.facebook.com/' successfully
+
+2020-03-15 20:51:45 - [MESSAGE][PASSED] - Navigate to 'https://www.facebook.com/' successfully
+
+2020-03-15 20:51:45 - [TEST_STEP][PASSED] - maximizeWindow(): Current window maximized
+
+2020-03-15 20:51:46 - [MESSAGE][PASSED] - Current window maximized
+
+2020-03-15 20:51:46 - [MESSAGE][PASSED] - Call Test Case 'Test Cases/Base' successfully
+
+2020-03-15 20:51:46 - [TEST_STEP][PASSED] - setText(findTestObject("page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576"), username, CONTINUE_ON_FAILURE): Text 'admin' is set on object 'Object Repository/page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'
+
+2020-03-15 20:51:47 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'
+
+2020-03-15 20:51:47 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+2020-03-15 20:51:49 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+2020-03-15 20:51:49 - [TEST_STEP][PASSED] - Thread.sleep(3000): null
+
+2020-03-15 20:51:52 - [TEST_STEP][PASSED] - setText(findTestObject("Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e"), pwd): Text 'admin123' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'
+
+2020-03-15 20:51:52 - [MESSAGE][PASSED] - Text 'admin123' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'
+
+2020-03-15 20:51:52 - [TEST_STEP][PASSED] - Thread.sleep(3000): null
+
+2020-03-15 20:51:55 - [TEST_STEP][PASSED] - setText(findTestObject("Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3"), "484111525"): Text '484111525' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3'
+
+2020-03-15 20:51:55 - [MESSAGE][PASSED] - Text '484111525' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3'
+
+2020-03-15 20:51:55 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+2020-03-15 20:51:56 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/ListUserTest" time="7.046" classname="Test Cases/ListUserTest" status="PASSED">
+         <system-out><![CDATA[2020-03-15 20:51:56 - [TEST_CASE][PASSED] - Test Cases/ListUserTest: Test Cases/ListUserTest
+
+2020-03-15 20:51:56 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+2020-03-15 20:51:56 - [MESSAGE][INFO] - Starting 'IE' driver
+
+2020-03-15 20:51:57 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+2020-03-15 20:51:57 - [TEST_STEP][PASSED] - navigateToUrl("https://www.facebook.com/"): Navigate to 'https://www.facebook.com/' successfully
+
+2020-03-15 20:51:59 - [MESSAGE][PASSED] - Navigate to 'https://www.facebook.com/' successfully
+
+2020-03-15 20:51:59 - [TEST_STEP][PASSED] - maximizeWindow(): Current window maximized
+
+2020-03-15 20:51:59 - [MESSAGE][PASSED] - Current window maximized
+
+2020-03-15 20:51:59 - [TEST_STEP][PASSED] - setText(findTestObject("Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576"), "bijaya"): Text 'bijaya' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'
+
+2020-03-15 20:52:00 - [MESSAGE][PASSED] - Text 'bijaya' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'
+
+2020-03-15 20:52:00 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+2020-03-15 20:52:02 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+2020-03-15 20:52:02 - [TEST_STEP][PASSED] - setText(findTestObject("Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e"), "chhetri"): Text 'chhetri' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'
+
+2020-03-15 20:52:02 - [MESSAGE][PASSED] - Text 'chhetri' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'
+
+2020-03-15 20:52:02 - [TEST_STEP][PASSED] - setText(findTestObject("Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3"), "484111525"): Text '484111525' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3'
+
+2020-03-15 20:52:02 - [MESSAGE][PASSED] - Text '484111525' is set on object 'Object Repository/Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3'
+
+2020-03-15 20:52:02 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+2020-03-15 20:52:03 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[2020-03-15 20:51:32 - [TEST_SUITE][PASSED] - Test_suit01: Test Cases/ListUserTest]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

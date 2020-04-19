@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>DataDrivenFromExcel</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>3becc262-86bb-4ff8-9446-4b26a8b82e9d</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>a2dfb82b-1952-407e-9fd7-968508c1809a</id>
+      <masked>false</masked>
+      <name>username</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>1dc6ba97-f7bb-48bf-b7d5-c0caeeb4f518</id>
+      <masked>false</masked>
+      <name>pwd</name>
+   </variable>
+   <variable>
+      <defaultValue>'https://www.facebook.com/'</defaultValue>
+      <description></description>
+      <id>fd8e7a08-4d2e-42ae-bf4f-5f44792b6544</id>
+      <masked>false</masked>
+      <name>url</name>
+   </variable>
+</TestCaseEntity>

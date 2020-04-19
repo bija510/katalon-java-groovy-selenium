@@ -1,0 +1,116 @@
+[35m[Appium][39m Welcome to Appium v1.16.0
+[35m[Appium][39m Non-default server args:
+[35m[Appium][39m   port: 61419
+[35m[Appium][39m   loglevel: info
+[35m[Appium][39m   chromeDriverPort: 61420
+[35m[Appium][39m   tmpDir: C:\Users\BIJAYA~1\AppData\Local\Temp\\Katalon\Appium\Temp1582932439741
+[35m[Appium][39m Appium REST http interface listener started on 0.0.0.0:61419
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m7 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session[39m
+[35m[HTTP][39m [90m{"desiredCapabilities":{"app":"C:\\Users\\Bijaya Chhetri\\Desktop\\android-mobile-tests-master\\androidapp\\APIDemos.apk","noReset":true,"newCommandTimeout":1800,"platformVersion":"5.1.1","autoGrantPermissions":true,"platformName":"Android","udid":"b0e0c467","deviceName":"Coolpad Coolpad 3622A (Android 5.1.1)","fullReset":false,"platform":"ANDROID","systemPort":61436},"capabilities":{"firstMatch":[{"appium:app":"C:\\Users\\Bijaya Chhetri\\Desktop\\android-mobile-tests-master\\androidapp\\APIDemos.apk","appium:autoGrantPermissions":true,"appium:deviceName":"Coolpad Coolpad 3622A (Android 5.1.1)","appium:fullReset":false,"appium:newCommandTimeout":1800,"appium:noReset":true,"platform":"ANDROID","platformName":"android","appium:platformVersion":"5.1.1","appium:systemPort":61436,"appium:udid":"b0e0c467"}]}}[39m
+[35m[BaseDriver][39m The capabilities ["platform"] are not standard capabilities and should have an extension prefix
+[35m[Appium][39m 
+[35m[Appium][39m ======================================================================
+[35m[Appium][39m   DEPRECATION WARNING:
+[35m[Appium][39m 
+[35m[Appium][39m   The 'automationName' capability was not provided in the desired 
+[35m[Appium][39m   capabilities for this Android session
+[35m[Appium][39m 
+[35m[Appium][39m   Setting 'automationName=UiAutomator2' by default and using the 
+[35m[Appium][39m   UiAutomator2 Driver
+[35m[Appium][39m 
+[35m[Appium][39m   The next major version of Appium (2.x) will **require** the 
+[35m[Appium][39m   'automationName' capability to be set for all sessions on all 
+[35m[Appium][39m   platforms
+[35m[Appium][39m 
+[35m[Appium][39m   In previous versions (Appium <= 1.13.x), the default was 
+[35m[Appium][39m   'automationName=UiAutomator1'
+[35m[Appium][39m 
+[35m[Appium][39m   If you wish to use that automation instead of UiAutomator2, please 
+[35m[Appium][39m   add 'automationName=UiAutomator1' to your desired capabilities
+[35m[Appium][39m 
+[35m[Appium][39m   For more information about drivers, please visit 
+[35m[Appium][39m   http://appium.io/docs/en/about-appium/intro/ and explore the 
+[35m[Appium][39m   'Drivers' menu
+[35m[Appium][39m 
+[35m[Appium][39m ======================================================================
+[35m[Appium][39m 
+[35m[Appium][39m Appium v1.16.0 creating new AndroidUiautomator2Driver (v1.40.0) session
+[35m[BaseDriver][39m The following capabilities were provided, but are not recognized by Appium:
+[35m[BaseDriver][39m   platform
+[35m[BaseDriver][39m Session created with session id: cf7e6029-68bf-4a52-bc30-82138e11ed03
+[35m[BaseDriver][39m Using local app 'C:\Users\Bijaya Chhetri\Desktop\android-mobile-tests-master\androidapp\APIDemos.apk'
+[35m[ADB][39m Found 1 'build-tools' folders under 'C:\Users\Bijaya Chhetri\.katalon\tools\android_sdk' (newest first):
+[35m[ADB][39m     C:/Users/Bijaya Chhetri/.katalon/tools/android_sdk/build-tools/29.0.3
+[35m[ADB][39m Using 'adb.exe' from 'C:\Users\Bijaya Chhetri\.katalon\tools\android_sdk\platform-tools\adb.exe'
+[35m[AndroidDriver][39m Retrieving device list
+[35m[AndroidDriver][39m Using device: b0e0c467
+[35m[ADB][39m Using 'adb.exe' from 'C:\Users\Bijaya Chhetri\.katalon\tools\android_sdk\platform-tools\adb.exe'
+[35m[ADB][39m Package name: 'com.hmh.api'
+[35m[ADB][39m Main activity name: 'com.hmh.api.ApiDemos'
+[35m[ADB][39m Caching the application at 'C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\io.appium.settings\apks\settings_apk-debug.apk' to '/data/local/tmp/appium_cache/6ac5f376f229532996b30c34307a5392093e1023.apk'
+[35m[ADB][39m The upload of 'settings_apk-debug.apk' (1.16 MB) took 0.464s
+[35m[ADB][39m The installation of 'settings_apk-debug.apk' took 8.035s
+[35m[AndroidDriver][39m Granting android.permission.SET_ANIMATION_SCALE, CHANGE_CONFIGURATION, ACCESS_FINE_LOCATION by pm grant
+[35m[ADB][39m Using 'apksigner.bat' from 'C:\Users\Bijaya Chhetri\.katalon\tools\android_sdk\build-tools\29.0.3\apksigner.bat'
+[35m[ADB][39m Using 'zipalign.exe' from 'C:\Users\Bijaya Chhetri\.katalon\tools\android_sdk\build-tools\29.0.3\zipalign.exe'
+[35m[UiAutomator2][39m Server packages are going to be (re)installed
+[35m[ADB][39m Caching the application at 'C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-v4.5.2.apk' to '/data/local/tmp/appium_cache/c4d04c1433ecbf8b791b15c7eeb8d8cb0f1b1376.apk'
+[35m[ADB][39m The upload of 'appium-uiautomator2-server-v4.5.2.apk' (2.14 MB) took 0.581s
+[35m[ADB][39m The installation of 'appium-uiautomator2-server-v4.5.2.apk' took 11.352s
+[35m[ADB][39m Caching the application at 'C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-debug-androidTest.apk' to '/data/local/tmp/appium_cache/3fd2b60c0ddebe3f986e559d16a0ecfe192bf3b8.apk'
+[35m[ADB][39m The upload of 'appium-uiautomator2-server-debug-androidTest.apk' (539.10 KB) took 0.387s
+[35m[ADB][39m The installation of 'appium-uiautomator2-server-debug-androidTest.apk' took 4.260s
+[35m[ADB][39m Caching the application at 'C:\Users\Bijaya Chhetri\Desktop\android-mobile-tests-master\androidapp\APIDemos.apk' to '/data/local/tmp/appium_cache/dad04642fe563346684e10f3095f73b8701f3836.apk'
+[35m[ADB][39m The upload of 'APIDemos.apk' (2.80 MB) took 0.823s
+[35m[ADB][39m The installation of 'APIDemos.apk' took 4.841s
+[35m[UiAutomator2][39m Starting UIAutomator2 server 4.5.2
+[35m[UiAutomator2][39m Using UIAutomator2 server from 'C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-v4.5.2.apk' and test from 'C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\appium-uiautomator2-server\apks\appium-uiautomator2-server-debug-androidTest.apk'
+[35m[UiAutomator2][39m Waiting up to 30000ms for UiAutomator2 to be online...
+[35m[WD Proxy][39m Got an unexpected response with status undefined: {"code":"ECONNRESET"}
+[35m[WD Proxy][39m Got an unexpected response with status undefined: {"code":"ECONNRESET"}
+[35m[WD Proxy][39m Got an unexpected response with status undefined: {"code":"ECONNRESET"}
+[35m[WD Proxy][39m Determined the downstream protocol as 'W3C'
+[35m[AndroidDriver][39m Screen already unlocked, doing nothing
+[35m[UiAutomator2][39m Starting 'com.hmh.api/com.hmh.api.ApiDemos and waiting for 'com.hmh.api/com.hmh.api.ApiDemos'
+[35m[Appium][39m New AndroidUiautomator2Driver session created successfully, session cf7e6029-68bf-4a52-bc30-82138e11ed03 added to master session list
+[35m[HTTP][39m [37m<-- POST /wd/hub/session [39m[32m200[39m [90m67546 ms - 1212[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03 [39m[32m200[39m [90m8 ms - 1144[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03 [39m[32m200[39m [90m7 ms - 1144[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/status[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[HTTP][39m [37m<-- GET /wd/hub/status [39m[32m200[39m [90m1 ms - 68[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mPOST[39m [37m/wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03/timeouts[39m
+[35m[HTTP][39m [90m{"implicit":60000}[39m
+[35m[HTTP][39m [37m<-- POST /wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03/timeouts [39m[32m200[39m [90m2 ms - 14[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03/source[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[W3C (cf7e6029)][39m Driver proxy active, passing request on via HTTP proxy
+[35m[WD Proxy][39m Replacing sessionId 011c5e16-961a-4f98-8287-7ab2f112583a with cf7e6029-68bf-4a52-bc30-82138e11ed03
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03/source [39m[32m200[39m [90m928 ms - 5685[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mGET[39m [37m/wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03/screenshot[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[HTTP][39m [37m<-- GET /wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03/screenshot [39m[32m200[39m [90m326 ms - 76338[39m
+[35m[HTTP][39m [90m[39m
+[35m[HTTP][39m [37m-->[39m [37mDELETE[39m [37m/wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03[39m
+[35m[HTTP][39m [90m{}[39m
+[35m[Appium][39m Removing session cf7e6029-68bf-4a52-bc30-82138e11ed03 from our master session list
+[35m[HTTP][39m [37m<-- DELETE /wd/hub/session/cf7e6029-68bf-4a52-bc30-82138e11ed03 [39m[32m200[39m [90m1160 ms - 14[39m
+[35m[HTTP][39m [90m[39m

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
+   <description></description>
+   <name>Test_suit01</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>0</numberOfRerun>
+   <pageLoadTimeout>30</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <testSuiteGuid>5edeb1a5-01fb-4705-8338-4d4f982ba8a7</testSuiteGuid>
+   <testCaseLink>
+      <guid>fff763fa-8c7a-4ab0-a335-37696ab38166</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/DataDriverTesting/facebook</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>b5fa0d0d-3577-4596-b50f-acb133705a3b</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/DataDriverTesting/ListUserTest</testCaseId>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>1f3604f0-6848-4bfa-962c-4848f0641316</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/DataDriverTesting/Base</testCaseId>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>4aaede61-ad87-4743-b832-81ac5f5cca2e</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>7807a134-86c5-4705-9c1b-a99f9a3c969c</variableId>
+      </variableLink>
+      <variableLink>
+         <testDataLinkId></testDataLinkId>
+         <type>DEFAULT</type>
+         <value></value>
+         <variableId>cd9f4799-2a4d-441c-a85c-e2809b490a80</variableId>
+      </variableLink>
+   </testCaseLink>
+</TestSuiteEntity>
