@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_concat(We Couldn  t Create Your Accou_c30576</name>
+   <name>input_Create Your Accou</name>
    <tag></tag>
-   <elementGuidId>a3c59281-0a2f-41b4-b2c3-7601930b1613</elementGuidId>
+   <elementGuidId>a1992f2e-3d75-40cd-9d2b-515cae78f421</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='u_0_m']</value>
+         <value>//input[@id='u_0_r']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -45,7 +45,7 @@
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
-      <value>firstname</value>
+      <value>reg_email__</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -59,41 +59,48 @@
       <matchCondition>equals</matchCondition>
       <name>aria-label</name>
       <type>Main</type>
-      <value>First name</value>
+      <value>Mobile number or email</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>u_0_m</value>
+      <value>u_0_r</value>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;u_0_m&quot;)</value>
+      <value>id(&quot;u_0_r&quot;)</value>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>screenshot</name>
+      <type>Main</type>
+      <value>C:/Users/Bijaya Chhetri/git/KatalonTest/Screenshots/Targets/input_concat(We Couldn  t Create Your Accou_b078a3.png</value>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
       <type>Main</type>
-      <value>//input[@id='u_0_m']</value>
+      <value>//input[@id='u_0_r']</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:idRelative</name>
       <type>Main</type>
-      <value>//div[@id='u_0_l']/div/input</value>
+      <value>//div[@id='u_0_q']/div/input</value>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//div/input</value>
+      <value>//div[2]/div/div/input</value>
    </webElementXpaths>
 </WebElementEntity>

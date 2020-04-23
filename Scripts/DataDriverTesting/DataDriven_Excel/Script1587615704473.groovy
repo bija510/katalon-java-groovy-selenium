@@ -16,16 +16,20 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('DataDriverTesting/Base'), [('username') : 'aaaa', ('pwd') : 'bbbb', ('test') : 'cccc'], 
-    FailureHandling.CONTINUE_ON_FAILURE)
 
-/*WebUI.setText(findTestObject('page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'), username)
+   /***************************************************
+    * DataDriven or Paramaterization using Excel Sheet
+    ***************************************************/
 
-WebUI.delay(2)
+		WebUI.openBrowser(url)
+		WebUI.maximizeWindow()
+		
+		WebUI.setText(findTestObject('Page_Facebook/input_concat2'), userName)
+		WebUI.delay(2)
+		
+		WebUI.setText(findTestObject('Page_Facebook/input_concat3'), pwd)
+		
+		WebUI.closeBrowser()
 
-WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'), pwd)
 
-WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3'), '484111525')
-*/
-WebUI.closeBrowser()
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DataFileEntity>
    <description></description>
-   <name>data1</name>
+   <name>Data_facebookReg</name>
    <tag></tag>
    <containsHeaders>true</containsHeaders>
    <csvSeperator></csvSeperator>
    <dataFileGUID>43ab0316-af1e-4eff-8121-0e10f9649256</dataFileGUID>
-   <dataSourceUrl>../../Documents/Katalon_Studio_Windows_64-7.2.1/katalonData.xlsx</dataSourceUrl>
+   <dataSourceUrl>DataDrExcel.xlsx</dataSourceUrl>
    <driver>ExcelFile</driver>
    <isInternalPath>true</isInternalPath>
    <query></query>

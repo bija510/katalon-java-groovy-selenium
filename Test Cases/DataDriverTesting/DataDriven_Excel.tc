@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>DataDriven_Excel</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>87e61f81-30c7-4926-9d9f-318efc3329bc</testCaseGuid>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>db2d510e-957a-4223-9740-476cf407478c</id>
+      <masked>false</masked>
+      <name>userName</name>
+   </variable>
+   <variable>
+      <defaultValue>''</defaultValue>
+      <description></description>
+      <id>df63384d-f343-4f1f-b753-2181dd2afb00</id>
+      <masked>false</masked>
+      <name>pwd</name>
+   </variable>
+</TestCaseEntity>

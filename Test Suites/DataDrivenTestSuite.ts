@@ -14,7 +14,7 @@
       <guid>99d99bb1-df50-4ce0-8fcc-daf788c967eb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/DataDriverTesting/DataDrivenFromExcel</testCaseId>
+      <testCaseId>Test Cases/DataDriverTesting/DataDriven_ForLoop</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>bedd69ee-8653-44d2-9e62-b092d04bed4f</id>
@@ -22,7 +22,7 @@
             <iterationType>ALL</iterationType>
             <value></value>
          </iterationEntity>
-         <testDataId>Data Files/data1</testDataId>
+         <testDataId>Data Files/Data_facebookReg</testDataId>
       </testDataLink>
       <variableLink>
          <testDataLinkId>bedd69ee-8653-44d2-9e62-b092d04bed4f</testDataLinkId>

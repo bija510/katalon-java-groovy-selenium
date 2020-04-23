@@ -35,16 +35,16 @@ println '======================================='
 println WebUI.verifyTextPresent('Birthday', false)
 CustomKeywords.'all_utilites.Selenium_library.hardAssert'(actTitle, expTitle, 'hard title vefify pass', 'hard title verify fail')
 
-WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'), 'bijaya')
+WebUI.setText(findTestObject('Page_Facebook/input_concat2'), 'bijaya')
 
 WebUI.delay(2)
 
-WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'), 'chhetri')
+WebUI.setText(findTestObject('Page_Facebook/input_concat3'), 'chhetri')
 WebDriver driver = DriverFactory.getWebDriver()
 JavascriptExecutor js = ((JavascriptExecutor) driver);
-js.executeScript("arguments[0].style.border='3px solid red'", findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'), 'chhetri');
+js.executeScript("arguments[0].style.border='3px solid red'", findTestObject('Page_Facebook/input_concat3'), 'chhetri');
 
-WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3'), '484111525')
+WebUI.setText(findTestObject('Page_Facebook/input_Create Your Accou'), '484111525')
 
 WebUI.closeBrowser()
 

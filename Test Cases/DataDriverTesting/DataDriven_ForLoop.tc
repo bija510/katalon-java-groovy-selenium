@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>DataDrivenFromExcel</name>
+   <name>DataDriven_ForLoop</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>3becc262-86bb-4ff8-9446-4b26a8b82e9d</testCaseGuid>
@@ -10,7 +10,7 @@
       <description></description>
       <id>a2dfb82b-1952-407e-9fd7-968508c1809a</id>
       <masked>false</masked>
-      <name>username</name>
+      <name>username11</name>
    </variable>
    <variable>
       <defaultValue>''</defaultValue>

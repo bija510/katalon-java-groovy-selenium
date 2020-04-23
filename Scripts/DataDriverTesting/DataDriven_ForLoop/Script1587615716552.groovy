@@ -15,23 +15,26 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-import org.testng.Asserts
 
-WebUI.openBrowser('')
 
-WebUI.navigateToUrl(url)
+   /***************************************************
+    * DataDriven or Paramaterization using for loop
+    ***************************************************/
 
-WebUI.maximizeWindow()
+	String userNames ='Adam¤Bija¤Cindey¤David'
+	String []userNameList = userNames.split('¤')
+	
+	for (String username : userNameList){
+		WebUI.openBrowser(url)
+		WebUI.maximizeWindow()
+		
+		WebUI.setText(findTestObject('Page_Facebook/input_concat2'), username)
+		WebUI.delay(2)
+		
+		WebUI.setText(findTestObject('Page_Facebook/input_concat3'), 'abc123')
+		
+		WebUI.closeBrowser()
+	}
 
-WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'), username)
 
-WebUI.delay(2)
-Thread.sleep(3000)
-
-WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'), pwd)
-Thread.sleep(3000)
-
-WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3'), '484111525')
-
-WebUI.closeBrowser()
 
