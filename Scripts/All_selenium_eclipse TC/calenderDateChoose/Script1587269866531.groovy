@@ -20,8 +20,9 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver as WebDriver
+import org.testng.Assert;
 
-
+     sc ='apple'
 
 	WebUI.openBrowser('https://www.path2usa.com/travel-companions')
 	
@@ -43,6 +44,7 @@ import org.openqa.selenium.WebDriver as WebDriver
 		if (text.equalsIgnoreCase("21")) {
 			driver.findElements(By.className("day")).get(i).click();
 			break;
+			
 	}
 		
 	}

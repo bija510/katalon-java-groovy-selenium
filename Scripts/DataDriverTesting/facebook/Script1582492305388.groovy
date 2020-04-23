@@ -16,11 +16,8 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-WebUI.callTestCase(findTestCase('DataDriverTesting/Base'), 
-		[username : 'aaaa',
-			pwd: 'bbbb',
-			test : 'cccc'],
-		FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('DataDriverTesting/Base'), [('username') : 'aaaa', ('pwd') : 'bbbb', ('test') : 'cccc'], 
+    FailureHandling.CONTINUE_ON_FAILURE)
 
 /*WebUI.setText(findTestObject('page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'), username)
 

@@ -16,17 +16,33 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+import org.openqa.selenium.JavascriptExecutor
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.WebDriver
+
 WebUI.openBrowser('')
 
 WebUI.navigateToUrl('https://www.facebook.com/')
 
 WebUI.maximizeWindow()
+String actTitle = WebUI.getWindowTitle()
+String expTitle = 'Facebook - Log In or Sign Up'
+
+CustomKeywords.'all_utilites.Selenium_library.softAssert'(actTitle, expTitle, 'Soft title verify pass', 'Soft title verify Fail')
+
+println '======================================='
+println WebUI.verifyTextPresent('Birthday', false)
+CustomKeywords.'all_utilites.Selenium_library.hardAssert'(actTitle, expTitle, 'hard title vefify pass', 'hard title verify fail')
 
 WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c30576'), 'bijaya')
 
 WebUI.delay(2)
 
 WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'), 'chhetri')
+WebDriver driver = DriverFactory.getWebDriver()
+JavascriptExecutor js = ((JavascriptExecutor) driver);
+js.executeScript("arguments[0].style.border='3px solid red'", findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_c7a02e'), 'chhetri');
 
 WebUI.setText(findTestObject('Page_Facebook - Log In or Sign Up/input_concat(We Couldn  t Create Your Accou_b078a3'), '484111525')
 
