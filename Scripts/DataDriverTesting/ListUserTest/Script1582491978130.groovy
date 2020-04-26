@@ -29,11 +29,11 @@ WebUI.maximizeWindow()
 String actTitle = WebUI.getWindowTitle()
 String expTitle = 'Facebook - Log In or Sign Up'
 
-CustomKeywords.'all_utilites.Selenium_library.softAssert'(actTitle, expTitle, 'Soft title verify pass', 'Soft title verify Fail')
+CustomKeywords.'all.Library.UtilityExcel.hardAssert'(actTitle, expTitle)
 
 println '======================================='
 println WebUI.verifyTextPresent('Birthday', false)
-CustomKeywords.'all_utilites.Selenium_library.hardAssert'(actTitle, expTitle, 'hard title vefify pass', 'hard title verify fail')
+CustomKeywords.'all.Library.UtilityExcel.hardAssert'(actTitle, expTitle,)
 
 WebUI.setText(findTestObject('Page_Facebook/input_concat2'), 'bijaya')
 

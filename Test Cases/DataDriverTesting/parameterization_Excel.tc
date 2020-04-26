@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>DataDriven_Excel</name>
+   <name>parameterization_Excel</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>87e61f81-30c7-4926-9d9f-318efc3329bc</testCaseGuid>

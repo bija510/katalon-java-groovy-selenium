@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>DataDriven_ForLoop</name>
+   <name>Parameterization_ForLoop</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>3becc262-86bb-4ff8-9446-4b26a8b82e9d</testCaseGuid>

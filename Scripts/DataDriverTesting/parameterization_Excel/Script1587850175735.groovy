@@ -9,25 +9,27 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
-import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
 
+   /***************************************************
+    * DataDriven or Paramaterization using Excel Sheet
+    ***************************************************/
 
-TestData dataFacebook = findTestData('facebook/Data_facebookReg')
-def firstName = dataFacebook.getValue('userName', 1)
-def lastName = dataFacebook.getValue('lastName', 1)
-def phoneNum = dataFacebook.getValue('PhoneNum', 1)
-def password = dataFacebook.getValue('pwd', 1)
+for (def rowNum=1; rowNum<=findTestData('Data Files/facebook/Data_facebookReg').getRowNumbers(); rowNum++){
+	WebUI.openBrowser('https://www.facebook.com/')
+	WebUI.maximizeWindow()
+	
+	WebUI.setText(findTestObject('Page_Facebook/input_concat2'), findTestData("facebook/Data_facebookReg").getValue('userName', 1))
+	WebUI.delay(2)
+	
+	WebUI.setText(findTestObject('Page_Facebook/input_concat3'), findTestData("facebook/Data_facebookReg").getValue('pwd', 1))
+	
+	WebUI.closeBrowser()
+}
 
-
-WebUI.openBrowser('https://www.facebook.com/')
-
-WebUI.setText(findTestObject('Page_Facebook/input_concat2'), firstName)
-WebUI.delay(2)
-
-WebUI.setText(findTestObject('Page_Facebook/input_concat3'), password)

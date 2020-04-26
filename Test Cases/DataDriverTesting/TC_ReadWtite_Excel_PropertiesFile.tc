@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC_facebookReg</name>
+   <name>TC_ReadWtite_Excel_PropertiesFile</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>d2d9c323-74e5-4738-82c9-9804ba2cf98c</testCaseGuid>
+   <testCaseGuid>0f5b884c-b37b-4b7a-9cd1-825ebaf3b462</testCaseGuid>
 </TestCaseEntity>

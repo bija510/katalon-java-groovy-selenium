@@ -1,4 +1,4 @@
-package all_utilites
+package all.Library
 import static com.kms.katalon.core.checkpoint.CheckpointFactory.findCheckpoint
 import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
@@ -50,6 +50,7 @@ import java.io.FileNotFoundException
 import java.io.IOException
 import java.util.Date
 
+import org.apache.commons.io.FileUtils
 import org.apache.poi.ss.usermodel.Cell
 import org.apache.poi.ss.usermodel.Row
 
@@ -65,63 +66,58 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.text.ParseException
 
-class Selenium_library {
+class UtilityExcel {
 	/**
 	 * Refresh browser
-	 */
-	@Keyword
-	def refreshBrowser() {
-		KeywordUtil.logInfo("Refreshing")
-		WebDriver webDriver = DriverFactory.getWebDriver()
-		webDriver.navigate().refresh()
-		KeywordUtil.markPassed("Refresh successfully")
-	}
-
-	/**
+	 *//*
+	 @Keyword
+	 def refreshBrowser() {
+	 KeywordUtil.logInfo("Refreshing")
+	 WebDriver webDriver = DriverFactory.getWebDriver()
+	 webDriver.navigate().refresh()
+	 KeywordUtil.markPassed("Refresh successfully")
+	 }
+	 *//**
 	 * Click element
 	 * @param to Katalon test object
-	 */
-	@Keyword
-	def clickElement(TestObject to) {
-		try {
-			WebElement element = WebUiBuiltInKeywords.findWebElement(to)
-			KeywordUtil.logInfo("Clicking element")
-			element.click()
-			KeywordUtil.markPassed("Element has been clicked")
-		} catch (WebElementNotFoundException e) {
-			KeywordUtil.markFailed("Element not found")
-		} catch (Exception e) {
-			KeywordUtil.markFailed("Fail to click on element")
-		}
-	}
-
-	/**
+	 *//*
+	 @Keyword
+	 def clickElement(TestObject to) {
+	 try {
+	 WebElement element = WebUiBuiltInKeywords.findWebElement(to)
+	 KeywordUtil.logInfo("Clicking element")
+	 element.click()
+	 KeywordUtil.markPassed("Element has been clicked")
+	 } catch (WebElementNotFoundException e) {
+	 KeywordUtil.markFailed("Element not found")
+	 } catch (Exception e) {
+	 KeywordUtil.markFailed("Fail to click on element")
+	 }
+	 }
+	 *//**
 	 * Get all rows of HTML table
 	 * @param table Katalon test object represent for HTML table
 	 * @param outerTagName outer tag name of TR tag, usually is TBODY
 	 * @return All rows inside HTML table
-	 */
-	@Keyword
-	def List<WebElement> getHtmlTableRows(TestObject table, String outerTagName) {
-		WebElement mailList = WebUiBuiltInKeywords.findWebElement(table)
-		List<WebElement> selectedRows = mailList.findElements(By.xpath("./" + outerTagName + "/tr"))
-		return selectedRows
-	}
-
-
-	@Keyword
-	def hardAssert(String actual, String expected , String passMsg , String failMsg){
-		if(Assert.assertEquals(actual, expected)){
-		}
-	}
-
-	@Keyword
-	def softAssert(String actual, String expected , String passMsg , String failMsg){
-		SoftAssert softassertion = new SoftAssert()
-		if(softassertion.assertEquals(actual, expected)){
-			softassertion.assertAll()
-		}
-	}
+	 *//*
+	 @Keyword
+	 def List<WebElement> getHtmlTableRows(TestObject table, String outerTagName) {
+	 WebElement mailList = WebUiBuiltInKeywords.findWebElement(table)
+	 List<WebElement> selectedRows = mailList.findElements(By.xpath("./" + outerTagName + "/tr"))
+	 return selectedRows
+	 }
+	 @Keyword
+	 def hardAssert(String actual, String expected ){
+	 if(Assert.assertEquals(actual, expected)){
+	 }
+	 }
+	 @Keyword
+	 def softAssert(String actual, String expected , String passMsg , String failMsg){
+	 SoftAssert softassertion = new SoftAssert()
+	 if(softassertion.assertEquals(actual, expected)){
+	 softassertion.assertAll()
+	 }
+	 }*/
 
 	/********************************************************
 	 import java.io.FileInputStream
@@ -137,7 +133,8 @@ class Selenium_library {
 	 import org.apache.poi.xssf.usermodel.XSSFCellStyle
 	 import java.lang.String
 	 **********************************************************/
-	def String [][] readExcelData(def excelFile, def sheetName){
+
+	def String[][] readExcelData(def excelFile, def sheetName){
 		FileInputStream file = new FileInputStream (new File(excelFile))
 		XSSFWorkbook workbook = new XSSFWorkbook(file);
 		XSSFSheet sheet = workbook.getSheet(sheetName);
@@ -146,7 +143,7 @@ class Selenium_library {
 		int colCount =sheet.getRow(0).getLastCellNum()
 		String[][] arrData=new String[rowCount][colCount]
 
-		for(int i=o; i<rowCount; i++){
+		for(int i=0; i<rowCount; i++){
 			for(int j=0; j<colCount; j++){
 
 				arrData[i][j] = sheet.getRow(i).getCell(j).getStringCellValue()
@@ -172,12 +169,12 @@ class Selenium_library {
 
 	def writeExcelData(def excelFile, def sheetName, def val, int row, int col){
 		FileInputStream file = new FileInputStream (new File(excelFile))
-		XSSFWorkbook workbook = new XSSFWorkbook(file);
-		XSSFSheet sheet = workbook.getSheet(sheetName);
+		XSSFWorkbook workbook = new XSSFWorkbook(file)
+		XSSFSheet sheet = workbook.getSheet(sheetName)
 
 		'Write data to excel'
-		sheet.getRow(row).createCell(col).setCellValue(val);
-		file.close();
+		sheet.getRow(row).createCell(col).setCellValue(val)
+		file.close()
 
 		FileOutputStream outFile =new FileOutputStream(new File(excelFile));
 		workbook.write(outFile);
@@ -192,11 +189,11 @@ class Selenium_library {
 	 import java.io.IOException
 	 https://forum.katalon.com/t/how-to-create-a-katalon-method-keyword-for-writing-to-a-text-file-with-java/28807
 	 *****************************************************************************************************************/	
+
 	def readFromtextFile(def fileName){
 		File file = new File(fileName)
 		String text = FileUtils.readFileToString(file)
 	}
-
 
 
 	def appendTextFile(String filePath, boolean append, String text){
@@ -211,14 +208,12 @@ class Selenium_library {
 
 
 
-	@Keyword
-	public static void drawBorder(WebElement element, WebDriver driver){
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].style.border='3px solid red'", element);
-	}
+	/*	@Keyword
+	 public static void drawBorder(WebElement element, WebDriver driver){
+	 JavascriptExecutor js = ((JavascriptExecutor) driver);
+	 js.executeScript("arguments[0].style.border='3px solid red'", element);
+	 }
+	 */
 }
-
-
-
 
 
