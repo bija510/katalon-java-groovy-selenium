@@ -25,7 +25,7 @@ import com.kms.katalon.core.util.KeywordUtil
 	 * READING from excel file outside of katalon
 	 *******************************************************/
 	
-	String[][] arrData = CustomKeywords.'all.Library.UtilityExcel.readExcelData'(excelFile, sheetName)
+	String[][] arrData = CustomKeywords.'library.UTILITY.UtilityExcel.readExcelData'(excelFile, sheetName)
 	
 	/*******************************************************
 	 * WRITING to the excel file outside of katalon
