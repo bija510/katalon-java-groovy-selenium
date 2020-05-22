@@ -4,4 +4,14 @@
    <name>default</name>
    <tag></tag>
    <defaultProfile>true</defaultProfile>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>gTestCaseId</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'Screenshots/katProj/'</initValue>
+      <name>gScreenshotDir</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

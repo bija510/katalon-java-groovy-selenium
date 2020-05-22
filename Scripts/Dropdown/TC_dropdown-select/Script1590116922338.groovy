@@ -11,6 +11,7 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
@@ -18,10 +19,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 //for selenium
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By;
 
+String tcID = GlobalVariable.gTestCaseId
+print "tcID>>>" +tcID
+def currentBrowser = DriverFactory.getExecutedBrowser().getName()
+println currentBrowser
+
+try {
 	WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
 	WebUI.maximizeWindow() 
 	
@@ -57,7 +66,36 @@ import org.openqa.selenium.By;
 	
 	ddlName.selectByValue("Afghanistan") //<option value="Afghanistan">Afghanistan</option>
 
+	/************************************************
+	 * If else for firefox execution or other 
+	 *************************************************/
+	if(currentBrowser.toString().equals("FIREFOX_DRIVER")){  //for chromr = CHROME_DRIVER and for MS.edge =EDGE_CHROMIUM_DRIVER
+		println('Test for firefox exxecution')
+	}else{
+		println('G.chrome or Ms.Edge execution')
+	}
+
+
+
+} catch (WebElementNotFoundException e) {
+	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)
+	KeywordUtil.logInfo('ERROR:' + e.message)
+	KeywordUtil.markFailed(tcID + 'failed, Element not found')
+
+} catch (Exception e) {
+	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)
+	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
+	KeywordUtil.markFailed(tcID + 'failed')
+
+}finally{
+
+WebUI.closeBrowser()
+
+}
+
 	
+
+
 
 
 
