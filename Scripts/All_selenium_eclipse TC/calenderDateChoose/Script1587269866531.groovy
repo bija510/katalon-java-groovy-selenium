@@ -21,13 +21,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.WebDriver as WebDriver
 import org.testng.Assert;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+     
 
-     sc ='apple'
+    sc ='apple'
 
 	WebUI.openBrowser('https://www.path2usa.com/travel-companions')
+	WebUI.maximizeWindow()
 	
 	WebDriver driver = DriverFactory.getWebDriver()
-	
 	driver.findElement(By.xpath(".//*[@id='travel_date']")).click()
 	
 	while (!driver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).getText()
@@ -37,16 +40,56 @@ import org.testng.Assert;
 	
 	List<WebElement> dates = driver.findElements(By.className("day"));
 	// Grab common attribute//Put into list and iterate
-	int count = driver.findElements(By.className("day")).size();
+	int count = dates.size();
 	
 	for (int i = 0; i < count; i++) {
-		String text = driver.findElements(By.className("day")).get(i).getText();
+		String text = dates.get(i).getText();
 		if (text.equalsIgnoreCase("21")) {
-			driver.findElements(By.className("day")).get(i).click();
+			dates.get(i).click();
 			break;
-			
+	
+		}
+	
 	}
+	
+	
+	/***********************************
+	 * To enter the current date
+	 ***********************************/
+	String dateFormat = println new Date().format('MM/dd/yyyy') //Result 05/21/2020
+	String dateFormat1 =  (new Date()-5).format('MM/dd/yyyy') //Result 05/16/2020
+	
+	String dateFormat2 = (new Date()+60).format('MM/dd/yyyy') //Result 07/20/2020
+	String currDate = new Date() //Thu May 21 22:40:05 EDT 2020
+	
+	String[] arrDate = currDate.split ('')
+	String year = arrDate[5]
+	String month = arrDate[1]
+	String day = arrDate[2]
+	
+	/***********************************
+	 * To enter the current time
+	 ***********************************/
+	Date date = new Date();
+	SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+	SimpleDateFormat sdf1 = new SimpleDateFormat("hh:mm a");
+	println(sdf.format(date)); //11:03:42 PM
+	println(sdf1.format(date)); //11:05 PM
+
+	 System.exit(0)
 		
-	}
-
-
+			
+			
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

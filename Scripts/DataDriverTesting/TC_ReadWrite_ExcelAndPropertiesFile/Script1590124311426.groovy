@@ -19,7 +19,7 @@ import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 
 	def excelFile = 'C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Book1.xlsx'
-	def util = new all.Library.UtilityExcel()
+	def util = new library.UTILITY.UtilityExcel()
 	def sheetName = 'Sheet1'
 	/*******************************************************
 	 * READING from excel file outside of katalon
@@ -38,7 +38,7 @@ import com.kms.katalon.core.util.KeywordUtil
 	
 	
 	def profFile = 'C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\textFile1.properties'
-	def testData = new all.Library.UtilitesTextFile(profFile)
+	def testData = new library.UTILITY.UtilitesTextFile(profFile)
 	
 	/*******************************************************
 	 * READING from Properties file outside of katalon
@@ -54,7 +54,7 @@ import com.kms.katalon.core.util.KeywordUtil
 	 * WRITING to Properties file outside of katalon
 	 *******************************************************/
 	testData.writeToTextFile('NameFN', 'Bijaya')
-	testData.writeToTextFile('NameFN', 'Chhetri')
+	testData.writeToTextFile('NameLN', 'Chhetri')
 	//NameFN = Blank
 	//NameLN = Blank
 	

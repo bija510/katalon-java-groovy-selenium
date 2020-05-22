@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC_ReadWtite_Excel_PropertiesFile</name>
+   <name>TC_ReadWrite_ExcelAndPropertiesFile</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>0f5b884c-b37b-4b7a-9cd1-825ebaf3b462</testCaseGuid>

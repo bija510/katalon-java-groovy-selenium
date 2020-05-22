@@ -9,42 +9,26 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-
-
+import org.openqa.selenium.interactions.Actions
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 
 
 
+/*********************************************
+* selenium WebDriver
+* import org.openqa.selenium.interactions.Actions
+* import org.openqa.selenium.WebDriver
+* import org.openqa.selenium.By
+*********************************************/
+WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
+WebUI.maximizeWindow()
 
-        WebUI.openBrowser('http://www.newtours.demoaut.com/')
-        WebDriver driver = DriverFactory.getWebDriver()
-		WebDriverWait mywait = new WebDriverWait(driver, 100000);
-		WebElement username = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("userName")));
-		username.sendKeys("Bijaya");
 
-       
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+
