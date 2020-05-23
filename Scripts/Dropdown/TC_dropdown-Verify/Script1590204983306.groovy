@@ -13,7 +13,7 @@ import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
-import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
@@ -21,28 +21,21 @@ import internal.GlobalVariable as GlobalVariable
 //for selenium
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
+import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
+import org.openqa.selenium.Keys as Keys
 import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.By as By
 
 String tcID = GlobalVariable.gTestCaseId
 print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
-println currentBrowser
+
 
 try {
 	WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
 	WebUI.maximizeWindow() 
-	
-	/************************************************
-	 * select DDL Using Katalon Built-in function 
-	 *************************************************/
-	WebUI.selectOptionByLabel(findTestObject("Object Repository/DemoAutomationTesting/Register/ddl_skills"), 'CSS', false)
-	Thread.sleep(2000)
-	WebUI.selectOptionByIndex(findTestObject("Object Repository/DemoAutomationTesting/Register/ddl_skills"), 6)
-	Thread.sleep(2000)
-	WebUI.selectOptionByValue(findTestObject("Object Repository/DemoAutomationTesting/Register/ddl_skills"), 'Android', false)
-	Thread.sleep(2000)
 	
 	/************************************************
 	 * Scroll using java script
@@ -52,32 +45,29 @@ try {
 	 WebUI.executeJavaScript("window.scrollBy(0, document.body.scrollHeight)", null)
 
 	/************************************************
-	 * Using selenium Select class
-	 * import org.openqa.selenium.support.ui.Select
-	 * import org.openqa.selenium.WebDriver
-	 * import org.openqa.selenium.By
-	 ****************************************************/
-	WebDriver driver = DriverFactory.getWebDriver()
-	Select ddlName = new Select(driver.findElement(By.xpath("//*[@id='countries']")))
-	
-	ddlName.selectByVisibleText("India")
-	Thread.sleep(2000)
-	
-	ddlName.selectByIndex(6) //Andorra is in 6th Number
-	Thread.sleep(2000)
-	
-	ddlName.selectByValue("Afghanistan") //<option value="Afghanistan">Afghanistan</option>
-
-	/************************************************
-	 * If else for firefox execution or other 
+	 * Verify dropdown list label
 	 *************************************************/
-	if(currentBrowser.toString().equals("FIREFOX_DRIVER")){  //for chromr = CHROME_DRIVER and for MS.edge =EDGE_CHROMIUM_DRIVER
-		println('Test for firefox exxecution')
-	}else{
-		println('G.chrome or Ms.Edge execution')
+	WebDriver driver = DriverFactory.getWebDriver()
+	String[] allMonth = ['Month', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+    Select select =new Select(driver.findElement(By.xpath("//*[@id='basicBootstrapForm']/div[11]/div[2]/select")))
+    List<WebElement> expddlvalues= select.getOptions()
+	
+	int ddlsize = expddlvalues.size()
+	for(int i=0; i < expddlvalues.size(); i++){
+		WebUI.verifyMatch(allMonth[i], expddlvalues.get(i).getText(), false) //import org.openqa.selenium.WebElement
 	}
-
-
+	
+	/************************************************
+	*Verifying default label
+	*************************************************/
+	WebUI.verifyOptionSelectedByLabel(findTestObject("Object Repository/DemoAutomationTesting/Register/ddl_skills"), 'Select Skills', false, 2, FailureHandling.STOP_ON_FAILURE)
+	
+	
+	/************************************************
+	*Verifying total ddl count
+	*************************************************/
+	WebUI.verifyEqual(ddlsize, 13)
+	
 
 } catch (WebElementNotFoundException e) {
 	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)
