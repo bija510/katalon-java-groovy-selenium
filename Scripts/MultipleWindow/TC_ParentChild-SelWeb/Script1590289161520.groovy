@@ -11,80 +11,49 @@ import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+//selenium
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-
-import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
-import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement
+import java.util.Iterator as Iterator
+import java.util.Set as Set
+import org.openqa.selenium.By as By
 import org.openqa.selenium.WebDriver as WebDriver
-import org.testng.Assert;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import org.openqa.selenium.chrome.ChromeDriver as ChromeDriver
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
 
 String tcID = GlobalVariable.gTestCaseId
 print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
+println currentBrowser
 
 
 try {
 
-    sc ='apple'
-
-	WebUI.openBrowser('https://www.path2usa.com/travel-companions')
-	WebUI.maximizeWindow()
+	WebUI.openBrowser('http://demo.automationtesting.in/Windows.html')
 	
 	WebDriver driver = DriverFactory.getWebDriver()
-	driver.findElement(By.xpath(".//*[@id='travel_date']")).click()
+    driver.manage.window().maximize()
 	
-	while (!driver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).getText()
-	.contains("May")) {
-		driver.findElement(By.cssSelector("[class='datepicker-days'] th[class='next']")).click();
-	}
-	
-	List<WebElement> dates = driver.findElements(By.className("day"));
-	// Grab common attribute//Put into list and iterate
-	int count = dates.size();
-	
-	for (int i = 0; i < count; i++) {
-		String text = dates.get(i).getText();
-		if (text.equalsIgnoreCase("21")) {
-			dates.get(i).click();
-			break;
-	
-		}
-	
-	}
-	
-	
-	/***********************************
-	 * To enter the current date
-	 ***********************************/
-	String dateFormat = println new Date().format('MM/dd/yyyy') //Result 05/21/2020
-	String dateFormat1 =  (new Date()-5).format('MM/dd/yyyy') //Result 05/16/2020
-	
-	String dateFormat2 = (new Date()+60).format('MM/dd/yyyy') //Result 07/20/2020
-	String currDate = new Date() //Thu May 21 22:40:05 EDT 2020
-	
-	String[] arrDate = currDate.split ('')
-	String year = arrDate[5]
-	String month = arrDate[1]
-	String day = arrDate[2]
-	
-	/***********************************
-	 * To enter the current time
-	 ***********************************/
-	Date date = new Date();
-	SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-	SimpleDateFormat sdf1 = new SimpleDateFormat("hh:mm a");
-	println(sdf.format(date)); //11:03:42 PM
-	println(sdf1.format(date)); //11:05 PM
+	driver.findElement(By.xpath('//*[@id="Tabbed"]/a/button')).click()
+	println(driver.getTitle())
 
-	 
+	Set<String> ids = driver.getWindowHandles()
+	Iterator<String> it = ids.iterator()
+
+	String parentid = it.next()
+	String childid = it.next()
+
+	driver.switchTo().window(childid) // travel to child and work there
+	println(driver.getTitle())
+
+	driver.findElement(By.xpath('//*[@id="container"]/header/div/div/div[2]/ul/li[4]/a')).click()
+	driver.switchTo().window(parentid) // travel back to parent
+
+	println(driver.getTitle())
+		
 
 } catch (WebElementNotFoundException e) {
 	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)
@@ -101,3 +70,5 @@ try {
 //WebUI.closeBrowser()
 
 }
+
+

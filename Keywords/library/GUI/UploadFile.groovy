@@ -104,7 +104,11 @@ class UploadFile {
 
 	}
 
-
+/************************************************************************
+ * This is the library for upload file 
+ * http://demo.automationtesting.in/FileUpload.html
+ * WebUI.click(findTestObject('Object Repository/UploadFile/frameUpload'))
+ *************************************************************************/
 
 	@Keyword
 	def uploadFileNew(TestObject to, String filePath) {

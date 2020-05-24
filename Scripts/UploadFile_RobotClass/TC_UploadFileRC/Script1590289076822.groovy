@@ -4,87 +4,49 @@ import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-
-import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
-import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement
-import org.openqa.selenium.WebDriver as WebDriver
-import org.testng.Assert;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import com.kms.katalon.core.webui.common.WebUiCommonHelper as WebUiCommonHelper
+//for selenium
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
+import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.By;
+
 
 String tcID = GlobalVariable.gTestCaseId
 print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
+println currentBrowser
 
 
 try {
 
-    sc ='apple'
-
-	WebUI.openBrowser('https://www.path2usa.com/travel-companions')
+	String FileUploadPath =RunConfiguration.getProjectDir() + '/Include/UploadFile/SamplePDF.pdf'
+	FileUploadPath = FileUploadPath.replace('/','\\')
+	
+	/*******************************************************************************
+	 * Upload file work for only certain website and DON'T work for alot of browser'
+	 * by using Upload and sendKey
+	 ********************************************************************************/
+	
+	WebUI.openBrowser('http://demo.automationtesting.in/FileUpload.html')
 	WebUI.maximizeWindow()
-	
-	WebDriver driver = DriverFactory.getWebDriver()
-	driver.findElement(By.xpath(".//*[@id='travel_date']")).click()
-	
-	while (!driver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).getText()
-	.contains("May")) {
-		driver.findElement(By.cssSelector("[class='datepicker-days'] th[class='next']")).click();
-	}
-	
-	List<WebElement> dates = driver.findElements(By.className("day"));
-	// Grab common attribute//Put into list and iterate
-	int count = dates.size();
-	
-	for (int i = 0; i < count; i++) {
-		String text = dates.get(i).getText();
-		if (text.equalsIgnoreCase("21")) {
-			dates.get(i).click();
-			break;
-	
-		}
-	
-	}
-	
-	
-	/***********************************
-	 * To enter the current date
-	 ***********************************/
-	String dateFormat = println new Date().format('MM/dd/yyyy') //Result 05/21/2020
-	String dateFormat1 =  (new Date()-5).format('MM/dd/yyyy') //Result 05/16/2020
-	
-	String dateFormat2 = (new Date()+60).format('MM/dd/yyyy') //Result 07/20/2020
-	String currDate = new Date() //Thu May 21 22:40:05 EDT 2020
-	
-	String[] arrDate = currDate.split ('')
-	String year = arrDate[5]
-	String month = arrDate[1]
-	String day = arrDate[2]
-	
-	/***********************************
-	 * To enter the current time
-	 ***********************************/
-	Date date = new Date();
-	SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-	SimpleDateFormat sdf1 = new SimpleDateFormat("hh:mm a");
-	println(sdf.format(date)); //11:03:42 PM
-	println(sdf1.format(date)); //11:05 PM
+	CustomKeywords.'library.GUI.UploadFile.uploadFileNew'(findTestObject('Object Repository/UploadFile/frameUpload'), FileUploadPath)
 
-	 
+
 
 } catch (WebElementNotFoundException e) {
 	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)

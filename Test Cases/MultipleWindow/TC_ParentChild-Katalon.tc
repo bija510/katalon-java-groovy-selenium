@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>UploadFile</name>
+   <name>TC_ParentChild-Katalon</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>06d9d80a-edf7-4709-b518-ea2332d4aa28</testCaseGuid>
+   <testCaseGuid>f0348e9a-0565-4490-859d-9dafbccefaa3</testCaseGuid>
 </TestCaseEntity>

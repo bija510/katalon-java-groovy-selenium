@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_upload2</name>
+   <name>frameUpload</name>
    <tag></tag>
-   <elementGuidId>ad068626-a394-4ce2-8004-61a597943f2c</elementGuidId>
+   <elementGuidId>310ab430-82b1-4a1c-82dc-956db3769775</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>

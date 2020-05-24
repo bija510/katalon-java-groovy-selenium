@@ -14,7 +14,7 @@
       <guid>99d99bb1-df50-4ce0-8fcc-daf788c967eb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/DataDriverTesting/Parameterization_ForLoop</testCaseId>
+      <testCaseId>Test Cases/DataDriverTesting/TC_Parameterization_ForLoop</testCaseId>
       <testDataLink>
          <combinationType>ONE</combinationType>
          <id>bedd69ee-8653-44d2-9e62-b092d04bed4f</id>
