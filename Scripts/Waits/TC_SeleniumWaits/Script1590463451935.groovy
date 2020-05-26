@@ -15,7 +15,6 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -23,15 +22,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import java.util.concurrent.TimeUnit;
 
 
 
 
-        WebUI.openBrowser('http://www.newtours.demoaut.com/')
-        WebDriver driver = DriverFactory.getWebDriver()
-		WebDriverWait mywait = new WebDriverWait(driver, 100000);
-		WebElement username = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("userName")));
-		username.sendKeys("Bijaya");
+	WebUI.openBrowser('http://www.newtours.demoaut.com/')
+	WebDriver driver = DriverFactory.getWebDriver()
+    
+	//soft wait Implicity wait
+	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //import java.util.concurrent.TimeUnit;
+	
+	Thread.sleep(4000)
+	
+	//Explicit Wait
+	WebDriverWait mywait = new WebDriverWait(driver, 100000);
+	WebElement username = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("userName")));
+	username.sendKeys("Bijaya");
 
        
 		

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>calenderDateChoose</name>
+   <name>TC_CalenderDatePicker</name>
    <tag></tag>
    <comment></comment>
    <testCaseGuid>600b9be2-19d2-4ba5-b083-94f96533248b</testCaseGuid>

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_alertWTxt_Bx</name>
+   <name>Rightclick</name>
    <tag></tag>
-   <elementGuidId>16593dfa-7578-409a-8580-80094b3ebdd6</elementGuidId>
+   <elementGuidId>ece57ea8-b3e7-41d9-8c3e-3d75b19d6250</elementGuidId>
    <selectorCollection>
       <entry>
-         <key>XPATH</key>
-         <value>//a[contains(text(),'Alert with Textbox')]</value>
+         <key>CSS</key>
+         <value></value>
       </entry>
       <entry>
          <key>BASIC</key>
          <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>/html/head/script[3]/text()</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

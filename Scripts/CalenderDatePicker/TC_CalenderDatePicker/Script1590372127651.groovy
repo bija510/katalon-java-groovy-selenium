@@ -33,33 +33,6 @@ def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 
 try {
 
-    sc ='apple'
-
-	WebUI.openBrowser('https://www.path2usa.com/travel-companions')
-	WebUI.maximizeWindow()
-	
-	WebDriver driver = DriverFactory.getWebDriver()
-	driver.findElement(By.xpath(".//*[@id='travel_date']")).click()
-	
-	while (!driver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).getText()
-	.contains("May")) {
-		driver.findElement(By.cssSelector("[class='datepicker-days'] th[class='next']")).click();
-	}
-	
-	List<WebElement> dates = driver.findElements(By.className("day"));
-	// Grab common attribute//Put into list and iterate
-	int count = dates.size();
-	
-	for (int i = 0; i < count; i++) {
-		String text = dates.get(i).getText();
-		if (text.equalsIgnoreCase("21")) {
-			dates.get(i).click();
-			break;
-	
-		}
-	
-	}
-	
 	
 	/***********************************
 	 * To enter the current date
@@ -70,10 +43,35 @@ try {
 	String dateFormat2 = (new Date()+60).format('MM/dd/yyyy') //Result 07/20/2020
 	String currDate = new Date() //Thu May 21 22:40:05 EDT 2020
 	
-	String[] arrDate = currDate.split ('')
+	String[] arrDate = currDate.split (' ')// NOTE split(' ') NEED SPACE here
 	String year = arrDate[5]
 	String month = arrDate[1]
 	String day = arrDate[2]
+	println arrDate +"=====>"+ day+year+month
+
+	WebUI.openBrowser("https://www.path2usa.com/travel-companions");
+	
+	WebDriver driver = DriverFactory.getWebDriver()
+	driver.findElement(By.xpath(".//*[@id='travel_date']")).click();
+	
+	while (!driver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).getText()
+			.contains(month)) {
+		driver.findElement(By.cssSelector("[class='datepicker-days'] th[class='next']")).click();
+	}
+	
+	List<WebElement> dates = driver.findElements(By.className("day"));
+	int count = driver.findElements(By.className("day")).size();
+	
+	for (int i = 0; i < count; i++) {
+		String text = driver.findElements(By.className("day")).get(i).getText();
+		if (text.equalsIgnoreCase(day)) {
+			driver.findElements(By.className("day")).get(i).click();
+			break;
+		
+		}
+	}
+	
+	
 	
 	/***********************************
 	 * To enter the current time

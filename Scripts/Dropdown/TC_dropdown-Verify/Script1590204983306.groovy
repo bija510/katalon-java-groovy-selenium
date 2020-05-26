@@ -52,7 +52,7 @@ try {
     Select select =new Select(driver.findElement(By.xpath("//*[@id='basicBootstrapForm']/div[11]/div[2]/select")))
     List<WebElement> expddlvalues= select.getOptions()
 	
-	int ddlsize = expddlvalues.size()
+	int totalOptions = expddlvalues.size() // 1nd Example
 	for(int i=0; i < expddlvalues.size(); i++){
 		WebUI.verifyMatch(allMonth[i], expddlvalues.get(i).getText(), false) //import org.openqa.selenium.WebElement
 	}
@@ -64,9 +64,14 @@ try {
 	
 	
 	/************************************************
+	*getting total num of Optoin
 	*Verifying total ddl count
 	*************************************************/
-	WebUI.verifyEqual(ddlsize, 13)
+	String totalOptions1 = WebUI.getNumberOfTotalOption(findTestObject("Object Repository/DemoAutomationTesting/Register/ddl_skills")) // 2nd Example Result:- 78
+	println totalOptions
+	WebUI.verifyEqual(totalOptions1, 78)
+	
+	WebUI.verifyEqual(totalOptions, 13)
 	
 
 } catch (WebElementNotFoundException e) {
