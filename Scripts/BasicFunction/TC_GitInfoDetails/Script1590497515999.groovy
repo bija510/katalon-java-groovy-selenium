@@ -16,26 +16,27 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('http://demo.automationtesting.in/Alerts.html')
-WebUI.maximizeWindow()
+/*******************************************************************************************************
+ * Git need to download Locally
+ * 
+ * Need to create the git Account in GitHUb
+ * 
+ * Clone Project==>it copy from github and paste in the katalon
+ * 
+ * Show History==>it will show the history of commit that you made with "Proper COMMENT"
+ * 
+ * Commit==> it will show the file which is new and which are modified so that we can push 
+ * 
+ * Push==>it will push final to git
+ * 
+ * Pull==>it will pull if there are new update in the gitProject final
+ * 
+ * Fetch==>it will show the update in git so that we can decide or can see what change we are Pulling final
+ * 
+ * Preference==>Team==>Git==>Ignore Resources and other setting
+ * 
+ * Preference==>Team==>Git==>Confugration for project locally and Remotely and other setting
+ * 
+ ************************************************************************************************************/
 
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OK'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OK_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
 
-
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OkandCancel'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OKCancel_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
-
-
-WebUI.click(findTestObject('DemoAutomationTesting/btn_alertWithTxtBx'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_alertWTxt_Bx_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
-//System.exit(0)

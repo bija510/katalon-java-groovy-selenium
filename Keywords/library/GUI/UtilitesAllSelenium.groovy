@@ -26,6 +26,7 @@ import WebUiBuiltInKeywords as WebUI
 
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
+import org.apache.commons.lang.text.StrBuilder
 import org.openqa.selenium.By
 
 import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
@@ -65,14 +66,36 @@ class UtilitesAllSelenium {
 
 		catch(WebElementNotFoundException e){
 			WebUI.takeScreenshot(FailureHandling.STOP_ON_FAILURE)
-			KeywordUtil.markFailed("Failed to selectTab"+tabName+", element not found")
+			//KeywordUtil.markFailed("Failed to selectTab"+tabName+", element not found")
+			KeywordUtil.markFailed("Failed to selectTab element not found")
 
 		}catch (Exception e){
 			WebUI.takeScreenshot(FailureHandling.STOP_ON_FAILURE)
-			KeywordUtil.markFailed("Failed to selectTab"+tabName)
-
+			//KeywordUtil.markFailed("Failed to selectTab"+tabName)
+			KeywordUtil.markFailed("Failed to selectTab")
 
 		}
 
 	}
+
+	@Keyword
+	def getalphaNumericString(int length){
+
+		String alphaNumericStr= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+		StringBuilder sb =new StringBuilder(length)
+		for (int i =0; i< length; i++){
+			int index = (int) (alphaNumericStr.length()*Math.random())
+			sb.append(alphaNumericStr.charAt(index))
+
+		}
+		return sb.toString()
+
+	}
+
+
+
+
+
+
+
 }

@@ -83,7 +83,7 @@ class UtilityExcel {
 	 import java.lang.String
 	 **********************************************************/
 
-	
+	@Keyword
 	def String[][] readExcelData(def excelFile, def sheetName){
 		FileInputStream file = new FileInputStream (new File(excelFile))
 		XSSFWorkbook workbook = new XSSFWorkbook(file);
@@ -116,7 +116,7 @@ class UtilityExcel {
 	 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 	 import java.lang.String
 	 *****************************************************/
-
+	@Keyword
 	def writeExcelData(def excelFile, def sheetName, def val, int row, int col){
 		FileInputStream file = new FileInputStream (new File(excelFile))
 		XSSFWorkbook workbook = new XSSFWorkbook(file)

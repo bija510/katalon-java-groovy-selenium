@@ -16,26 +16,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-WebUI.openBrowser('http://demo.automationtesting.in/Alerts.html')
-WebUI.maximizeWindow()
+WebUI.openBrowser(GlobalVariable.url)
 
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OK'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OK_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
+WebUI.sendKeys(findTestObject("Page_Facebook/txt_firstName"), firstName) //yes we can skip this "<<Object Repository/>>""
 
-
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OkandCancel'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OKCancel_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
-
-
-WebUI.click(findTestObject('DemoAutomationTesting/btn_alertWithTxtBx'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_alertWTxt_Bx_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
-//System.exit(0)
+WebUI.sendKeys(findTestObject("Object Repository/Page_Facebook/txt_LastName"), lastName)

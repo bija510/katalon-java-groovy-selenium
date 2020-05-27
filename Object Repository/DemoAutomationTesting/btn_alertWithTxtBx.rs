@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_alertWTxt_Bx_click</name>
+   <name>btn_alertWithTxtBx</name>
    <tag></tag>
-   <elementGuidId>3a6919a8-2bb3-437b-bc1f-bba3eed216fd</elementGuidId>
+   <elementGuidId>58344f8c-c547-4651-bb13-313efb732c51</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;Textbox&quot;]/button</value>
+         <value>/html/body/div[1]/div/div/div/div[1]/ul/li[3]/a</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>

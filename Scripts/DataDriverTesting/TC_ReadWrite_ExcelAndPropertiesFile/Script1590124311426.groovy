@@ -19,7 +19,6 @@ import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 
 	def excelFile = 'C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Book1.xlsx'
-	def util = new library.UTILITY.UtilityExcel()
 	def sheetName = 'Sheet1'
 	/*******************************************************
 	 * READING from excel file outside of katalon
@@ -31,9 +30,13 @@ import com.kms.katalon.core.util.KeywordUtil
 	 * WRITING to the excel file outside of katalon
 	 * if the excel box already "Blank" then it will fail
 	 *******************************************************/
-	
-	util.writeExcelData(excelFile, 'Sheet1', 'Blank', 2, 0)
-	util.writeExcelData(excelFile, 'Sheet1', 'Blank', 2, 1)
+	CustomKeywords.'library.UTILITY.UtilityExcel.writeExcelData'(excelFile, 'Sheet1', 'Blank26', 2, 0)
+	CustomKeywords.'library.UTILITY.UtilityExcel.writeExcelData'(excelFile, 'Sheet1', 'Blank26', 2, 1)
+	      
+//	//or by another way with 3 line
+//	def util = new library.UTILITY.UtilityExcel()
+//	util.writeExcelData(excelFile, 'Sheet1', 'Blank', 2, 0)
+//	util.writeExcelData(excelFile, 'Sheet1', 'Blank', 2, 1)
 	
 	
 	

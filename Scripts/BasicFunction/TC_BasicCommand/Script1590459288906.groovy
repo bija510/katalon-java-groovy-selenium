@@ -59,12 +59,16 @@ try {
 	println expValue // or System.out.println("") or println("")
 	WebUI.verifyMatch(actValue, expValue, false)
 	
+	
 	actValue = 'http://demo.automationtesting.in/Register.html'
 	expValue = WebUI.getUrl() // Get url of the current window
 	WebUI.verifyMatch(actValue, expValue, false)
 	
+	/*********************************
+	 * window size maximize and set 
+	 * zoom
+	 *********************************/
 	WebDriver driver = DriverFactory.getWebDriver()
-	
 	Dimension d= new Dimension (642,482); //need import org.openqa.selenium.Dimension;
 	driver.manage().window().setSize(d);
 	
@@ -74,7 +78,14 @@ try {
 	WebUI.delay(2)
 	WebUI.deleteAllCookies()
 	
+	/*********************************
+	 * all referesh function
+	 *********************************/
 	WebUI.refresh()
+	driver.navigate().refresh()
+	driver.getCurrentUrl()
+	
+	
 	WebUI.click(findTestObject('DemoAutomationTesting/tab_WebTable'),FailureHandling.STOP_ON_FAILURE) //will stop
 	//WebUI.click(findTestObject('DemoAutomationTesting/tab_WebTable'),FailureHandling.CONTINUE_ON_FAILURE) //continue and show fail
 	//WebUI.click(findTestObject('DemoAutomationTesting/tab_WebTable'),FailureHandling.OPTIONAL) //fail on continue and make TC pass

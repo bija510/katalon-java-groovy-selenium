@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>btn_alertWTxt_Bx_click</name>
+   <name>chk_Movie</name>
    <tag></tag>
-   <elementGuidId>3a6919a8-2bb3-437b-bc1f-bba3eed216fd</elementGuidId>
+   <elementGuidId>12c50f37-c36a-4cbd-8f8e-056425552730</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;Textbox&quot;]/button</value>
+         <value>//*[@id=&quot;checkbox2&quot;]</value>
       </entry>
       <entry>
          <key>BASIC</key>
+         <value></value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
