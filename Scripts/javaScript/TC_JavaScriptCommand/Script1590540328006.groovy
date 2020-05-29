@@ -65,23 +65,31 @@ try {
 	 ***************************/
 	WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
 	WebUI.maximizeWindow()
-	
-	//Scroll to height and by number
-	WebUI.executeJavaScript("window.scrollBy(0, document.body.scrollHeight)", null)//another way to scroll
+	WebUI.delay(2)
+	//1.Scroll to height and by number
+	WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight)", null) //scrollTo =scrollBy
+	//2.other way
+	WebUI.executeJavaScript("window.scrollBy(0, document.body.scrollHeight)", null)
+	//3. other way
     WebUI.executeJavaScript('window.scrollBy(0,1500)', null)
 	
-	//Scroll to certain element
-	
+	//4.Scroll to certain element
 	WebElement Element = WebUiCommonHelper.findWebElement(findTestObject('DemoAutomationTesting/Register/btn_Submit'),30) 
 	JavascriptExecutor js1 = ((JavascriptExecutor) driver);
     js1.executeScript("arguments[0].scrollIntoView(true);", Element);
 	
 	/*******************************
 	 * javascript setZoom in or out
+	 * not working
 	 *******************************/
-	WebUI.executeJavaScript("document.body.style.zoom='zoom 80%'", null)
+//	WebUI.openBrowser('https://www.walmart.com/')
+//	WebUI.maximizeWindow()
+//	WebUI.executeJavaScript("document.body.style.zoom='80%'", null)
 	
-	
+	//go to the chrome settings
+//	driver.get("chrome://settings/")
+//	//set the zoom to 70%
+//	((JavascriptExecutor)driver).executeScript("chrome.settingsPrivate.setDefaultZoom(0.7);");
 	
 
 } catch (WebElementNotFoundException e) {

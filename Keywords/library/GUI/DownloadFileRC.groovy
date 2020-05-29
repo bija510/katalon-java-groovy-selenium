@@ -24,7 +24,7 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-import org.openqa.selenium.WebElement
+
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By
 
@@ -41,45 +41,69 @@ import com.kms.katalon.core.util.KeywordUtil
 
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 
+//Added import
+import java.awt.datatransfer.StringSelection
+import java.awt.event.KeyEvent
+import java.awt.Robot
+import java.awt.Toolkit
+import org.openqa.selenium.WebElement
 
-class SwitchCase {
+
+
+class DownloadFileRC {
+
 	@Keyword
-	def clickTab(String buttonName){
-		//https://www.capitalone.com/about/corporate-information/corporate-offices/
-		switch(buttonName){
-			case 'Credit Cards':
-				WebUI.click(findTestObject("CapitalOne/span_CreditCards"))
-				break;
+	def DownloadFileTEXT(WebElement we ){
 
-			case 'Checking & Savings':
-				WebUI.click(findTestObject("CapitalOne/span_CheckingSavings"))
+		we.click()
 
-				break;
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_DOWN);
+		//robot.keyRelease(KeyEvent.VK_DOWN);
+		//WebUI.delay()
+//
+//		robot.keyPress(KeyEvent.VK_TAB);
+//		robot.keyRelease(KeyEvent.VK_TAB)
+//		//WebUI.delay(2)
+//
+//		robot.keyPress(KeyEvent.VK_TAB);
+//		robot.keyRelease(KeyEvent.VK_TAB)
+//		//WebUI.delay(2)
+//
+//		robot.keyPress(KeyEvent.VK_TAB);
+//		robot.keyRelease(KeyEvent.VK_TAB)
+		//		robot.keyPress(KeyEvent.VK_TAB);
+		//		robot.keyRelease(KeyEvent.VK_TAB)
+		WebUI.delay(2)
 
-			case 'Auto Loans':
-				WebUI.click(findTestObject("CapitalOne/span_AutoLoans"))
-				break;
+		robot.keyPress(KeyEvent.VK_ENTER);
+		robot.keyRelease(KeyEvent.VK_ENTER)
+		//WebUI.delay(2)
 
-			case 'Business':
-				WebUI.click(findTestObject("CapitalOne/span_Business"))
-				break;
-
-			case 'Commercial':
-				WebUI.click(findTestObject("CapitalOne/span_Commercial"))
-				break;
-
-			case 'Learn & Grow':
-				WebUI.click(findTestObject("CapitalOne/_LearnAndGrow"))
-				break;
-
-
-
-		}
 
 	}
 
+	@Keyword
+	def DownloadFilePDF(WebElement web ){
+
+		web.click()
+
+		Robot robot = new Robot();
+		robot.keyPress(KeyEvent.VK_TAB);
+		WebUI.delay(2)
+
+		//		robot.keyPress(KeyEvent.VK_TAB);
+		//		WebUI.delay(2)
+
+		robot.keyPress(KeyEvent.VK_ENTER);
+		WebUI.delay(2)
+
+
+	}
 
 }
+
+
 
 
 
