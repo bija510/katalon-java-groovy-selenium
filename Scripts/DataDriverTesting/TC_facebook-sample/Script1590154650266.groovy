@@ -23,8 +23,9 @@ import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
 
+
+
 	WebUI.openBrowser('')
-	
 	WebUI.navigateToUrl('https://www.facebook.com/')
 	
 	WebUI.maximizeWindow()

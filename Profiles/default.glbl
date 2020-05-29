@@ -14,4 +14,9 @@
       <initValue>'Screenshots/katProj/'</initValue>
       <name>gScreenshotDir</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'https://www.facebook.com/'</initValue>
+      <name>url</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

@@ -15,26 +15,54 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
+//additional import
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.driver.DriverFactory
+import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
+import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.By;
 
+String tcID = GlobalVariable.gTestCaseId
+print "tcID>>>" +tcID
+def currentBrowser = DriverFactory.getExecutedBrowser().getName()
+println currentBrowser
 
+try {
    /***************************************************
     * DataDriven or Paramaterization using for loop
     ***************************************************/
-
+	WebUI.openBrowser(url)  //or GlobalVariable.url
+	WebUI.maximizeWindow()
+	
 	String userNames ='Adam¤Bija¤Cindey¤David'
-	String []userNameList = userNames.split('¤')
+	String []userNameList = userNames.split('¤') //can be split with space or = or anything instead of ¤
 	
 	for (String username : userNameList){
-		WebUI.openBrowser(url)
-		WebUI.maximizeWindow()
 		
-		WebUI.setText(findTestObject('Page_Facebook/input_concat2'), username)
+		def control = CustomKeywords.'library.GUI.UtilitesAllSelenium.getalphaNumericString'(10)+" "+ username
+		WebUI.setText(findTestObject('Page_Facebook/input_concat2'), control)
 		WebUI.delay(2)
 		
 		WebUI.setText(findTestObject('Page_Facebook/input_concat3'), 'abc123')
-		
-		WebUI.closeBrowser()
+			
 	}
+	
 
+} catch (WebElementNotFoundException e) {
+	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)
+	KeywordUtil.logInfo('ERROR:' + e.message)
+	KeywordUtil.markFailed(tcID + 'failed, Element not found')
 
+} catch (Exception e) {
+	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)
+	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
+	KeywordUtil.markFailed(tcID + 'failed')
+
+}finally{
+
+WebUI.closeBrowser()
+
+}
+   
 
