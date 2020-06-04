@@ -36,26 +36,31 @@ try {
 	
 	/***********************************
 	 * To enter the current date
+	 * this Website need full name of Month like January...
+	 * Need to rework 
 	 ***********************************/
 	String dateFormat = println new Date().format('MM/dd/yyyy') //Result 05/21/2020
 	String dateFormat1 =  (new Date()-5).format('MM/dd/yyyy') //Result 05/16/2020
 	
 	String dateFormat2 = (new Date()+60).format('MM/dd/yyyy') //Result 07/20/2020
-	String currDate = new Date() //Thu May 21 22:40:05 EDT 2020
+	String currDate = new Date().toGMTString() 
 	
 	String[] arrDate = currDate.split (' ')// NOTE split(' ') NEED SPACE here
-	String year = arrDate[5]
-	String month = arrDate[1]
-	String day = arrDate[2]
-	println arrDate +"=====>"+ day+year+month
+	String year = arrDate[2]
+	String month = arrDate[1]// some calender give Jun and some June
+	String day = arrDate[0]
+	println arrDate +"=====>"+ day+year+month //result [4, Jun, 2020, 12:49:01, GMT, =====>, 4, 2020, Jun]
 
+	/****************************
+	 * TestCase start from here
+	 ****************************/
 	WebUI.openBrowser("https://www.path2usa.com/travel-companions");
-	
+	WebUI.maximizeWindow()
 	WebDriver driver = DriverFactory.getWebDriver()
 	driver.findElement(By.xpath(".//*[@id='travel_date']")).click();
 	
 	while (!driver.findElement(By.cssSelector("[class='datepicker-days'] [class='datepicker-switch']")).getText()
-			.contains(month)) {
+			.contains("June")) {
 		driver.findElement(By.cssSelector("[class='datepicker-days'] th[class='next']")).click();
 	}
 	

@@ -24,11 +24,8 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.By
-
 import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -42,64 +39,74 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 
 //Added import
-import java.awt.datatransfer.StringSelection
-import java.awt.event.KeyEvent
-import java.awt.Robot
-import java.awt.Toolkit
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
+import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
+import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
+import org.openqa.selenium.By as By
 
 
 
-class DownloadFileRC {
+
+
+public class HTMLTable {
+	
+	
 
 	@Keyword
-	def DownloadFileTEXT(WebElement we ){
+	def selectRowFromTable(TestObject to, String KeyVal, String colToGet){
 
-		we.click()
-
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_DOWN);
-		//robot.keyRelease(KeyEvent.VK_DOWN);
-		//WebUI.delay()
-		//
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		robot.keyRelease(KeyEvent.VK_TAB)
-		//		//WebUI.delay(2)
-		//
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		robot.keyRelease(KeyEvent.VK_TAB)
-		//		//WebUI.delay(2)
-		//
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		robot.keyRelease(KeyEvent.VK_TAB)
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		robot.keyRelease(KeyEvent.VK_TAB)
 		WebUI.delay(2)
+		int colIndex = -1
 
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER)
-		//WebUI.delay(2)
+		WebElement Table =  WebUiBuiltInKeywords.findWebElement(to)
+		List<WebElement> Rows =Table.findElements(By.tagName('tr'))
+		List<WebElement> ColHeaders = Rows.get(0).findElements(By.tagName('th'))
+		for(int i=0; i < ColHeaders.size(); i++){
+			if (ColHeaders.get(i).getText().toLowerCase().contains(colToGet.toLowerCase())){
+				//println ColHeaders.get(i).getText()
+				colIndex =i
+				break;
+			}
+		}
+		outerLoop:
+		for(int i=0; i < Rows.size(); i++){
+			List<WebElement> Cols =Rows.get(i).findElements(By.tagName('td'))
+			int colSize = Cols.size()
+			for(int j = 0; j < Cols.size(); j++){
 
+				if (Cols.get(j).getText().toLowerCase().contains(KeyVal.toLowerCase())){
+					return Cols.get(colIndex).click()
+
+					break outerLoop;
+
+
+
+				}
+
+			}
+		}
 
 	}
 
-	@Keyword
-	def DownloadFilePDF(WebElement web ){
-
-		web.click()
-
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_TAB);
-		WebUI.delay(2)
-
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		WebUI.delay(2)
-
-		robot.keyPress(KeyEvent.VK_ENTER);
-		WebUI.delay(2)
 
 
-	}
+
+
+
+	//
+	//
+	//	@Keyword
+	//	def getColValFromTable(WebElement we, String filePath){
+	//
+	//
+	//
+	//	}
+
+
 
 }
 

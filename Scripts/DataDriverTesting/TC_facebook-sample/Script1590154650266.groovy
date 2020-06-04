@@ -35,8 +35,8 @@ import org.openqa.selenium.WebDriver
 	WebUI.verifyMatch(actTitle, expTitle, false)
 	
 	
-	
-	WebUI.setText(findTestObject('Page_Facebook/input_concat2'), 'bijaya')
+	CustomKeywords.'library.GUI.JScript.sendKeyJS'('Page_Facebook/input_concat2', 'bijaya')
+	//WebUI.setText(findTestObject('Page_Facebook/input_concat2'), 'bijaya')
 	
 	WebUI.delay(2)
 	

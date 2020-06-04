@@ -4,6 +4,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
+import java.lang.reflect.Array
+
 import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.checkpoint.Checkpoint
 import com.kms.katalon.core.checkpoint.CheckpointFactory
@@ -24,11 +26,13 @@ import MobileBuiltInKeywords as Mobile
 import WSBuiltInKeywords as WS
 import WebUiBuiltInKeywords as WebUI
 
-
+import org.openqa.selenium.WebElement
 import org.openqa.selenium.WebDriver
+import org.apache.commons.lang.text.StrBuilder
 import org.openqa.selenium.By
 
 import com.kms.katalon.core.mobile.keyword.internal.MobileDriverFactory
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 import com.kms.katalon.core.testobject.RequestObject
@@ -40,72 +44,51 @@ import com.kms.katalon.core.mobile.helper.MobileElementCommonHelper
 import com.kms.katalon.core.util.KeywordUtil
 
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
+import org.openqa.selenium.JavascriptExecutor
 
-//Added import
-import java.awt.datatransfer.StringSelection
-import java.awt.event.KeyEvent
-import java.awt.Robot
-import java.awt.Toolkit
-import org.openqa.selenium.WebElement
-
-
-
-class DownloadFileRC {
-
+class JScript {
+	
+	
+	/******************
+	 * scrollToElement()
+	 ******************/
 	@Keyword
-	def DownloadFileTEXT(WebElement we ){
+	def scrollToElement(String toPath) throws Exception{
+		WebElement ele = WebUiCommonHelper.findWebElement(findTestObject(toPath), 10)
+		WebUI.executeJavaScript("arguments[0].scrollIntoView(true)", Arrays.asList(ele))
+		}
 
-		we.click()
+		
+	/******************
+	 * vScrollToBottom()
+	 ******************/
+	@Keyword
+	def vScrollToBottom()throws Exception{
 
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_DOWN);
-		//robot.keyRelease(KeyEvent.VK_DOWN);
-		//WebUI.delay()
-		//
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		robot.keyRelease(KeyEvent.VK_TAB)
-		//		//WebUI.delay(2)
-		//
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		robot.keyRelease(KeyEvent.VK_TAB)
-		//		//WebUI.delay(2)
-		//
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		robot.keyRelease(KeyEvent.VK_TAB)
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		robot.keyRelease(KeyEvent.VK_TAB)
-		WebUI.delay(2)
+		WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight)", null)
 
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER)
-		//WebUI.delay(2)
+	}
+	/******************
+	 * hScrollToRight()
+	 ******************/
+	@Keyword
+	def hScrollToRight()throws Exception{
 
+		WebUI.executeJavaScript("document.documentElement.clientWidth,0)", null)
+
+	}
+	/******************
+	 * sendKeyJS()
+	 ******************/
+	@Keyword
+	def sendKeyJS(String toPath, String val)throws Exception{
+		WebElement ele = WebUiCommonHelper.findWebElement(findTestObject(toPath), 10)
+		WebUI.executeJavaScript("arguments[0].value='"+ val +"'", Arrays.asList(ele))
 
 	}
 
-	@Keyword
-	def DownloadFilePDF(WebElement web ){
-
-		web.click()
-
-		Robot robot = new Robot();
-		robot.keyPress(KeyEvent.VK_TAB);
-		WebUI.delay(2)
-
-		//		robot.keyPress(KeyEvent.VK_TAB);
-		//		WebUI.delay(2)
-
-		robot.keyPress(KeyEvent.VK_ENTER);
-		WebUI.delay(2)
 
 
-	}
+
 
 }
-
-
-
-
-
-
-
