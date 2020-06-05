@@ -18,7 +18,9 @@ import internal.GlobalVariable as GlobalVariable
 import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
 
-	def excelFile = 'C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Book1.xlsx'
+	//def excelFile = 'C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Data Files All\\Book1.xlsx'
+	def excelFile = System.getProperty("user.dir")+"\\Data Files All\\Book1.xlsx"
+	
 	def sheetName = 'Sheet1'
 	/*******************************************************
 	 * READING from excel file outside of katalon
@@ -28,11 +30,14 @@ import com.kms.katalon.core.util.KeywordUtil
 	
 	/*******************************************************
 	 * WRITING to the excel file outside of katalon
+	 * While writing excel should be close
+	 * Only read open excel don't matter
 	 * if the excel box already "Blank" then it will fail
 	 *******************************************************/
-	CustomKeywords.'library.UTILITY.UtilityExcel.writeExcelData'(excelFile, 'Sheet1', 'Blank26', 2, 0)
-	CustomKeywords.'library.UTILITY.UtilityExcel.writeExcelData'(excelFile, 'Sheet1', 'Blank26', 2, 1)
-	      
+	CustomKeywords.'library.UTILITY.UtilityExcel.writeExcelData'(excelFile, 'Sheet1', 'Blank000', 2, 0)
+	CustomKeywords.'library.UTILITY.UtilityExcel.writeExcelData'(excelFile, 'Sheet1', 'Blank001', 2, 1)
+	     
+	
 //	//or by another way with 3 line
 //	def util = new library.UTILITY.UtilityExcel()
 //	util.writeExcelData(excelFile, 'Sheet1', 'Blank', 2, 0)
@@ -40,11 +45,14 @@ import com.kms.katalon.core.util.KeywordUtil
 	
 	
 	
-	def profFile = 'C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\textFile1.properties'
+	//def profFile = 'C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Data Files All\\textFile1.properties'
+	def profFile = System.getProperty("user.dir")+"\\Data Files All\\textFile1.properties"
 	def testData = new library.UTILITY.UtilitesTextFile(profFile)
 	
 	/*******************************************************
 	 * READING from Properties file outside of katalon
+	 * Example:-
+	 * testdata=Apple [NO SPACE afrer =]
 	 *******************************************************/
 	def var1 =testData.readFromTextFile('afor')
 	def var2 =testData.readFromTextFile('b')
@@ -56,8 +64,8 @@ import com.kms.katalon.core.util.KeywordUtil
 	/*******************************************************
 	 * WRITING to Properties file outside of katalon
 	 *******************************************************/
-	testData.writeToTextFile('NameFN', 'Bijaya')
-	testData.writeToTextFile('NameLN', 'Chhetri')
+	testData.writeToTextFile('NameFN', 'subi')
+	testData.writeToTextFile('NameLN', 'Joshi')
 	//NameFN = Blank
 	//NameLN = Blank
 	

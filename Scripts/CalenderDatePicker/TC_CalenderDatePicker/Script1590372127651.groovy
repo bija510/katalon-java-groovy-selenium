@@ -51,9 +51,10 @@ try {
 	String day = arrDate[0]
 	println arrDate +"=====>"+ day+year+month //result [4, Jun, 2020, 12:49:01, GMT, =====>, 4, 2020, Jun]
 
-	/****************************
+	/************************************************************
 	 * TestCase start from here
-	 ****************************/
+	 * need To HARDCODE Month like January, february,..full Name
+	 *************************************************************/
 	WebUI.openBrowser("https://www.path2usa.com/travel-companions");
 	WebUI.maximizeWindow()
 	WebDriver driver = DriverFactory.getWebDriver()
@@ -90,12 +91,12 @@ try {
 	 
 
 } catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)
+WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
 	KeywordUtil.logInfo('ERROR:' + e.message)
 	KeywordUtil.markFailed(tcID + 'failed, Element not found')
 
 } catch (Exception e) {
-	WebUI.takeScreenshot((GlobalVariable.gScreenshotDir)+ tcID + '.png', FailureHandling.STOP_ON_FAILURE)
+	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
 	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
 	KeywordUtil.markFailed(tcID + 'failed')
 

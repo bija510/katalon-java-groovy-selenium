@@ -1,0 +1,10 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Master-TS,Chrome 83.0.4103.61,,,2020-05-28 23:04:09,2020-05-28 23:04:20,11.069s,PASSED
+,,,,,,,
+Test Cases/BasicFunction/TC_BrowserSpecific,Chrome 83.0.4103.61,,,2020-05-28 23:04:09,2020-05-28 23:04:20,10.909s,PASSED
+tcID = gTestCaseId,Chrome 83.0.4103.61,,,2020-05-28 23:04:10,2020-05-28 23:04:10,0.121s,PASSED
+"print(""tcID>>>"" + tcID)",Chrome 83.0.4103.61,,,2020-05-28 23:04:10,2020-05-28 23:04:10,0.004s,PASSED
+currentBrowser = getExecutedBrowser().getName(),Chrome 83.0.4103.61,,,2020-05-28 23:04:10,2020-05-28 23:04:10,0.031s,PASSED
+println(currentBrowser),Chrome 83.0.4103.61,,,2020-05-28 23:04:10,2020-05-28 23:04:10,0.002s,PASSED
+try,Chrome 83.0.4103.61,,,2020-05-28 23:04:10,2020-05-28 23:04:18,7.647s,PASSED
+Finally,Chrome 83.0.4103.61,,,2020-05-28 23:04:18,2020-05-28 23:04:18,0.642s,PASSED
