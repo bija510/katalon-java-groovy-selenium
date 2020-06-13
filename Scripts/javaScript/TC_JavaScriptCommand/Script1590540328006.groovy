@@ -34,9 +34,17 @@ print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 
 try {
+	/*****************************************************
+	 * open browser using javascript
+	 *****************************************************/
+	WebUI.openBrowser('')
+//	WebUI.navigateToUrl(GlobalVariable.url)
 	
-	WebUI.openBrowser(GlobalVariable.url)
-	WebDriver driver = DriverFactory.getWebDriver()
+	WebUI.delay(2)
+	WebUI.executeJavaScript("window.location = 'https://letskodeit.teachable.com/pages/practice';",null)
+	WebUI.maximizeWindow()
+	
+    System.exit(0)
 	/*****************************************************
 	 * for more in eclipse test case == D31JscriptAllCode
 	 * javascript click
@@ -45,11 +53,11 @@ try {
 	//WebUI.executeJavaScript("document.getElementById('u_0_a').click()", null)
 	
 	//another way
+	WebDriver driver =DriverFactory.getWebDriver()
 	WebElement element2 =driver.findElement(By.id('u_0_a'))
 	JavascriptExecutor js = ((JavascriptExecutor) driver);
 	js.executeScript("arguments[0].click();", element2);
 	
-	System.exit(0)
 	/**********************************************************************
 	 * javascript SetText need to Import
 	 * import com.kms.katalon.core.webui.common.WebUiCommonHelper
@@ -57,8 +65,6 @@ try {
 	 **********************************************************************/
 	WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Page_Facebook/txt_firstName'),30) 
     WebUI.executeJavaScript("arguments[0].value='Bijaya'", Arrays.asList(element))
-    
-	WebUI.closeBrowser()
 	
 	/***************************
 	 * javascript scrollBy
@@ -70,8 +76,11 @@ try {
 	WebUI.executeJavaScript("window.scrollTo(0, document.body.scrollHeight)", null) //scrollTo =scrollBy
 	//2.other way
 	WebUI.executeJavaScript("window.scrollBy(0, document.body.scrollHeight)", null)
-	//3. other way
+	//3. other way to scroll down
     WebUI.executeJavaScript('window.scrollBy(0,1500)', null)
+	WebUI.delay(2)
+	//4. way to scroll up
+	WebUI.executeJavaScript('window.scrollBy(0,-1500)', null)//to go up again
 	
 	//4.Scroll to certain element
 	WebElement Element = WebUiCommonHelper.findWebElement(findTestObject('DemoAutomationTesting/Register/btn_Submit'),30) 
@@ -80,16 +89,13 @@ try {
 	
 	/*******************************
 	 * javascript setZoom in or out
-	 * not working
+	 * fully Tested working
+	 *driver.get("chrome://settings/")
 	 *******************************/
-//	WebUI.openBrowser('https://www.walmart.com/')
-//	WebUI.maximizeWindow()
-//	WebUI.executeJavaScript("document.body.style.zoom='80%'", null)
+	WebUI.openBrowser('https://www.walmart.com/')
+	WebUI.maximizeWindow()
+	WebUI.executeJavaScript("document.body.style.zoom='80%';", null)
 	
-	//go to the chrome settings
-//	driver.get("chrome://settings/")
-//	//set the zoom to 70%
-//	((JavascriptExecutor)driver).executeScript("chrome.settingsPrivate.setDefaultZoom(0.7);");
 	
 
 } catch (WebElementNotFoundException e) {
