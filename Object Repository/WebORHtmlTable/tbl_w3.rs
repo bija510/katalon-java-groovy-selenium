@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>tbl_web</name>
+   <name>tbl_w3</name>
    <tag></tag>
-   <elementGuidId>c6b7e1b2-be15-4a7b-9c43-76b4e1829247</elementGuidId>
+   <elementGuidId>d1c2ca77-a679-4665-825d-6ddbb7d3d7cd</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//*[@id=&quot;DataTables_Table_0_wrapper&quot;]</value>
+         <value>//*[@id=&quot;customers&quot;]/tbody</value>
       </entry>
       <entry>
          <key>BASIC</key>

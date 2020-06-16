@@ -51,7 +51,7 @@ import org.openqa.selenium.WebElement
 
 
 class UploadFileRC {
-
+ //Not in used
 	@Keyword
 	def uploadFile(WebElement we, String filePath){
 		WebUI.delay(2)
@@ -75,7 +75,7 @@ class UploadFileRC {
 
 	}
 
-
+  //Not In used
 	@Keyword
 	def uploadFileNish(TestObject to, String filePath){
 		if(!(to=null))

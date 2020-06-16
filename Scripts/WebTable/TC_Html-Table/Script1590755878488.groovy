@@ -31,19 +31,21 @@ def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 println currentBrowser
 
 try {
-	WebUI.openBrowser('https://rstudio.github.io/DT/011-radio.html')
+	WebUI.openBrowser('https://www.w3schools.com/html/html_tables.asp')
 	WebUI.maximizeWindow() 
 	
 	/************************************************
 	 * select DDL Using Katalon Built-in function 
 	 * https://total-qa.com/selenium/demo-sites/
+	 * this Work but need to wait it takes time 
 	 *************************************************/
 	
-	WebUI.executeJavaScript("window.scrollBy(0, document.body.scrollHeight)", null)
+	WebUI.executeJavaScript("window.scrollBy(0, 300)", null)
 	WebUI.delay(2)
-	CustomKeywords.'library.GUI.HTMLTable.selectRowFromTable'(findTestObject('DemoAutomationTesting/WebTable/tbl_web'), 'C', 'Mar')
+	String actName = 'UK'
+	String expName =CustomKeywords.'library.GUI.HTMLTable.getRowColumnValue'(findTestObject('WebORHtmlTable/tbl_w3'), 'UK', 'Country')
 	
-	
+    WebUI.verifyMatch(actName, expName, false)
 	
 	
 	
@@ -63,6 +65,6 @@ WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + Cus
 
 }finally{
 
-//WebUI.closeBrowser()
+WebUI.closeBrowser()
 
 }
