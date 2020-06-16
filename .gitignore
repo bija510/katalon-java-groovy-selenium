@@ -1,6 +1,27 @@
+.settings
+
+.classpath
+
+.project
+
+build
+
+bin
+
+Reports
+
+Libs
+
+output
+
+Screenshots
+
+!output/.gitkeep
 
 /bin/
 /Libs/
 /.settings/
 /.classpath
 .svn/
+*.png
+/.Data Files All
