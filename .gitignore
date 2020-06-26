@@ -2,9 +2,11 @@
 
 .classpath
 
-.project
+*.project
 
 build
+
+.properties
 
 bin
 
@@ -15,6 +17,8 @@ Libs
 output
 
 Screenshots
+
+ZTemp
 
 !output/.gitkeep
 

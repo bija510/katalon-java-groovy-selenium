@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_01_CallingJavaMethod</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>d10d1daa-4e9e-4aab-aa55-7f3713b028bd</testCaseGuid>
+</TestCaseEntity>
