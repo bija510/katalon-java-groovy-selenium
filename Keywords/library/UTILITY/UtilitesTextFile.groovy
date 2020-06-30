@@ -59,7 +59,7 @@ class UtilitesTextFile {
 	public UtilitesTextFile(String txtFile) {
 		this.txtFile = txtFile
 	}
-
+	@Keyword
 	public String readFromTextFile(String key)throws Exception {
 		List<List<String>> outerList = new ArrayList<List<String>>()
 		List<String> innerList = new ArrayList<String>()
@@ -89,6 +89,7 @@ class UtilitesTextFile {
 		}
 	}
 
+	@Keyword
 	public writeToTextFile(String key, String val) throws Exception{
 		String[] arrLines =null
 
@@ -117,6 +118,13 @@ class UtilitesTextFile {
 		}
 		finally{
 		}
+	}
+
+	@Keyword
+	def append(String msg) throws Exception{
+		FileWriter fw = new FileWriter(txtFile, true);
+		fw.write(msg + "\n");
+		fw.close()
 	}
 }
 

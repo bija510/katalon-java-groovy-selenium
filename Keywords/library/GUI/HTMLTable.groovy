@@ -53,7 +53,7 @@ import org.openqa.selenium.By as By
 
 
 public class HTMLTable {
-	
+
 	/*****************************************************************************************
 	 * HTML Table-1:- For getText()
 	 * This function is good to click() on any rowColumn or getText() from any rowColumn
@@ -65,6 +65,8 @@ public class HTMLTable {
 
 		WebUI.delay(2)
 		int colIndex = -1
+		boolean found =false
+		String retVal =''
 
 		WebElement Table =  WebUiBuiltInKeywords.findWebElement(to)
 		List<WebElement> Rows =Table.findElements(By.tagName('tr'))
@@ -85,15 +87,20 @@ public class HTMLTable {
 				if (Cols.get(j).getText().toLowerCase().contains(KeyVal.toLowerCase())){
 					//return Cols.get(colIndex).click()
 					return Cols.get(colIndex).getText()
+					found = true
 					break outerLoop;
-
-
 
 				}
 
 			}
 		}
+		if(found){
+			return retVal
+		}else{
+			throw new Exception(KeyVal +'Was NOt Found')
 
+		}
+		WebUI.delay(1)
 	}
 
 	/*****************************************************************************************
@@ -101,12 +108,13 @@ public class HTMLTable {
 	 * This function is good to click() on any rowColumn
 	 * In 1 & 2 Funct difference is return Cols.get(colIndex).click()
 	 *****************************************************************************************/
-	
+
 	@Keyword
 	def selectRowFromTable(TestObject to, String KeyVal, String colToGet){
 
 		WebUI.delay(2)
 		int colIndex = -1
+		boolean found =false
 
 		WebElement Table =  WebUiBuiltInKeywords.findWebElement(to)
 		List<WebElement> Rows =Table.findElements(By.tagName('tr'))
@@ -127,15 +135,17 @@ public class HTMLTable {
 				if (Cols.get(j).getText().toLowerCase().contains(KeyVal.toLowerCase())){
 					//return Cols.get(colIndex).click()
 					return Cols.get(colIndex).click()
+					found = true
 					break outerLoop;
-
-
 
 				}
 
 			}
 		}
-
+		if(!found){
+			throw new Exception(KeyVal + 'Was not found')
+		}
+		WebUI.delay(1)
 	}
 }
 
