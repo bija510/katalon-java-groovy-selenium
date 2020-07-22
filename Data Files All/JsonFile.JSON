@@ -1,0 +1,25 @@
+{
+    "//ref": "https://www.jsonschemavalidator.net/",
+    "address": {
+        "city": "San Jose",
+        "postalCode": "95221",
+        "state": "PA",
+        "streetAddress": "Philly"
+    },
+    "age": null,
+    "firstName": "Racks",
+    "gender": "man",
+    "isUSCitizen": "true",
+    "lastName": "jackson",
+    "phoneNumbers": [
+        {
+            "number": "12345",
+            "type": "home"
+        },
+        {
+            "number": "678910",
+            "type": "Cell"
+        }
+    ],
+    "salary": 250000.5
+}

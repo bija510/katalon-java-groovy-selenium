@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_WriteRead_Jsonfile</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7294e0cd-1959-4490-bbab-af820154bdfc</testCaseGuid>
+</TestCaseEntity>
