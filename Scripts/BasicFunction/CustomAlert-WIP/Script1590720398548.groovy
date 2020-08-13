@@ -17,24 +17,25 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
 WebUI.openBrowser('http://demo.automationtesting.in/Alerts.html')
+System.exit(0)
 WebUI.maximizeWindow()
 
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OK'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OK_click'))
+WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_OK'))
+WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_OK_click'))
 WebUI.delay(2)
 CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
 WebUI.delay(2)
 
 
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OkandCancel'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_OKCancel_click'))
+WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_OkandCancel'))
+WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_OKCancel_click'))
 WebUI.delay(2)
 CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
 WebUI.delay(2)
 
 
-WebUI.click(findTestObject('DemoAutomationTesting/btn_alertWithTxtBx'))
-WebUI.click(findTestObject('DemoAutomationTesting/btn_alertWTxt_Bx_click'))
+WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_alertWithTxtBx'))
+WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_alertWTxt_Bx_click'))
 WebUI.delay(2)
 CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
 WebUI.delay(2)

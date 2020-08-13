@@ -15,4 +15,19 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.testng.Assert
 
+
+WebUI.openBrowser('https://www.facebook.com/')
+
+String actPageTitle = WebUI.getWindowTitle()
+
+String expPageTitle = 'Facebook - log  In or Sign Up'
+
+WebUI.verifyMatch(actPageTitle, expPageTitle, false)
+
+Assert.assertEquals("apple", "ball") // 1. Mostly used 
+
+Assert.assertTrue(false) // 2. mostly used
+
+Assert.assertFalse(true) // 3. also used but not much

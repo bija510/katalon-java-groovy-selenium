@@ -87,24 +87,24 @@ try {
 	driver.getCurrentUrl()
 	
 	
-	WebUI.click(findTestObject('DemoAutomationTesting/tab_WebTable'),FailureHandling.STOP_ON_FAILURE) //will stop
-	//WebUI.click(findTestObject('DemoAutomationTesting/tab_WebTable'),FailureHandling.CONTINUE_ON_FAILURE) //continue and show fail
-	//WebUI.click(findTestObject('DemoAutomationTesting/tab_WebTable'),FailureHandling.OPTIONAL) //fail on continue and make TC pass
+	WebUI.click(findTestObject('DemoAutomationTesting/Web Table/tab_WebTable'),FailureHandling.STOP_ON_FAILURE) //will stop
+	//WebUI.click(findTestObject('DemoAutomationTesting/Web Table/tab_WebTable'),FailureHandling.CONTINUE_ON_FAILURE) //continue and show fail
+	//WebUI.click(findTestObject('DemoAutomationTesting/Web Table/tab_WebTable'),FailureHandling.OPTIONAL) //fail on continue and make TC pass
 	
 	WebUI.back()
 	WebUI.delay(2)
 	WebUI.forward()
 	WebUI.back()
 	
-	WebUI.getText(findTestObject('DemoAutomationTesting/lbl_Register')) //Register
+	WebUI.getText(findTestObject('DemoAutomationTesting/Register/lbl_Register')) //Register
 	
-	WebUI.sendKeys(findTestObject('DemoAutomationTesting/txt_FirstName'), 'DemoName1') //this only send text
+	WebUI.sendKeys(findTestObject('DemoAutomationTesting/Register/txt_FirstName'), 'DemoName1') //this only send text
 	WebUI.delay(2)
-	WebUI.setText(findTestObject('DemoAutomationTesting/txt_FirstName'), 'DemoName2') //this clear first and set text
+	WebUI.setText(findTestObject('DemoAutomationTesting/Register/txt_FirstName'), 'DemoName2') //this clear first and set text
 	WebUI.delay(2)
 	
 	actValue = 'DemoName2'
-	expValue = WebUI.getAttribute(findTestObject('DemoAutomationTesting/txt_FirstName'), 'value') //Result = DemoName2
+	expValue = WebUI.getAttribute(findTestObject('DemoAutomationTesting/Register/txt_FirstName'), 'value') //Result = DemoName2
 	WebUI.verifyMatch(actValue, expValue, false, FailureHandling.STOP_ON_FAILURE)
 
 	KeywordUtil.markPassed('*************All Step Executed Succesfully****************')

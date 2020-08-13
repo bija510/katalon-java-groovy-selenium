@@ -16,6 +16,7 @@
 #""
 ## (Comments)
 #Sample Feature Definition Template
+#<---------------We can run from here also just click run from TOP as usual or from test case lavel call it----------------->
 @tag
 Feature: Title of your feature
   I want to use this template for my feature file
@@ -24,10 +25,10 @@ Feature: Title of your feature
   Scenario Outline: Title of your scenario outline
     Given I want to write a step with <nameFN>
     When I check for the <nameLN> in step
-    And I verify the <phoneNum> in step
+    And I verify the <address> in step
     Then Close browser
 
     Examples: 
-      | nameFN | nameLN | phoneNum     |
-      | bijaya | thapa  | 111-222-3333 |
-      | david  | Lee    | 444-555-6666 |
+      | nameFN | nameLN | address      |
+      | bijaya | thapa  | 123 bogus dr |
+      | david  | Lee    | 456 alpha dr |

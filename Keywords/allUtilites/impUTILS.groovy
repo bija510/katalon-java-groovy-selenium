@@ -56,22 +56,20 @@ class impUTILS {
 	 *****************************************/
 	@Keyword
 	static def clickXTime(String objPath, int numX  ){
-		
-				int i=1
-				while(i<numX)
-				{
-					WebUI.click(findTestObject(objPath))
-					i++;
-				}
 
-//		for(int i=1;i<numX;i++) {
-//			//driver.findElement(By.id(idName)).click();
-//			
-//			WebUI.click(findTestObject(objPath))
-//		}
+		int i=1
+		while(i<numX) {
+			WebUI.click(findTestObject(objPath))
+			i++;
+		}
+
+		//		for(int i=1;i<numX;i++) {
+		//			//driver.findElement(By.id(idName)).click();
+		//
+		//			WebUI.click(findTestObject(objPath))
+		//		}
 
 
 	}
-
 }
 
