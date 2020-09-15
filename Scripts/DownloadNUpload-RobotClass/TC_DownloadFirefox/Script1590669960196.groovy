@@ -53,7 +53,7 @@ try {
 				  FirefoxOptions option =new FirefoxOptions()
 				  option.setProfile(profile)
 				  
-				  System.setProperty("WebDriver.gecko.driver", "C:\\Users\\Bijaya Chhetri\\Documents\\Katalon_Studio_Windows_64-7.2.1\\configuration\\resources\\drivers\\firefox_win64\\geckodriver.exe")
+				  System.setProperty("webdriver.gecko.driver", "C:\\Users\\Bijaya Chhetri\\Documents\\Katalon_Studio_Windows_64-7.2.1\\configuration\\resources\\drivers\\firefox_win64\\geckodriver.exe")
 				  WebDriver driver = new FirefoxDriver(option)
 				  driver.get("http://demo.automationtesting.in/FileDownload.html")
 				 
