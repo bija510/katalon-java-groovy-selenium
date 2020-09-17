@@ -14,7 +14,9 @@ ByAngular.binding(""),  || exactBinding("")
 ByAngular.model(''),    || options("")
 ByAngular.buttonText("")|| partialButtonText("")
 					    || ByAngular.cssContainingText("")
-***********************************************************/	
+***********************************************************
+* cd C:\Users\Bijaya Chhetri\git\KatalonTest ==>gradle katalonCopyDependencies
+**********************************************************/	
     WebUI.openBrowser('http://juliemr.github.io/protractor-demo/')
 	
 	WebDriver driver = DriverFactory.getWebDriver()

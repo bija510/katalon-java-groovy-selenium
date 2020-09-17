@@ -31,38 +31,23 @@ import groovy.json.*
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-//String fileName = "../KatalonTest/Data Files All/JsonFile.json"
-//def slurper = new JsonSlurper()
-//Map parsedData = slurper.parse(new File(fileName))
-//
-//println parsedData.firstName
-//println parsedData.address.city
-//println parsedData.get("isUSCitizen")
-//
-//println parsedData.phoneNumbers[0]
-//println parsedData.phoneNumbers[1]
-//println parsedData.salary
-//
-//println parsedData.phoneNumbers[1].number
 
-
-
-
-
- 
- //Process p= Runtime.getRuntime().exec("cmd /c netstat");
-//echo %userprofile%\Downloads ==> to print the path of the downloads folder
-
-
-Process p= Runtime.getRuntime().exec("cmd /c  taskkill \\f \\im chromedriver.exe");
-
- String s;
-	System.out.println(p.getOutputStream());
-	BufferedReader stdInput = new BufferedReader(new
-			InputStreamReader(p.getInputStream()));
-	while((s=stdInput.readLine())!=null){
-	 System.out.println(s);
-	 
+/*
+	1.upto(3){
+		WebUI.openBrowser("https://www.amazon.com")
+		println "apple"+"$it"
+		WebUI.closeBrowser()
+		"$it"
 	}
-
- 
+	*/
+	
+	0.step(7,2){
+		println "$it"
+	}
+	
+	0.step(10,2){
+		println "$it"
+	}
+	
+	
+	
