@@ -15,28 +15,31 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
-WebUI.openBrowser('http://demo.automationtesting.in/Alerts.html')
-System.exit(0)
-WebUI.maximizeWindow()
-
-WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_OK'))
-WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_OK_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
+/******************************************************************************
+ * Available Device: Nexus 5 & Google Pixal =Both Work No update Need for Nexus
+ * Bijayaemulator
+ * Nexus_5X_API_29_x86
+ * Driver location:- C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\appium-chromedriver\chromedriver\win
+ ******************************************************************************/
 
 
-WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_OkandCancel'))
-WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_OKCancel_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
+Mobile.startApplication('../KatalonTest/Data Files All/A-MobileFile/ApiDemos.apk', true)
 
+Mobile.tap(findTestObject('MobileObject/android.widget.TextView - Views'), 30)
 
-WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_alertWithTxtBx'))
-WebUI.click(findTestObject('DemoAutomationTesting/Register/btn_alertWTxt_Bx_click'))
-WebUI.delay(2)
-CustomKeywords.'library.GUI.UtilitesAllSelenium.selectVisualButton'('OK')
-WebUI.delay(2)
-//System.exit(0)
+Mobile.tap(findTestObject('MobileObject/android.widget.TextView - Gallery'), 30)
+
+Mobile.tap(findTestObject('MobileObject/android.widget.TextView - 1. Photos'), 30)
+
+Mobile.tap(findTestObject('MobileObject/android.widget.ImageView'), 30)
+
+Mobile.pressBack()
+
+Mobile.tap(findTestObject('MobileObject/android.widget.TextView - 2. People'), 30)
+
+Mobile.getText(findTestObject('MobileObject/android.widget.Button - Testing'), 30)
+
+Mobile.closeApplication()
+
