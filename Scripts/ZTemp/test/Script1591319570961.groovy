@@ -32,22 +32,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/*
-	1.upto(3){
-		WebUI.openBrowser("https://www.amazon.com")
-		println "apple"+"$it"
-		WebUI.closeBrowser()
-		"$it"
-	}
-	*/
-	
-	0.step(7,2){
-		println "$it"
-	}
-	
-	0.step(10,2){
-		println "$it"
-	}
+println DriverFactory.getChromeDriverPath()
 	
 	
 	

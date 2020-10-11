@@ -22,10 +22,13 @@ ZTemp
 
 !output/.gitkeep
 
+.prj*
+.log*
 /bin/
 /Libs/
-/.settings/
+/settings/*
 /.classpath
 .svn/
 *.png
 /.Data Files All
+.meta*
