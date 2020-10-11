@@ -33,21 +33,13 @@ String tcID = GlobalVariable.gTestCaseId
 print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 
-try {
 	/*****************************************************
 	 * open browser using javascript
 	 *****************************************************/
-	WebUI.openBrowser('')
-//	WebUI.navigateToUrl(GlobalVariable.url)
-	
-	WebUI.delay(2)
 	WebUI.executeJavaScript("window.location = 'https://letskodeit.teachable.com/pages/practice';",null)
-	WebUI.maximizeWindow()
 	
-    System.exit(0)
 	/*****************************************************
-	 * for more in eclipse test case == D31JscriptAllCode
-	 * javascript click
+	 * javascript click()
 	 *****************************************************/
 	//one way
 	//WebUI.executeJavaScript("document.getElementById('u_0_a').click()", null)
@@ -59,12 +51,20 @@ try {
 	js.executeScript("arguments[0].click();", element2);
 	
 	/**********************************************************************
-	 * javascript SetText need to Import
+	 * javascript SetText or sendKeys need to Import
 	 * import com.kms.katalon.core.webui.common.WebUiCommonHelper
      * import org.openqa.selenium.WebElement
 	 **********************************************************************/
 	WebElement element = WebUiCommonHelper.findWebElement(findTestObject('Page_Facebook/txt_firstName'),30) 
     WebUI.executeJavaScript("arguments[0].value='Bijaya'", Arrays.asList(element))
+	
+	/***************************
+	 * javascript getText()
+	 ***************************/
+	WebElement headerTest = driver.findElement(By.xpath("//h1[contains(text(),'Automation Demo Site')]"));
+	println(js.executeScript("return (arguments[0].innerHTML).toString();", headerTest));
+	
+	
 	
 	/***************************
 	 * javascript scrollBy
@@ -82,7 +82,9 @@ try {
 	//4. way to scroll up
 	WebUI.executeJavaScript('window.scrollBy(0,-1500)', null)//to go up again
 	
-	//4.Scroll to certain element
+	/***************************
+	 Scroll to certain element
+	 ***************************/
 	WebElement Element = WebUiCommonHelper.findWebElement(findTestObject('DemoAutomationTesting/Register/btn_Submit'),30) 
 	JavascriptExecutor js1 = ((JavascriptExecutor) driver);
     js1.executeScript("arguments[0].scrollIntoView(true);", Element);
@@ -92,29 +94,5 @@ try {
 	 * fully Tested working
 	 *driver.get("chrome://settings/")
 	 *******************************/
-	WebUI.openBrowser('https://www.walmart.com/')
-	WebUI.maximizeWindow()
 	WebUI.executeJavaScript("document.body.style.zoom='80%';", null)
 	
-	
-
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-//WebUI.closeBrowser()
-
-}
-
-
-
-
-

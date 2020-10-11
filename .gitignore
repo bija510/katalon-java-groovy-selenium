@@ -23,7 +23,7 @@ ZTemp
 !output/.gitkeep
 
 .prj*
-.log*
+appium.log*
 /bin/
 /Libs/
 /settings/*
