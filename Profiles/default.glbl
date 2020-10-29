@@ -11,7 +11,7 @@
    </GlobalVariableEntity>
    <GlobalVariableEntity>
       <description></description>
-      <initValue>'Screenshots/katProj/'</initValue>
+      <initValue>'Screenshots/'</initValue>
       <name>gScreenshotDir</name>
    </GlobalVariableEntity>
    <GlobalVariableEntity>

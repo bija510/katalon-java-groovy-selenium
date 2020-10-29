@@ -31,7 +31,10 @@ class NewTestListener {
 	def sampleBeforeTestCase(TestCaseContext testCaseContext) {
 		println testCaseContext.getTestCaseId()
 		println testCaseContext.getTestCaseVariables()
-		GlobalVariable.gTestCaseId = testCaseContext.getTestCaseId()//gives a TC Name
+		 def tcId= testCaseContext.getTestCaseId()//gives a TC Name
+		 tcId = tcId.substring(tcId.lastIndexOf('/'))
+		 
+		 GlobalVariable.gTestCaseId = tcId
 	}
 
 	/**
@@ -43,15 +46,15 @@ class NewTestListener {
 		println testCaseContext.getTestCaseId()
 		println testCaseContext.getTestCaseStatus()
 
-		if (testCaseContext.getTestCaseStatus()=="FAILED"){
-			try {
-				WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + GlobalVariable.gTestCaseId) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-
-			} catch (Exception e) {
-				println e.message
-			}
-
-		}
+//		if (testCaseContext.getTestCaseStatus()=="FAILED"){
+//			try {
+//				WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + GlobalVariable.gTestCaseId) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
+//
+//			} catch (Exception e) {
+//				println e.message
+//			}
+//
+//		}
 //		WebUI.delay(3)
 //		WebUI.closeBrowser()
 	}
