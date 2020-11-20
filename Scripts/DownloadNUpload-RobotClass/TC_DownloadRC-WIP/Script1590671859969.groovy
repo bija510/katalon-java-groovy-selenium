@@ -30,13 +30,7 @@ import org.openqa.selenium.firefox.FirefoxDriver
 import org.openqa.selenium.firefox.FirefoxOptions
 import org.openqa.selenium.firefox.FirefoxProfile
 
-String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
-println currentBrowser
-
-
-try {
 
 	/***************************************************************
 	 * Download file Using Robot class
@@ -44,7 +38,6 @@ try {
 	 * In chrome no pop up Occur
 	 * import com.kms.katalon.core.webui.common.WebUiCommonHelper
 	 **************************************************************/
-
 
 
 	WebUI.openBrowser('http://demo.automationtesting.in/FileDownload.html')
@@ -67,19 +60,3 @@ try {
 //	CustomKeywords.'library.GUI.DownloadFileRC.DownloadFilePDF'(element)
 
 
-
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-//WebUI.closeBrowser()
-
-}

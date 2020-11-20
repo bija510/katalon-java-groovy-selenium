@@ -35,33 +35,3 @@ import org.testng.Assert;
 	select.selectByVisibleText("5")
 	
 	
-	/*********************************************************************************************
-	 * This is the code for click multiple time using for-loop and While loop\
-	 * User Interface got change before + and - button but now Multiple drop down under drop down
-	 *********************************************************************************************/
-		
-//	 int i=1;
-//	 while(i<5)
-//	 {
-//	 driver.findElement(By.id("hrefIncAdt")).click();//4 times
-//	 i++;
-//	 }
-//	
-//	System.out.println(driver.findElement(By.id("divpaxinfo")).getText());
-//	for(int i=1;i<5;i++)
-//	 {
-//		driver.findElement(By.id("hrefIncAdt")).click();
-//	 }
-//	driver.findElement(By.id("btnclosepaxoption")).click();
-//	Assert.assertEquals(driver.findElement(By.id("divpaxinfo")).getText(), "5 Adult");
-//	System.out.println(driver.findElement(By.id("divpaxinfo")).getText())
-//User Interface got change before + and - button but now Multiple drop drop down under drop down
-	
-	
-	
-	
-	
-	
-	
-	
-	

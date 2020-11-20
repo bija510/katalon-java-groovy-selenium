@@ -26,14 +26,6 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By;
 
 
-String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
-def currentBrowser = DriverFactory.getExecutedBrowser().getName()
-println currentBrowser
-
-
-try {
-
 	String FileUploadPath =RunConfiguration.getProjectDir() + '/Include/UploadFile/SamplePDF.pdf'
 	FileUploadPath = FileUploadPath.replace('/','\\')
 	
@@ -45,21 +37,3 @@ try {
 	WebUI.openBrowser('http://demo.automationtesting.in/FileUpload.html')
 	WebUI.maximizeWindow()
 	CustomKeywords.'library.GUI.UploadFileRC.uploadFileNew'(findTestObject('Object Repository/UploadFile/frameUpload'), FileUploadPath)
-
-
-
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-//WebUI.closeBrowser()
-
-}

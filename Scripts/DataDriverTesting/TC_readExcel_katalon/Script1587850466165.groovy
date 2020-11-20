@@ -24,12 +24,6 @@ import org.openqa.selenium.support.ui.Select
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By;
 
-String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
-def currentBrowser = DriverFactory.getExecutedBrowser().getName()
-println currentBrowser
-
-try {
 
 
 /******************************************************************
@@ -48,23 +42,4 @@ WebUI.setText(findTestObject('Page_Facebook/input_concat2'), UN)
 WebUI.delay(2)
 
 WebUI.setText(findTestObject('Page_Facebook/input_concat3'), password)
-
-
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-//WebUI.closeBrowser()
-
-}
-   
-
 

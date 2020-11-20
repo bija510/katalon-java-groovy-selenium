@@ -60,12 +60,6 @@
       <testCaseId>Test Cases/ChkBxNRadButton/TC-ChkBxNRadButton</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>50566c4b-34fe-4042-89b8-e5649ea53f21</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/DataDriverTesting/TC_facebook-sample</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>b72796a9-56eb-4944-8ed9-1adbc638be60</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

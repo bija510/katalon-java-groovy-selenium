@@ -46,17 +46,17 @@ class NewTestListener {
 		println testCaseContext.getTestCaseId()
 		println testCaseContext.getTestCaseStatus()
 
-//		if (testCaseContext.getTestCaseStatus()=="FAILED"){
-//			try {
-//				WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + GlobalVariable.gTestCaseId) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-//
-//			} catch (Exception e) {
-//				println e.message
-//			}
-//
-//		}
-//		WebUI.delay(3)
-//		WebUI.closeBrowser()
+		if (testCaseContext.getTestCaseStatus()=="FAILED"){
+			try {
+				WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + GlobalVariable.gTestCaseId) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
+
+			} catch (Exception e) {
+				println e.message
+			}
+
+		}
+		WebUI.delay(3)
+		WebUI.closeBrowser()
 	}
 
 

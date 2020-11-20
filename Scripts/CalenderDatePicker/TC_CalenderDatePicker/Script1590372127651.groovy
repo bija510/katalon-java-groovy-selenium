@@ -27,13 +27,7 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
 
 String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
-def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 
-
-try {
-
-	
 	/***********************************
 	 * To enter the current date
 	 * this Website need full name of Month like January...
@@ -89,15 +83,3 @@ try {
 	println(sdf1.format(date)); //11:05 PM
 
 	 
-
-} catch (WebElementNotFoundException e) {
-  new library.GUI.ErrorHandler().catch1(tcID, e)
-
-} catch (Exception e) {
-new library.GUI.ErrorHandler().catch2(tcID, e)
-
-}finally{
-
-//WebUI.closeBrowser()
-
-}

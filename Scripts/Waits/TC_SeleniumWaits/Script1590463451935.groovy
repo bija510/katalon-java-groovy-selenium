@@ -28,15 +28,6 @@ import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
 
 
-
-String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
-def currentBrowser = DriverFactory.getExecutedBrowser().getName()
-
-
-try {
-	
-
 	WebUI.openBrowser('http://www.newtours.demoaut.com/')
 	WebDriver driver = DriverFactory.getWebDriver()
     
@@ -51,33 +42,3 @@ try {
 	username.sendKeys("Bijaya");
 
        
-		
-		
-		
-		
-		
-		
-
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-//WebUI.closeBrowser()
-
-}
-
-		
-		
-		
-		
-		
-		
-		

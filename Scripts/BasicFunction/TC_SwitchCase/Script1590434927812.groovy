@@ -23,14 +23,12 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By;
 
 String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
-println currentBrowser
+
 
 String actValue =''
 String expValue =''
 
-try {
 
 	/**********************************************************************************************************
 	 *IMPORTANT library for framework
@@ -46,24 +44,4 @@ try {
 	actValue = 'Small Business Banking | Open a Business Bank Account'
 	expValue = WebUI.getWindowTitle()
 	WebUI.verifyMatch(actValue, expValue, false)
-
-
-	
-	
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-//WebUI.closeBrowser()
-
-}
-
 

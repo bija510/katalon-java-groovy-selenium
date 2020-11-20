@@ -28,12 +28,8 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.By as By
 
-String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 
-
-try {
 	WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
 	WebUI.maximizeWindow() 
 	
@@ -78,27 +74,3 @@ try {
 	
 	WebUI.verifyEqual(totalOptions, 13)
 	
-
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-WebUI.closeBrowser()
-
-}
-
-	
-
-
-
-
-
-

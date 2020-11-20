@@ -24,12 +24,8 @@ import org.openqa.selenium.WebElement
 import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
 
-String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
-def currentBrowser = DriverFactory.getExecutedBrowser().getName()
-println currentBrowser
 
-try {
+
     WebUI.openBrowser('http://demo.automationtesting.in/Frames.html')
 	WebUI.maximizeWindow()
 	WebDriver driver =DriverFactory.getWebDriver() 
@@ -45,34 +41,4 @@ try {
 
 	driver.findElement(By.xpath("/html/body/section/div/div/div/input")).sendKeys("Bijaya");
 
-	
-	
-	//this is not working well
-	/*WebUI.click(findTestObject("DemoAutomationTesting/frame/btn_iframeWithInIframe"))
-	WebElement outerframe = WebUiCommonHelper.findWebElement(findTestObject('DemoAutomationTesting/frame/bx_Outerframe'),30)
-	driver.switchTo().frame(outerframe);
-	
-	
-	WebElement innerframe = WebUiCommonHelper.findWebElement(findTestObject('DemoAutomationTesting/frame/bx_InnerFrame'),30)
-	driver.switchTo().frame(innerframe);
-
-	WebUI.setText(findTestObject('DemoAutomationTesting/frame/txt_input'), 'Bijaya chet')
-	*/
-   
-
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-WebUI.closeBrowser()
-	
-}
 	

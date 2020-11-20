@@ -33,7 +33,6 @@ println currentBrowser
 String actValue = ''
 String expValue = ''
 
-try {
 	
 	/************************************************************************************************
 	 * Ctrl + Shift + O = To remove unused Import and organize
@@ -110,28 +109,5 @@ try {
 	KeywordUtil.markPassed('*************All Step Executed Succesfully****************')
 	//KeywordUtil.markFailed('*************All Step Executed Succesfully****************') //it will fail the test case
 	
-	
-
-} catch (WebElementNotFoundException e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo('ERROR:' + e.message)
-	KeywordUtil.markFailed(tcID + 'failed, Element not found')
-
-} catch (Exception e) {
-	WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcID) +'_Failed_') + CustomKeywords.'allUtilites.impUTILS.get5DigitTimeStamp'())+'.png', FailureHandling.STOP_ON_FAILURE)
-	KeywordUtil.logInfo((('ERROR:' + e.message) + '\n Stack trace') + e.stackTrace)
-	KeywordUtil.markFailed(tcID + 'failed')
-
-}finally{
-
-//WebUI.closeBrowser()
-
-}
-
-	
-
-
-
-
 
 
