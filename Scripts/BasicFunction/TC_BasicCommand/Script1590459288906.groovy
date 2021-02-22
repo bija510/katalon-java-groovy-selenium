@@ -49,7 +49,7 @@ String expValue = ''
 	
 	WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
 	WebUI.maximizeWindow()
-	
+	println DriverFactory.getChromeDriverPath()
 	/**********************************************************************************
 	 * actValue is like Local variable can be used multiple time in test case
 	 **********************************************************************************/

@@ -31,15 +31,15 @@ import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebEl
 import internal.GlobalVariable
 
 public class ErrorHandler {
-	
+
 	@Keyword
 	public void catch1(String tcId, WebElementNotFoundException e){
 		WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcId) +'_Failed_') + new allUtilites.impUTILS().get5DigitTimeStamp() )+'.png', FailureHandling.STOP_ON_FAILURE)
 		KeywordUtil.logInfo('ERROR:' + e.message)
 		KeywordUtil.markFailed(tcId + 'failed, Element not found')
 	}
-	
-	
+
+
 	@Keyword
 	public void catch2(String tcId, Exception e){
 		WebUI.takeScreenshot((((GlobalVariable.gScreenshotDir + tcId) +'_Failed_') + new allUtilites.impUTILS().get5DigitTimeStamp() )+'.png', FailureHandling.STOP_ON_FAILURE)

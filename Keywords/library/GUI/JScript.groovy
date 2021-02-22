@@ -41,5 +41,9 @@ class JScript {
 	def sendKeyJS(String toPath, String val)throws Exception{
 		WebElement ele = WebUiCommonHelper.findWebElement(findTestObject(toPath), 10)
 		WebUI.executeJavaScript("arguments[0].value='"+ val +"'", Arrays.asList(ele))
+		if(ele.getAttribute("value").equals(val)){
+		}else{
+			throw new Exception("Error Unable to set "+val+ "in textBox")
+		}
 	}
 }

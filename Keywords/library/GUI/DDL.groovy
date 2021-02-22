@@ -10,13 +10,13 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
 class DDL {
-	
+
 	/**************************************************************
 	 * Example:-
 	 * Ctrl + Shift + O = To remove unused Import and organize
 	 * String[] str = ["url1","url2","url3","url4"]
 	 * CustomKeywords.'library.GUI.DDL.verifyDDLItems'(toPath, str)
-	*****************************************************************/
+	 *****************************************************************/
 
 	@Keyword
 	def verifyDDLItems(String toPath, String[] arrDDLList ) throws Exception{
@@ -31,8 +31,6 @@ class DDL {
 		for(int i=0; i < expddlvalues.size(); i++){
 			WebUI.verifyMatch(arrDDLList[i], expddlvalues.get(i).getText(), false) //import org.openqa.selenium.WebElement
 		}
-
-
 	}
 
 
@@ -40,7 +38,7 @@ class DDL {
 	 * Example:-
 	 * String[] str = ["url1","url2","url3","url4"]
 	 * CustomKeywords.'library.GUI.DDL.addSingleQuoteNComma'(str)
-	*****************************************************************/
+	 *****************************************************************/
 	@Keyword
 	def addSingleQuoteNComma(String[] str ) throws Exception{
 		//String[] str = ["url1","url2","url3","url4"]

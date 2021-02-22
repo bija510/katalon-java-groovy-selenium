@@ -42,13 +42,12 @@ import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 import org.testng.Assert;
 
-class impUTILS {
+class impUTILS extends InputDatas{
 
 	@Keyword
 	static def get5DigitTimeStamp(){
 		String ts = new Date().format('yyyyMMddHHmmssSSS')
 		return ts.substring(ts.length() - 5)
 	}
-
 }
 
