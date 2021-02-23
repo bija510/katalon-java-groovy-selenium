@@ -23,7 +23,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.*;
-public class TestNG_Demo {
+public class TestNG_DemoTest {
 
 	private WebDriver driver;
 	

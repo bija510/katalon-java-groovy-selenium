@@ -15,16 +15,7 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import testNG.*
 
+List testSuites = ['Include/Resources/testng.xml']
 
-/****************************************************************
- * https://github.com/katalon-studio-samples/TestNG-migration
-  1. Go to this gitRepo & download Project & copy Driver folder with jarfile then
-     paste in the katalon project
-     That all =======> & testNG plugin is auto download 
- 2. Need to import the package like this :- import testNG.*
- ***************************************************************/
-
-TestNGKW.runTestNGTestClasses([TestNG_DemoTest.class], FailureHandling.STOP_ON_FAILURE)
-
+TestNGKW.runTestNGTestSuites(testSuites, FailureHandling.STOP_ON_FAILURE)
