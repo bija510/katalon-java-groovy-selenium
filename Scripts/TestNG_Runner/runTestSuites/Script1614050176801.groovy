@@ -16,6 +16,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-List testSuites = ['Include/Resources/testng.xml']
+List testSuites = ['Include/Resources/testng.xml', 'Include/Resources/testng1.xml']
+//List testSuites = ['Include/Resources/testng.xml'] //Just do this to run only one XMl file
 
 TestNGKW.runTestNGTestSuites(testSuites, FailureHandling.STOP_ON_FAILURE)
