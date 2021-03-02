@@ -9,36 +9,40 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
-import java.util.concurrent.TimeUnit;
-
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
-import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
+//additional import
+import com.kms.katalon.core.testobject.ObjectRepository
+import com.kms.katalon.core.testobject.SelectorMethod
+import com.kms.katalon.core.testobject.TestObject
+import com.kms.katalon.core.testobject.TestObjectProperty
 
 
-	WebUI.openBrowser('http://www.newtours.demoaut.com/')
-	WebDriver driver = DriverFactory.getWebDriver()
-    
-	//soft wait Implicity wait
-	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS); //import java.util.concurrent.TimeUnit;
-	
-	Thread.sleep(4000)
-	
-	//Explicit Wait
-	WebDriverWait mywait = new WebDriverWait(driver, 100000);
-	WebElement username = mywait.until(ExpectedConditions.visibilityOfElementLocated(By.name("userName")));
-	username.sendKeys("Bijaya");
+/********************************************************************************
+	import com.kms.katalon.core.testobject.ObjectRepository
+	import com.kms.katalon.core.testobject.SelectorMethod
+	import com.kms.katalon.core.testobject.TestObject
+	import com.kms.katalon.core.testobject.TestObjectProperty4
+	this 4 or import com.kms.katalon.core.testobject.*
+This is how we can print any Attribute form TestObject like:- XPATH, BASIC, CSS
+https://forum.katalon.com/t/printing-the-attribute-value-using-println/12913/2
+*********************************************************************************/
 
-       
+println "===>"+findTestObject("DemoAutomationTesting/Register/txt_FirstName").getSelectorCollection().get(SelectorMethod.XPATH)
+
+
+
+
+
+
+
+
+
+
+
+
+

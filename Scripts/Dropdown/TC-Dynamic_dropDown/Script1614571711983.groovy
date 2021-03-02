@@ -26,6 +26,7 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
+
 	WebUI.openBrowser('https://www.spicejet.com/')
 	WebUI.maximizeWindow()
 	WebDriver driver = DriverFactory.getWebDriver()

@@ -3,6 +3,12 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+import org.openqa.selenium.*
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.support.ui.ExpectedConditions
+import org.openqa.selenium.support.ui.WebDriverWait
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -17,41 +23,26 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
-class MethodCheck {
-	
-	static String met= null
-	
-	static def car(){
-		
-		met = 'this is the method 1'
-		return met
-		println "===========>check"
+/******************************************************************************************************
+  Sometime if the tabName is inside <a .....<span HtmlTable />span ../a>  
+  then we have to use like this ===> if(eleList.getAttribute("innerHTML").contains(ddlLabel))
+  NOTE:- Work Tested
+ *******************************************************************************************************/
+
+
+WebUI.openBrowser("http://demo.automationtesting.in/Register.html")
+WebUI.maximizeWindow()
+selectDropDownOptionByLabel("//*[@id='header']/nav/div/div[2]/ul/li/a", "WebTable").click()
+
+
+public WebElement selectDropDownOptionByLabel(String elesXpath, String ddlLabel){
+	WebDriver driver =DriverFactory.getWebDriver()
+	List<WebElement> eleLists = driver.findElements(By.xpath(elesXpath))
+	for(WebElement eleList: eleLists){
+		if(eleList.getText().equalsIgnoreCase(ddlLabel)){
+			return new WebDriverWait(driver, 10).until(ExpectedConditions.elementToBeClickable(eleList))
+			break
+		}
 	}
-	
-	
-	static def food(){
-		
-		String Met1 = 'this is the Method 2'
-		println Met1
-		
-	}
-	
-	static def clothBrand(){
-		String bran = 'nike and addidas are the clothes brand'
-		
-	}
-			
-	
 }
 
-	new MethodCheck().food()
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	

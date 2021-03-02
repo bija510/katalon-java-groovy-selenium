@@ -135,13 +135,13 @@
       <guid>e6130472-5ab8-4c70-9fd4-026659db1468</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Dropdown/TC_dropdown-select</testCaseId>
+      <testCaseId>Test Cases/Dropdown/TC_Static_dropdown</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>444a6a08-0a4f-4641-b975-66628f3682fa</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Dropdown/TC_dropdown-Verify</testCaseId>
+      <testCaseId>Test Cases/Dropdown/TC_Verify_dropdown</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>0cd2acd9-b5d0-4f5d-a2d4-8c3c5f5ddf60</guid>
@@ -196,11 +196,5 @@
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
       <testCaseId>Test Cases/Waits/TC_KatalonWaits</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>34f99823-934c-4da7-9477-570898656744</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Waits/TC_SeleniumWaits</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

@@ -56,7 +56,7 @@ class NewTestListener {
 
 		}
 		WebUI.delay(3)
-		WebUI.closeBrowser()
+		//WebUI.closeBrowser()
 	}
 
 
