@@ -1,11 +1,8 @@
 package library.GUI
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
-
 import org.openqa.selenium.WebElement
 import org.openqa.selenium.support.ui.Select
-
 import com.kms.katalon.core.annotation.Keyword
-import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
 
@@ -21,7 +18,7 @@ class DDL {
 	@Keyword
 	def verifyDDLItems(String toPath, String[] arrDDLList ) throws Exception{
 
-		Select select =new Select(WebUiBuiltInKeywords.findWebElement(findTestObject(toPath)))
+		Select select =new Select(WebUI.findWebElement(findTestObject(toPath)))
 		List<WebElement> expddlvalues= select.getOptions()
 
 		int expddlSize = expddlvalues.size()
