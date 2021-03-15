@@ -1,6 +1,7 @@
 {
 	"welcomeMsg":"Welcome",
 	"logoutValidationMsg":"Forgot your password?",
+	"adminTab":"Admin",
     "firstName": "David",
     "lastName": "Johnson",
     "gender": "man",

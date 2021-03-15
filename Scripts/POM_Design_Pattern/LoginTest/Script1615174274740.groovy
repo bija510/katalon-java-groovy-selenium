@@ -34,6 +34,8 @@ LoginPage loginPage = new LoginPage()
 	WebUI.verifyTextPresent(data.welcomeMsg, false)
 	
 HomePage homePage = new HomePage()
+	homePage.selectAdminTab(data.adminTab)
 	homePage.clickMenuBtn()
 	homePage.clickLogoutBtn()
 	WebUI.verifyTextPresent(data.logoutValidationMsg, false)
+	
