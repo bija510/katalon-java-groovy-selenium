@@ -31,7 +31,7 @@ def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 
 	WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
 	WebDriver driver =DriverFactory.getWebDriver()
-	WebElement ChkBox = WebUI.findWebElement(findTestObject("DemoAutomationTesting/Register/chk_Movie"))
+	WebElement ChkBox = WebUI.findWebElement(findTestObject("RegisterPage/chk_Movie"))
 	
 	/*************************************************
 	 * if the CheckBox is not selected it will Select

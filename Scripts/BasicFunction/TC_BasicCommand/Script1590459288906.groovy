@@ -26,48 +26,27 @@ import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 
-String tcID = GlobalVariable.gTestCaseId
-print "tcID>>>" +tcID
 def currentBrowser = DriverFactory.getExecutedBrowser().getName()
-println currentBrowser
-String actValue = ''
-String expValue = ''
+WebDriver driver = DriverFactory.getWebDriver()
+/************************************************************************************************
+ * Ctrl + Shift + O = To remove unused Import and organize
+ * Mouse hover to functin it will show what it Does?
+ * System.exit(0)
+ * for password increption help==>Encrypt Text==>input 
+ * if any Form We can used 
+ * WebUI.submit(findTestObject(''))==>if htere is Submit button then it will click
+ * "Ctrl + I" , "Ctrl+a" , "Ctrl+Shift+f" ,"Select all +tab/i" , "Shift+click+anoClick" Ctrl+click..
+ *************************************************************************************************/
+openBrowserAndGetChromeDriverPath()
+setWindowSizeAndZoom()
 
-	
-	/************************************************************************************************
-	 * Ctrl + Shift + O = To remove unused Import and organize
-	 * All Basic Command
-	 * Mouse hover to the functin like openbrowser it will show what it Does?
-	 * System.exit(0)
-	 * for password increption help==>Encrypt Text==>input 
-	 * if any Form We can used 
-	 * WebUI.submit(findTestObject(''))==>if htere is Submit button then it will click
-	 * "Ctrl + I" , "Ctrl+a" , "Ctrl+Shift+f" ,"Select all +tab/i" , "Shift+click+anoClick" Ctrl+click..
-	 *************************************************************************************************/
-	//WebUI.openBrowser('')
-	//WebUI.navigateToUrl('http://demo.automationtesting.in/Register.html') //or line 45 instead of this 2 line
-	
+def openBrowserAndGetChromeDriverPath(){
 	WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
 	WebUI.maximizeWindow()
 	println DriverFactory.getChromeDriverPath()
-	/**********************************************************************************
-	 * actValue is like Local variable can be used multiple time in test case
-	 **********************************************************************************/
-	actValue =  'Register'
-	expValue = WebUI.getWindowTitle()
-	
-	println expValue // or System.out.println("") or println("")
-	WebUI.verifyMatch(actValue, expValue, false)
-	
-	
-	actValue = 'http://demo.automationtesting.in/Register.html'
-	expValue = WebUI.getUrl() // Get url of the current window
-	WebUI.verifyMatch(actValue, expValue, false)
-	
-	/*********************************
-	 * window size maximize and set 
-	 * zoom
-	 *********************************/
+}
+
+def setWindowSizeAndZoom(){
 	WebDriver driver = DriverFactory.getWebDriver()
 	Dimension d= new Dimension (642,482); //need import org.openqa.selenium.Dimension;
 	driver.manage().window().setSize(d);
@@ -75,39 +54,6 @@ String expValue = ''
 	WebUI.delay(2)
 	WebUI.maximizeWindow()
 	WebUI.executeJavaScript("document.body.style.zoom='zoom 80%'", null)
-	WebUI.delay(2)
-	WebUI.deleteAllCookies()
-	
-	/*********************************
-	 * all referesh function
-	 *********************************/
-	WebUI.refresh()
-	driver.navigate().refresh()
-	driver.getCurrentUrl()
-	
-	
-	WebUI.click(findTestObject('DemoAutomationTesting/Web Table/tab_WebTable'),FailureHandling.STOP_ON_FAILURE) //will stop
-	//WebUI.click(findTestObject('DemoAutomationTesting/Web Table/tab_WebTable'),FailureHandling.CONTINUE_ON_FAILURE) //continue and show fail
-	//WebUI.click(findTestObject('DemoAutomationTesting/Web Table/tab_WebTable'),FailureHandling.OPTIONAL) //fail on continue and make TC pass
-	
-	WebUI.back()
-	WebUI.delay(2)
-	WebUI.forward()
-	WebUI.back()
-	
-	WebUI.getText(findTestObject('DemoAutomationTesting/Register/lbl_Register')) //Register
-	
-	WebUI.sendKeys(findTestObject('DemoAutomationTesting/Register/txt_FirstName'), 'DemoName1') //this only send text
-	WebUI.delay(2)
-	WebUI.setText(findTestObject('DemoAutomationTesting/Register/txt_FirstName'), 'DemoName2') //this clear first and set text
-	WebUI.delay(2)
-	
-	actValue = 'DemoName2'
-	expValue = WebUI.getAttribute(findTestObject('DemoAutomationTesting/Register/txt_FirstName'), 'value') //Result = DemoName2
-	WebUI.verifyMatch(actValue, expValue, false, FailureHandling.STOP_ON_FAILURE)
-
-	KeywordUtil.markPassed('*************All Step Executed Succesfully****************')
-	//KeywordUtil.markFailed('*************All Step Executed Succesfully****************') //it will fail the test case
-	
+}
 
 

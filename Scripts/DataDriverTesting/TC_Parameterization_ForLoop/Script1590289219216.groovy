@@ -35,7 +35,7 @@ import org.openqa.selenium.By;
 	
 	for (String username : userNameList){
 		
-		def control = CustomKeywords.'library.GUI.UtilitesAllSelenium.getalphaNumericString'(10)+" "+ username
+		def control = CustomKeywords.'helpers.UtilitesAllSelenium.getalphaNumericString'(10)+" "+ username
 		WebUI.setText(findTestObject('Page_Facebook/input_concat2'), control)
 		WebUI.delay(2)
 		

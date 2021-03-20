@@ -156,12 +156,6 @@
       <testCaseId>Test Cases/Frame/TC_Frame-Selenium</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>4985a82e-f2e2-4a35-80ed-c6c51f8abb93</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/javaScript/TC_JavaScriptCommand</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>8456f64c-dd13-49dd-b413-15b7ab81ae18</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

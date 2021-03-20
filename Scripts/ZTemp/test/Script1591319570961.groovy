@@ -4,15 +4,12 @@ import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import allUtilites.*
 import groovy.json.*
 import com.kms.katalon.core.webui.driver.DriverFactory
+import utilites.JavaScript
 
 
 WebUI.openBrowser("http://demo.automationtesting.in/Register.html")
+WebUI.maximizeWindow()
 
-//ChromeOptions option =new ChromeOptions()
-//option.setExperimentalOption("debuggerAddress", "localhost:62631")
-//WebDriver driver = new ChromeDriver(option)
-//DriverFactory.changeWebDriver(driver)
+println JavaScript.getTextJS(findTestObject('RegisterPage/lbl_Register'), 6)
 
-WebUI.setText(findTestObject('Object Repository/DemoAutomationTesting/Register/txt_FirstName'), "aab")
-//WebUI.setText(findTestObject('Object Repository/DemoAutomationTesting/Register/txt_LastName'), "Johnson")
 

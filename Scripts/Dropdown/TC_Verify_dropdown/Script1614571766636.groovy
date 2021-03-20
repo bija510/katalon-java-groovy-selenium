@@ -42,7 +42,7 @@ def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 
 	/************************************************
 	 * Verify dropdown list label
-	 * CustomKeywords.'library.GUI.DDL.verifyDDLItems'('DemoAutomationTesting/ddl_list', allMonth)
+	 * CustomKeywords.'helpers.DropDownHelper.verifyDDLItems'('DemoAutomationTesting/ddl_list', allMonth)
 	 *************************************************/
 	WebDriver driver = DriverFactory.getWebDriver()
 	String[] allMonth = ['Month', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -55,20 +55,20 @@ def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 	}
 	
 	//or We can use this Library
-	//CustomKeywords.'library.GUI.DDL.verifyDDLItems'('DemoAutomationTesting/ddl_list', allMonth)
+	//CustomKeywords.'helpers.DropDownHelper.verifyDDLItems'('DemoAutomationTesting/ddl_list', allMonth)
 	
 	
 	/************************************************
 	*Verifying default label
 	*************************************************/
-	WebUI.verifyOptionSelectedByLabel(findTestObject("Object Repository/DemoAutomationTesting/Register/ddl_skills"), 'Select Skills', false, 2, FailureHandling.STOP_ON_FAILURE)
+	WebUI.verifyOptionSelectedByLabel(findTestObject("RegisterPage/ddl_skills"), 'Select Skills', false, 2, FailureHandling.STOP_ON_FAILURE)
 	
 	
 	/************************************************
 	*getting total num of Optoin
 	*Verifying total ddl count
 	*************************************************/
-	String totalOptions1 = WebUI.getNumberOfTotalOption(findTestObject("Object Repository/DemoAutomationTesting/Register/ddl_skills")) // 2nd Example Result:- 78
+	String totalOptions1 = WebUI.getNumberOfTotalOption(findTestObject("RegisterPage/ddl_skills")) // 2nd Example Result:- 78
 	println totalOptions
 	WebUI.verifyEqual(totalOptions1, 78)
 	

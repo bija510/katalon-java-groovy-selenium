@@ -27,7 +27,7 @@ import internal.GlobalVariable as GlobalVariable
  * 
  * Commit==> it will show the file which is new and which are modified so that we can push 
  * 
- * Push==>it will push final to git
+ * Push==>it will push final to Remote github desiredBranch
  * 
  * Pull==>it will pull if there are new update in the gitProject final
  * 
@@ -37,6 +37,9 @@ import internal.GlobalVariable as GlobalVariable
  * 
  * Preference==>Team==>Git==>Confugration for project locally and Remotely and other setting
  * 
+ * Git merge===> it will merge the side branch(david) with master usually team lead do code review and merge 
+ * 
+ * Git request pull request ==>
  ************************************************************************************************************/
 
 

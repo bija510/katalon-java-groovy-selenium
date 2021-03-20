@@ -15,11 +15,11 @@ katalon_staticDropdown()
 
 
 def katalon_staticDropdown(){
-	WebUI.selectOptionByLabel(findTestObject("DemoAutomationTesting/Register/ddl_skills"), 'CSS', false)
+	WebUI.selectOptionByLabel(findTestObject("RegisterPage/ddl_skills"), 'CSS', false)
 	Thread.sleep(2000)
-	WebUI.selectOptionByIndex(findTestObject("DemoAutomationTesting/Register/ddl_skills"), 6)
+	WebUI.selectOptionByIndex(findTestObject("RegisterPage/ddl_skills"), 6)
 	Thread.sleep(2000)
-	WebUI.selectOptionByValue(findTestObject("DemoAutomationTesting/Register/ddl_skills"), 'Android', false)
+	WebUI.selectOptionByValue(findTestObject("RegisterPage/ddl_skills"), 'Android', false)
 	Thread.sleep(2000)
 }
 

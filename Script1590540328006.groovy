@@ -16,33 +16,15 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 //additional import
-import com.kms.katalon.core.testobject.ObjectRepository
-import com.kms.katalon.core.testobject.SelectorMethod
-import com.kms.katalon.core.testobject.TestObject
-import com.kms.katalon.core.testobject.TestObjectProperty
-
-
-/********************************************************************************
-	import com.kms.katalon.core.testobject.ObjectRepository
-	import com.kms.katalon.core.testobject.SelectorMethod
-	import com.kms.katalon.core.testobject.TestObject
-	import com.kms.katalon.core.testobject.TestObjectProperty4
-	this 4 or import com.kms.katalon.core.testobject.*
-This is how we can print any Attribute form TestObject like:- XPATH, BASIC, CSS
-https://forum.katalon.com/t/printing-the-attribute-value-using-println/12913/2
-*********************************************************************************/
-
-println "===>"+findTestObject("RegisterPage/txt_FirstName").getSelectorCollection().get(SelectorMethod.XPATH)
-
-
-
-
-
-
-
-
-
-
-
-
+import com.kms.katalon.core.webui.common.WebUiCommonHelper
+import com.kms.katalon.core.webui.driver.DriverFactory as DriverFactory
+import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
+import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
+import com.kms.katalon.core.configuration.RunConfiguration as RunConfiguration
+import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.support.ui.Select
+import org.openqa.selenium.WebDriver
+import org.openqa.selenium.WebElement
+import org.openqa.selenium.By as By
+import org.openqa.selenium.JavascriptExecutor;
 

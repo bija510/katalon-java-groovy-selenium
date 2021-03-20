@@ -25,7 +25,7 @@ import internal.GlobalVariable as GlobalVariable
 
 
 WebUI.openBrowser("http://demo.automationtesting.in/Datepicker.html")
-WebUI.findWebElement(findTestObject('DemoAutomationTesting/dataPicker/datePicker')).click()
+WebUI.findWebElement(findTestObject('DataPickerPage/datePicker')).click()
 WebDriver driver = DriverFactory.getWebDriver()
 List<WebElement> days = driver.findElements(By.xpath("//div[@class='datepick-month']//table//tr//td"))
 

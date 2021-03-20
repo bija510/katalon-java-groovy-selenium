@@ -6,5 +6,5 @@ String lastName = "Last Name"
 
 WebUI.openBrowser("http://demo.automationtesting.in/Register.html")
 WebUI.maximizeWindow()
-WebUI.setText(findTestObject('DemoAutomationTesting/Register/parameterized_TO',[('lastname'):lastName]), "Ram")
+WebUI.setText(findTestObject('RegisterPage/parameterized_TO',[('lastname'):lastName]), "Ram")
 

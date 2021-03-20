@@ -48,7 +48,7 @@ def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 	WebUI.delay(2)
 	WebUI.click(findTestObject('DemoAutomationTesting/FileDownload/btn_downloadText'))
 	WebElement element1 = WebUiCommonHelper.findWebElement(findTestObject('DemoAutomationTesting/FileDownload/btn_downloadText'),30)
-	CustomKeywords.'library.GUI.DownloadFileRC.DownloadFileTEXT'(element1)
+	CustomKeywords.'helpers.DownloadFileRC.DownloadFileTEXT'(element1)
 
 	WebUI.delay(2)
 
@@ -57,6 +57,6 @@ def currentBrowser = DriverFactory.getExecutedBrowser().getName()
 //	WebUI.click(findTestObject('DemoAutomationTesting/FileDownload/btn_GenerateFilePdf'))
 //	WebUI.delay(2)
 //	WebElement element = WebUiCommonHelper.findWebElement(findTestObject('DemoAutomationTesting/FileDownload/btn_DownloadPdf'),30)
-//	CustomKeywords.'library.GUI.DownloadFileRC.DownloadFilePDF'(element)
+//	CustomKeywords.'helpers.DownloadFileRC.DownloadFilePDF'(element)
 
 

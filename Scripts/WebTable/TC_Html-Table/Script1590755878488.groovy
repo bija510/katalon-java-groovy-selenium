@@ -38,7 +38,7 @@ import org.openqa.selenium.By;
 	WebUI.executeJavaScript("window.scrollBy(0, 300)", null)
 	WebUI.delay(2)
 	String actName = 'UK'
-	String expName =CustomKeywords.'library.GUI.HTMLTable.getRowColumnValue'(findTestObject('WebORHtmlTable/tbl_w3'), 'UK', 'Country')
+	String expName =CustomKeywords.'utilites.WebTable.getRowColumnValue'(findTestObject('WebORHtmlTable/tbl_w3'), 'UK', 'Country')
 	
     WebUI.verifyMatch(actName, expName, false)
 	

@@ -31,7 +31,7 @@ String tcID = GlobalVariable.gTestCaseId
  * Test Cases/DataDriverTesting/TC_WriteReadTextFile
 ********************************************************/
 
-CustomKeywords.'library.UTILITY.CMD.executeCmdCommand'("del /Q \"" + RunConfiguration.getProjectDir() + "/Data Files/TextDataFolder" + "\"")
+CustomKeywords.'utilites.CMD.executeCmdCommand'("del /Q \"" + RunConfiguration.getProjectDir() + "/Data Files/TextDataFolder" + "\"")
 
 
 

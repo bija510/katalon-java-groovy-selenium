@@ -37,10 +37,10 @@ import org.openqa.selenium.By as By
     /*********************************************
 	 * import org.openqa.selenium.Keys as Keys
 	*********************************************/
-	WebUI.sendKeys(findTestObject('Object Repository/DemoAutomationTesting/Register/txt_FirstName'), 'Bija')
-	WebUI.sendKeys(findTestObject('Object Repository/DemoAutomationTesting/Register/txt_FirstName'), Keys.chord(Keys.TAB))
+	WebUI.sendKeys(findTestObject('RegisterPage/txt_FirstName'), 'Bija')
+	WebUI.sendKeys(findTestObject('RegisterPage/txt_FirstName'), Keys.chord(Keys.TAB))
 	
-	WebUI.sendKeys(findTestObject('Object Repository/DemoAutomationTesting/Register/txt_LastName'), Keys.chord(Keys.DIVIDE))
+	WebUI.sendKeys(findTestObject('RegisterPage/txt_LastName'), Keys.chord(Keys.DIVIDE))
 	Thread.sleep(2000)
 	
 	/*********************************************

@@ -22,26 +22,36 @@ import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebEl
 import org.openqa.selenium.WebDriver
 import org.openqa.selenium.By;
 
-String tcID = GlobalVariable.gTestCaseId
-def currentBrowser = DriverFactory.getExecutedBrowser().getName()
+
+WebUI.openBrowser('https://www.capitalone.com/about/corporate-information/corporate-offices/')
+WebUI.maximizeWindow()
+clickTab('Business')
 
 
-String actValue =''
-String expValue =''
+def clickTab(String buttonName){
+	switch(buttonName){
+		case 'Credit Cards':
+			WebUI.click(findTestObject("CapitalOne/span_CreditCards"))
+			break;
 
+		case 'Checking & Savings':
+			WebUI.click(findTestObject("CapitalOne/span_CheckingSavings"))
+			break;
 
-	/**********************************************************************************************************
-	 *IMPORTANT library for framework
-	 *import com.kms.katalon.core.webui.driver.DriverFactory
-	 *import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
-	 *import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
-	**********************************************************************************************************/
+		case 'Auto Loans':
+			WebUI.click(findTestObject("CapitalOne/span_AutoLoans"))
+			break;
 
-	WebUI.openBrowser('https://www.capitalone.com/about/corporate-information/corporate-offices/')
-	WebUI.maximizeWindow()
+		case 'Business':
+			WebUI.click(findTestObject("CapitalOne/span_Business"))
+			break;
 
-	CustomKeywords.'library.GUI.SwitchCase.clickTab'('Business')
-	actValue = 'Small Business Banking | Open a Business Bank Account'
-	expValue = WebUI.getWindowTitle()
-	WebUI.verifyMatch(actValue, expValue, false)
+		case 'Commercial':
+			WebUI.click(findTestObject("CapitalOne/span_Commercial"))
+			break;
 
+		case 'Learn & Grow':
+			WebUI.click(findTestObject("CapitalOne/_LearnAndGrow"))
+			break;
+	}
+}
