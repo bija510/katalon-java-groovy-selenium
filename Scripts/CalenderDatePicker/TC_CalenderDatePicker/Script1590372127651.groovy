@@ -44,6 +44,17 @@ String tcID = GlobalVariable.gTestCaseId
 	String month = arrDate[1]// some calender give Jun and some June
 	String day = arrDate[0]
 	println arrDate +"=====>"+ day+year+month //result [4, Jun, 2020, 12:49:01, GMT, =====>, 4, 2020, Jun]
+	
+	
+	/***********************************
+	 * To enter the current time
+	 ***********************************/
+	Date date = new Date();
+	SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+	SimpleDateFormat sdf1 = new SimpleDateFormat("hh:mm a");
+	println(sdf.format(date)); //11:03:42 PM
+	println(sdf1.format(date)); //11:05 PM
+
 
 	/************************************************************
 	 * TestCase start from here
@@ -73,13 +84,4 @@ String tcID = GlobalVariable.gTestCaseId
 	
 	
 	
-	/***********************************
-	 * To enter the current time
-	 ***********************************/
-	Date date = new Date();
-	SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
-	SimpleDateFormat sdf1 = new SimpleDateFormat("hh:mm a");
-	println(sdf.format(date)); //11:03:42 PM
-	println(sdf1.format(date)); //11:05 PM
-
 	 

@@ -20,6 +20,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 
 import internal.GlobalVariable
+import java.text.SimpleDateFormat
 import com.kms.katalon.core.webui.driver.DriverFactory
 import org.openqa.selenium.*
 import com.kms.katalon.core.util.KeywordUtil
@@ -27,6 +28,21 @@ import com.kms.katalon.core.webui.exception.WebElementNotFoundException
 
 public class Utils {
 
+	@Keyword
+	static def currentDate(){
+		new Date().format('MM/dd/yyyy') //Result 05/21/2020
+	}
+	
+	@Keyword
+	static def currentTime(){
+		Date date = new Date();
+		SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+		SimpleDateFormat sdf1 = new SimpleDateFormat("hh:mm a");
+		//println(); //11:03:42 PM
+		//println(sdf1.format(date)); //11:05 PM
+		return sdf.format(date)
+	}
+	
 	@Keyword
 	static def get5DigitTimeStamp(){
 		String ts = new Date().format('yyyyMMddHHmmssSSS')

@@ -1,4 +1,5 @@
 package utilites
+
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import org.openqa.selenium.WebElement
 import com.kms.katalon.core.annotation.Keyword
@@ -38,14 +39,14 @@ class JavaScript {
 	}
 
 	/****************************************************
-	@param Num:- pass range 100 to 2000 for Scroll down
-	@param Num:- pass range -100 to -2000 for Scroll up
+	 @param Num:- pass range 100 to 2000 for Scroll down
+	 @param Num:- pass range -100 to -2000 for Scroll up
 	 *****************************************************/
 	@Keyword
 	static def scroll(int Num){
 		WebUI.executeJavaScript('window.scrollBy(0,'+Num+')', null)
 	}
-	
+
 	@Keyword
 	static def scrollToElement(TestObject to, int timeout) throws Exception{
 		WebElement ele = WebUiCommonHelper.findWebElement(to, timeout)
@@ -61,7 +62,7 @@ class JavaScript {
 	static def hScrollToRight()throws Exception{
 		WebUI.executeJavaScript("document.documentElement.clientWidth,0)", null)
 	}
-	
+
 	@Keyword
 	static def setBrowserZoomInOut(int NumPercent){
 		WebUI.executeJavaScript("document.body.style.zoom="+ "'" + NumPercent + "%'" + ";", null)
