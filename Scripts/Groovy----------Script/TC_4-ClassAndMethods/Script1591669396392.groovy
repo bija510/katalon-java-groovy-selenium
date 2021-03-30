@@ -3,6 +3,11 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import static com.kms.katalon.core.testobject.ObjectRepository.findWindowsObject
+
+import java.lang.reflect.Method
+
+import org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.MethodChooser
+
 import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
 import com.kms.katalon.core.cucumber.keyword.CucumberBuiltinKeywords as CucumberKW
 import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
@@ -21,30 +26,23 @@ class MethodCheck {
 	
 	static String met= null
 	
-	static def car(){
-		
-		met = 'this is the method 1'
-		return met
-		println "===========>check"
+	static def addNum(def x, def y){
+		def sum = x + y	
+		return sum
 	}
 	
-	
-	static def food(){
-		
-		String Met1 = 'this is the Method 2'
-		println Met1
-		
+	static def food(){	
+		String Met1 = 'this is the Method food'
+		println Met1	
 	}
 	
 	static def clothBrand(){
-		String bran = 'nike and addidas are the clothes brand'
-		
-	}
-			
-	
+		String bran = 'nike and addidas are the clothes brand'	
+	}	
 }
 
-	new MethodCheck().food()
+	println(MethodCheck.addNum(10, 20))
+	MethodCheck.food()
 	
 	
 	

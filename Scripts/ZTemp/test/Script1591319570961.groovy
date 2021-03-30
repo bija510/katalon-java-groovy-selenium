@@ -5,11 +5,8 @@ import allUtilites.*
 import groovy.json.*
 import com.kms.katalon.core.webui.driver.DriverFactory
 import utilites.JavaScript
+import utilites.Utils
 
+ 
 
-WebUI.openBrowser("http://demo.automationtesting.in/Register.html")
-WebUI.maximizeWindow()
-
-println JavaScript.getTextJS(findTestObject('RegisterPage/lbl_Register'), 6)
-
-
+println Utils.currentTime()
