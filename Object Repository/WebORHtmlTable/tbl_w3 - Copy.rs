@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>tbl_w3</name>
+   <name>tbl_w3 - Copy</name>
    <tag></tag>
-   <elementGuidId>d1c2ca77-a679-4665-825d-6ddbb7d3d7cd</elementGuidId>
+   <elementGuidId>1c5432c1-e695-408a-8839-e344ac22ae4b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>BASIC</key>
@@ -14,7 +14,7 @@
          <value>//*[@id=&quot;customers&quot;]/tbody</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
    <webElementProperties>
       <isSelected>false</isSelected>

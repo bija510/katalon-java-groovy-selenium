@@ -57,3 +57,14 @@ https://www.blazemeter.com/blog/top-15-ui-test-automation-best-practices-you-sho
 [17] Implement run fail test twice feature in Regression TestSuite.
 ==> means sometime test case fail because of various region that may pass in Rerun. 
    & even they fail twice. then we don't have to run locally twice to verify for creating Bug.
+
+-----------------------------------
+How to push from git bash 
+----------------------------------
+1.git status will show the file in red
+2. git add type name + tab for autocomplete
+3. git add .  ==> will add all & git * ==> will add all
+4. git status will show the file in greeen
+5. git rm --cached README.md ==> to send back to unstaged
+6. git commit -m "added jmeter file"
+7. git push origin master
