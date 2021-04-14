@@ -15,31 +15,4 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
-
-/******************************************************************************
- * Available Device: Nexus 5 & Google Pixal =Both Work No update Need for Nexus
- * Bijayaemulator
- * Nexus_5X_API_29_x86
- * Driver location:- C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\appium-chromedriver\chromedriver\win
- ******************************************************************************/
-
-
-Mobile.startApplication('../katalon-java-groovy-selenium/Data Files All/A-MobileFile/ApiDemos.apk', true)
-
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - Views'), 30)
-
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - Gallery'), 30)
-
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - 1. Photos'), 30)
-
-Mobile.tap(findTestObject('MobileObject/android.widget.ImageView'), 30)
-
-Mobile.pressBack()
-
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - 2. People'), 30)
-
-Mobile.getText(findTestObject('MobileObject/android.widget.Button - Testing'), 30)
-
-Mobile.closeApplication()
 

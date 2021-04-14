@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>KT_04_Variables_Local_Global</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>14623795-9f61-408f-8b5f-7eb6604caf66</testCaseGuid>
+   <variable>
+      <defaultValue>'Bijaya'</defaultValue>
+      <description></description>
+      <id>a6a40332-c0f2-4f9a-b332-1e1e0cd76ec2</id>
+      <masked>false</masked>
+      <name>firstName</name>
+   </variable>
+   <variable>
+      <defaultValue>'Chhetri'</defaultValue>
+      <description></description>
+      <id>8935d3b9-7693-4003-a2c1-5e55511cc0ab</id>
+      <masked>false</masked>
+      <name>lastName</name>
+   </variable>
+</TestCaseEntity>

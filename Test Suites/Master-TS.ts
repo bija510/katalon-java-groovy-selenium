@@ -12,22 +12,10 @@
    <rerunImmediately>false</rerunImmediately>
    <testSuiteGuid>88c8d92c-831c-4b59-99ba-265228807be6</testSuiteGuid>
    <testCaseLink>
-      <guid>bf4b392a-9c80-4d18-b848-178fc9413966</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/BasicFunction/TC_BrowserSpecific</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>cb1443e4-d578-4570-bdeb-06492a008b65</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/BasicFunction/TC_BasicCommand</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>e61c3a97-49f0-4d23-ad03-511be5eac365</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/BasicFunction/TC_GlobalnLocalVar</testCaseId>
+      <testCaseId>Test Cases/WebUI TestCase/KT_04_Variables_Local_Global</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -40,12 +28,6 @@
          <value></value>
          <variableId>8935d3b9-7693-4003-a2c1-5e55511cc0ab</variableId>
       </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>4872d644-79de-4a88-baa7-68ecc119f538</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/BasicFunction/TC_SwitchCase</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>e8e2b2f6-8071-4fa5-9f72-e2bf6bd75ffb</guid>

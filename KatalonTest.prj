@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Project>
    <description></description>
-   <name>KatalonTest</name>
+   <name>katalon-java-groovy-selenium</name>
    <tag></tag>
    <UUID>19e5b97f-67d4-43c1-a30e-506d1095e3f2</UUID>
    <migratedVersion>5.9.0</migratedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>C:\Users\Bijaya Chhetri\git\KatalonTest\KatalonTest.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\Bijaya Chhetri\git\katalon-java-groovy-selenium\KatalonTest.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>

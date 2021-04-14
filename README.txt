@@ -68,3 +68,29 @@ How to push from git bash
 5. git rm --cached README.md ==> to send back to unstaged
 6. git commit -m "added jmeter file"
 7. git push origin master
+
+/*******************************************************************************************************
+ * Git need to download Locally
+ * 
+ * Need to create the git Account in GitHUb
+ * 
+ * Clone Project==>it copy from github and paste in the katalon
+ * 
+ * Show History==>it will show the history of commit that you made with "Proper COMMENT"
+ * 
+ * Commit==> it will show the file which is new and which are modified so that we can push 
+ * 
+ * Push==>it will push final to Remote github desiredBranch
+ * 
+ * Pull==>it will pull if there are new update in the gitProject final
+ * 
+ * Fetch==>it will show the update in git so that we can decide or can see what change we are Pulling final
+ * 
+ * Preference==>Team==>Git==>Ignore Resources and other setting
+ * 
+ * Preference==>Team==>Git==>Confugration for project locally and Remotely and other setting
+ * 
+ * Git merge===> it will merge the side branch(david) with master usually team lead do code review and merge 
+ * 
+ * Git request pull request ==>
+ ************************************************************************************************************/

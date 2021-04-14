@@ -1,0 +1,107 @@
+<!-- 
+  Created by sanjay kumar on 25/06/2020.
+ -->
+
+
+<!doctype html>
+<html>
+<head>
+    <title>SelectorsHub is an editor to write and verify the XPath and cssSelector.</title>
+    <link rel="stylesheet" type="text/css" href="popup.css" />
+</head>
+<body>
+	<div class="content">
+		<div class="header">
+			<h2>SelectorsHub</h2>
+
+			<!-- <a class="logo" target="_blank" href="https://www.selectorshub.com/"><img  src="../icons/selectorsHublogo.svg"></a> -->
+			<div class="headerContainer">
+				<button id='record' class="recorderButton">
+					<span class="tcStudio toolTip">Click to open TestCase Studio.</span>
+				</button>			
+			</div>
+			<br>
+		</div>
+		<div class="contextMenu">
+			<span class="contextMenuHeader">ContextMenu</span>
+			<div class="toggle-btn active">
+				<div class="toggle-circle"></div>
+				<span class="toggle toolTip">click to disable SelectorsHub</span>
+			</div>
+			<div class="contextMenuFilter">
+				<label title="Add/Remove Rel XPath from contextMenu."><input class="chooseSelector relXpath" type="checkbox" title="xpath with text or without text." checked />Rel XPath</label>	
+				<label title="Add/Remove Rel cssSelector from contextMenu."><input class="chooseSelector cssSelector" type="checkbox" name="id" />Rel cssSelector</label>
+				<label title="Add/Remove JS path from contextMenu."><input class="chooseSelector jspath" type="checkbox" name="class"  />JS path</label>
+				<label title="Add/Remove abs XPath from contextMenu."><input class="chooseSelector absXpath" type="checkbox" name="name"  />abs XPath</label>
+			</div>
+		</div>
+		<span class="tagline">Innovation Inspired Automation</span>	
+		<div class="box">
+			<div class="infoBlock">
+				<div class="sponsorBlock" title="SelectorsHub Level">
+					<a target="_blank" class="sponsor-link" href="https://testproject.io/?utm_source=selectorshub&utm_medium=blog&utm_campaign=sj">
+						Sponsor:
+						<span class="sponsor toolTip">A must try, FREE end-to-end test automation tool.</span>
+						<button class='sponsorIcon svgIcon'></button>
+					</a>
+				</div>
+				<br>
+				<a target="_blank" class="donationLink" href="https://www.patreon.com/sanjaykumar_selectorshub">
+					<div class="reviewBlock">Be a Patron & support SelectorsHub.
+						<button class='donation-btn'>
+							<span class="donation toolTip">Click to be a Patron.</span>
+						</button>
+					</div>
+				</a>
+				<div class="sponsorHeader"><a target="_blank" href="https://www.paypal.com/paypalme/sanjayselectorshub">PayPal</a>, PayTM/GPay &#8594; 9663877336</div>
+				
+				<div class="supportLinks">
+					<a target="_blank" class="changelog" href="https://www.selectorshub.com/changelog/">Changelog</a>
+					<a class="videoLink" target="_blank" href="https://youtu.be/jV84DRg96qs">
+						<button class='videoIcon'>
+							<span class="tutorial toolTip">Watch this video tutorial to make best use of SH.</span>
+						</button>
+					</a>
+					<a class="slackLink" target="_blank" class="bold-link" href="https://join.slack.com/t/selectorshub/shared_invite/zt-fho3ep1h-mkjFOdKqmtYWwNVyV8tLSg">
+							<button class="slackIcon">
+								<span class="slack toolTip">Click to join SelectorsHub slack channel.</span>
+							</button>
+					</a>
+					<a target="_blank" class="review-link" href="https://chrome.google.com/webstore/detail/selectorshub/ndgimibanhlabgdgjcpbbndiehljcpfh/reviews">
+                       	<button class='reviewIcon'>
+                            <span class="review toolTip">Click to add rating.</span>
+       					</button>
+                    </a>
+				</div>	
+			</div>
+			<br>
+			<ul><b>Instructions:</b><br>
+				<li>After installing SelectorsHub, restart the browser.</li>
+				<li>Open DevTools</li>
+				<li>On right side of Elements tab, SelectorsHub will be the last tab as shown in below image. If not visible, expand the sidebar.</li>
+				<li>If it doesn't work, 
+					<ul class="subMenu">
+						<li>Open website in new tab.</li>
+						<li>Don't try on blank tab. There should be a url in address bar.</li>
+						<li>For more details please checkout <a target="_blank" href="https://www.selectorshub.com/faq/">FAQs here.</a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<br>
+		
+		<img class="demoPic" src="../icons/defaultTheme.png">
+		<br>
+		
+	</div>
+	<div class="footer"> 
+		<span class="version">v 3.0.7</span>
+	</div>
+
+	<span class="sponsors">Offered by: <a class="profile" target="_blank" href="https://twitter.com/SanjayKumaarr">Sanjay Kumar.</a> Want to sponsor, please connect <a class="profile" target="_blank" href="https://www.linkedin.com/in/chropath-creator/">here</a>.</span>
+
+	<script src="./popup.js"></script>
+    <!-- <script src='../content-script/browser-polyfill.min.js'></script> -->
+</body>
+
+</html>

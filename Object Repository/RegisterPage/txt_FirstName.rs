@@ -11,8 +11,16 @@
       </entry>
       <entry>
          <key>BASIC</key>
+         <value>input[placeholder='First Name']</value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>BASIC</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>css</name>
+      <type>Main</type>
+      <value>input[placeholder='First Name']</value>
+   </webElementProperties>
 </WebElementEntity>

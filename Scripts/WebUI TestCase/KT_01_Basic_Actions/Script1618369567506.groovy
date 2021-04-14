@@ -15,31 +15,36 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
-
-/******************************************************************************
- * Available Device: Nexus 5 & Google Pixal =Both Work No update Need for Nexus
- * Bijayaemulator
- * Nexus_5X_API_29_x86
- * Driver location:- C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\appium-chromedriver\chromedriver\win
- ******************************************************************************/
 
 
-Mobile.startApplication('../katalon-java-groovy-selenium/Data Files All/A-MobileFile/ApiDemos.apk', true)
+'1. Open Browser'
+WebUI.openBrowser('http://demo.automationtesting.in/Register.html')
+//WebUI.navigateToUrl('http://demo.automationtesting.in/Register.html')
 
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - Views'), 30)
+'2. Maximize'
+WebUI.maximizeWindow()
 
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - Gallery'), 30)
+'3. Text Box'
+WebUI.setText(findTestObject('RegisterPage/txt_FirstName'), 'Michal')
+WebUI.sendKeys(findTestObject('RegisterPage/txt_LastName'), 'Jackson')
 
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - 1. Photos'), 30)
+'4. getText'
+println "Page Header = " + WebUI.getText(findTestObject('Object Repository/RegisterPage/lbl_Register'))
 
-Mobile.tap(findTestObject('MobileObject/android.widget.ImageView'), 30)
+'5. GetAttribute of value'
+println "firstName TextBox attribute value = " + WebUI.getAttribute(findTestObject('RegisterPage/txt_FirstName'), 'value')
 
-Mobile.pressBack()
+'6. Radio Button'
+WebUI.click(findTestObject('RegisterPage/rad_Male'))
 
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - 2. People'), 30)
+'7. CheckBox'
+WebUI.check(findTestObject('RegisterPage/chk_Movie'))
+WebUI.delay(2)
+WebUI.uncheck(findTestObject('RegisterPage/chk_Movie'))
 
-Mobile.getText(findTestObject('MobileObject/android.widget.Button - Testing'), 30)
+'8. DropDown'
+WebUI.selectOptionByLabel(findTestObject('RegisterPage/ddl_skills'), 'C', false)
 
-Mobile.closeApplication()
+'9. Close Browser'
+WebUI.closeBrowser()
 

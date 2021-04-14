@@ -12,34 +12,29 @@ import com.kms.katalon.core.testdata.TestData as TestData
 import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
+import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
-import org.openqa.selenium.Keys as Keys
+import org.openqa.selenium.*
+import org.openqa.selenium.remote.DesiredCapabilities
 
-/******************************************************************************
- * Available Device: Nexus 5 & Google Pixal =Both Work No update Need for Nexus
- * Bijayaemulator
- * Nexus_5X_API_29_x86
- * Driver location:- C:\Users\Bijaya Chhetri\AppData\Roaming\npm\node_modules\appium\node_modules\appium-chromedriver\chromedriver\win
- ******************************************************************************/
+WebUI.openBrowser('')
 
+//1. Browser Name
+def currentBrowser = DriverFactory.getExecutedBrowser().getName()
+println "Current Running Browser Name = " + currentBrowser
 
-Mobile.startApplication('../katalon-java-groovy-selenium/Data Files All/A-MobileFile/ApiDemos.apk', true)
+//2. Browser Driver path
+println "Chrome Driver path = " + DriverFactory.getChromeDriverPath()
 
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - Views'), 30)
+//3. Changing WebUI to driver
+WebDriver driver = DriverFactory.getWebDriver()
+driver.get("http://demo.automationtesting.in/Register.html")
 
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - Gallery'), 30)
+//4. Changing driver back to WebUI
+DriverFactory.changeWebDriver(driver)
+WebUI.setText(findTestObject('RegisterPage/txt_FirstName'), 'Michal')
 
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - 1. Photos'), 30)
-
-Mobile.tap(findTestObject('MobileObject/android.widget.ImageView'), 30)
-
-Mobile.pressBack()
-
-Mobile.tap(findTestObject('MobileObject/android.widget.TextView - 2. People'), 30)
-
-Mobile.getText(findTestObject('MobileObject/android.widget.Button - Testing'), 30)
-
-Mobile.closeApplication()
-
+//5. Pause Execution
+System.exit(0)

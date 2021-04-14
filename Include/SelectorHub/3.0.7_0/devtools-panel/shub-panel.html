@@ -1,0 +1,461 @@
+<html>
+<head>
+    <title>SelectorsHub</title>
+    <meta http-equiv="content-type" content="text/plain; charset=UTF-8"/>
+    <link rel="stylesheet" id="cssFile" type="text/css" href="lightTheme.css" /> 
+</head>
+<body>
+	<div class="editorHeader">
+		<div class="header1">
+			<span class="editorContent header-copy-btn" title="Click to copy selector value.">
+				<button class="edit-icon"></button>
+				<span class="editorTitle">XPath/cssSel..</span>
+			</span>
+
+			<div class="selector-editor-div">
+				<input type="search" class="selectors-input jsSelector"  value="" autocorrect="off" autocapitalize="off" placeholder="Type // for xpath and for cssSelector type # or . or tagname" autocomplete="off"  spellcheck="false"/>
+				
+			</div>
+	    </div>
+	    <div class="configContainer">
+	    	<a class="donationLink" target="_blank" href="https://www.patreon.com/sanjaykumar_selectorshub">
+	    		<span class="donation toolTip">Please be a patron & support SelectorsHub.</span>
+		    	<button class="donation-btn"></button>
+		    </a>
+  			
+		    <div class="autosuggest-toggle-btn active" id="autosuggestToggle">
+    			<div class="autosuggest-toggle-circle"></div>
+    			<span class="autosuggest-toggle toolTip">Turn off auto suggestion while typing.</span>
+  			</div>
+
+			<div class="total-match-count jsTotalMatchCount hideMatchCountMsg"></div>
+			<span class="errorInfo hideMatchCountMsg"></span>
+			<a class="cheetSheetLink hideMatchCountMsg" target="_blank" href="https://www.selectorshub.com/xpath-and-cssselector-functions/">
+				<span class="cheetSheetBtn toolTip">Click to learn more about selector's errors..</span>
+				<button class="cheetSheet"></button>
+			</a>
+			<button class="ignoreCaseBtn">
+		    	<span class="ignoreCase toolTip">Click to make Selectors Case Insensitive.</span>
+		    </button>
+		    <!-- <div class="toggle-btn inactive" data-placeholder="1.0"> -->
+		    <div class="toggle-btn active">
+    			<div class="toggle-circle"></div>
+    			<span class="toggle toolTip">click to disable SelectorsHub</span>
+  			</div>
+	    </div>
+	</div>
+	<span class="copyToolTip">Selector value is copied in clipboard</span>
+	<div class="shub-generator">
+		<div class="driver-command-box">
+		    <input type="search" class="driver-command" value='' placeholder="Enter the driver command and keep xpathvalue as keyword in the command." autocomplete="off" autocorrect="off" spellcheck="false" />
+		    <button class="commandTip">
+				<span class="questionMark toolTip">Keep xpathvalue as keyword where you want to have xpath value in command. For ex- FindBy(xpath="xpathvalue") or if xpath is not inside double quotes then FindBy(xpath=xpathValue).</span>
+			</button>	
+	    </div>
+		<div class="attributeFilter">
+			<input class="chooseAttr user" type="search" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" name="unique" placeholder="Enter attribute name">
+			<label><input class="chooseAttr textXpath" type="checkbox" title="xpath with text or without text." checked>text</label>	
+			<label><input class="chooseAttr id" type="checkbox" name="id" checked />id</label>
+			<label><input class="chooseAttr class" type="checkbox" name="class" checked />class</label>
+			<label><input class="chooseAttr name" type="checkbox" name="name" checked />name</label>
+			<label><input class="chooseAttr placeholder" type="checkbox" name="placeholder" checked />placeholder</label>
+				
+		</div>
+		
+		<ul class='selectorsGenerator'>
+			<li class="selectorsRow suggestedXpath">
+				<div class="copyContainer suggestedCopyBtn" title="Click to copy suggested selector value">
+					<button class="copy-btn box suggestedCopyBtn"></button>
+					<mark class="noOfMatch suggestedXpath"></mark><span class="typeOfLocator box suggestedCopyBtn">SH Selector</span>
+				</div>
+			    <span type="text" class="box valueSelector suggestedXpath suggestedEditBtn" data-command="xpath" title="click to edit SH XPath."></span>
+	    	</li>
+			<li class="selectorsRow iframeXpath">
+				<div class="copyContainer iframeCopyBtn" title="click to copy iframe XPath">
+					<button class="copy-btn box iframeCopyBtn"></button>
+					<mark class="noOfMatch iframeXpath"></mark><span  class="typeOfLocator box iframeCopyBtn">iframeXPath</span>
+				</div>
+			    <span type="text" class="box valueSelector iframeXpath iframeEditBtn" data-command="xpath" title="click to edit iframe XPath."></span>
+		    </li>
+			<li class="selectorsRow cssSelector">
+				<div class="copyContainer cssCopyBtn" title="click to copy relative cssSelector">
+					<button class="copy-btn box cssCopyBtn"></button>
+					<mark class="noOfMatch cssSelector"></mark><span  class="typeOfLocator box cssCopyBtn" title="Click to copy cssSelector.">
+				    Rel cssSelector</span>
+			    </div>
+			    <span type="text" class="box valueSelector css cssEditBtn" data-command="cssSelector" title="Click to edit cssSelector."></span>
+		    </li>
+			<li class="selectorsRow relXpath">
+				<div class="copyContainer relXpathCopyBtn" title="click to copy relative XPath">
+					<button class="copy-btn box relXpathCopyBtn"></button>
+					<mark class="noOfMatch relXpath"></mark><span  class="typeOfLocator box relXpathCopyBtn">Rel XPath
+						<button class="warningIcon" title="">
+						<span class="alert toolTip"></span>
+					</button></span>
+				</div>
+			    <span type="text" class="box valueSelector rel relXpathEditBtn" data-command="xpath" title="Click to edit Rel XPath."></span>
+			    
+		    </li>
+			<li class="selectorsRow id">
+				<div class="copyContainer idCopyBtn" title="click to copy id">
+					<button class="copy-btn box idCopyBtn"></button>
+					<mark class="noOfMatch id"></mark><span  class="typeOfLocator box idCopyBtn">id</span>
+				</div>
+			    <span type="text" class="box valueSelector id idEditBtn" data-command="id" title="Click to edit id."></span>
+	    	</li>
+	    	<li class="selectorsRow name">
+	    		<div class="copyContainer nameCopyBtn" title="click to copy name">
+		    		<button class="copy-btn box nameCopyBtn" title="click to copy name"></button>
+					<mark class="noOfMatch name"></mark><span class="typeOfLocator box nameCopyBtn">name</span>
+				</div>
+			    <span type="text" class="box valueSelector name nameEditBtn" data-command="name" title="Click to edit name."></span>
+	    	</li>
+	    	<li class="selectorsRow className">
+	    		<div class="copyContainer classNameCopyBtn" title="click to copy className">
+		    		<button class="copy-btn box classNameCopyBtn"></button>
+					<mark class="noOfMatch className"></mark><span class="typeOfLocator box classNameCopyBtn">className</span>
+				</div>
+			    <span type="text" class="box valueSelector className classNameEditBtn" data-command="className" title="Click to copy className."></span>
+	    	</li>
+		    
+		     <li class="selectorsRow jsPath">
+		     	<div class="copyContainer jsPathCopyBtn" title="click to copy jsPath">
+			     	<button class="copy-btn box jsPathCopyBtn"></button>
+					<mark class="noOfMatch jsPath"></mark><span  class="typeOfLocator box jsPathCopyBtn">JS Path</span>
+				</div>
+			    <span type="text" class="box valueSelector jsPath jsPathEditBtn" data-command="jsPath" title="Click to edit JS Path."></span>
+		    </li>
+	    	<li class="selectorsRow linkText">
+	    		<div class="copyContainer linkTextCopyBtn" title="click to copy linkText">
+		    		<button class="copy-btn box linkTextCopyBtn"></button>
+					<mark class="noOfMatch linkText"></mark><span  class="typeOfLocator box linkTextCopyBtn">LinkText</span>
+				</div>
+			    <span type="text" class="box valueSelector linkText linkTextEditBtn" data-command="linkText" title="Click to edit linkText."></span>
+	    	</li>
+	    	<li class="selectorsRow partialLinkText">
+	    		<div class="copyContainer partialLinkTextCopyBtn" title="click to copy partialLinkText">
+		    		<button class="copy-btn box partialLinkTextCopyBtn"></button>
+					<mark class="noOfMatch partialLinkText"></mark><span class="typeOfLocator box partialLinkTextCopyBtn">PLinkText</span>
+				</div>
+			    <span type="text" class="box valueSelector partialLinkText partialLinkTextEditBtn" data-command="partialLinkText" title="Click to edit partialLinkText."></span>
+	    	</li>
+	    	<li class="selectorsRow absXpath">
+	    		<div class="copyContainer absCopyBtn" title="click to copy absXPath">
+		    		<button class="copy-btn box absCopyBtn"></button>
+					<mark class="noOfMatch absXpath"></mark><span  class="typeOfLocator box absCopyBtn">Abs XPath</span>
+				</div>
+			    <span type="text" class="box valueSelector abs absEditBtn" data-command="xpath" title="Click to edit absXpath."></span>
+		    </li>
+	    	<li class="selectorsRow tagName">
+	    		<div class="copyContainer tagNameCopyBtn" title="click to copy absXPath">
+		    		<button class="copy-btn box tagNameCopyBtn"></button>
+				    <mark class="noOfMatch tagName"></mark><span  class="typeOfLocator box tagNameCopyBtn">tagName</span>
+				</div>
+			    <span type="text" class="box valueSelector tagName tagNameEditBtn" data-command="tagName" title="Click to edit tagName."></span>
+	    	</li>  	
+	    </ul>
+	    <div class="configOptions">
+				<!-- <button class="commandTip">
+					<span class="questionMark toolTip">"xpathValue" keyword should be there in the command.</span>
+				</button>
+
+			    <input type="search" class="driver-command" value='driver.findElement(By.xpath("xpathvalue"))' placeholder="keep xpathvalue as keyword in command." autocomplete="off" autocorrect="off" title='You can change this command, just keep xpathvalue as keyword where you want to have xpath value in command. For ex- FindBy(xpath="xpathvalue") or if xpath is not inside double quotes then FindBy(xpath=xpathValue)' spellcheck="false" />
+ -->			
+ 				
+
+			    <button class="attrFilterBtn active">
+			    	<span class="filter toolTip">Set attribute.</span>
+			    </button>
+			    <button class="addDriverCommand inactive">
+			    	<span class="driverCommand toolTip">Set driver command to append on selectors.</span>
+			    </button>
+			    <button class="multiSelectorRecordBtn grey">
+			    	<span class="capture toolTip">Click to generate automation code/multiple xpaths.</span>
+			    </button>
+			    <button id='record' class="testCaseStudioBtn">
+			    	<span class="tcStudio toolTip">Click to open TestCase Studio.</span>
+				</button>	
+				<button class="debugBtn inactive">
+			    	<span class="debug toolTip">Turn on Debugger.</span>
+			    </button>		
+			    <button id='smartFix' class="smartFix">
+			    	<span class="resetSmart toolTip">Click for Script Fix.</span>
+				</button>	
+				<button class="quotes-btn inactive">
+			    	<span class="quotes toolTip">Click to generate selectors with double quote.</span>
+			    </button>											
+			    <button class="reset-btn">
+			    	<span class="reset toolTip">Click to reset all setting to the default.</span>
+			    </button>
+			    <button class="uiSetting-btn">
+			    	<span class="uiSetting toolTip">Click to customize UI.</span>
+			    </button>
+		 </div>
+    </div>
+	<div id="xpathValueAlertMsg"></div>
+
+	<div id="multiSelectorContainer">
+	  <table id="recordedSelectorTable" border="1">
+	  	<thead>
+		    <tr id="multiSelectorRow">
+			    <th class="row-no-header">#</th>
+			    <th class="selectorName-header">Selector Name</th>
+			    <th class="selector-header xpath-header"><span id="selectorHeader">Command</span><span class="selectorsCount">(0)</span>
+				    <button class="copyAllBtn xpath">
+				      	<span class="copyAll toolTip">Click to copy all the XPaths.</span>
+				    </button>
+				    <button class="deleteAllBtn">
+				     	<span class="deleteAll toolTip">Click to delete all the rows.</span>
+				    </button>
+				      
+			  	  <!-- </th> -->
+			      <!-- <th class="headerExportBtn"> -->
+					<button id="changeIconButton" class="openSelectorModal">
+						<span class="pasteModal toolTip">Click to paste all the XPaths</span>
+					</button>
+					<button class="importButton">
+						<span class="uploadModalIcon toolTip">Click to upload downloaded XPath xls file</span>
+					</button>
+					<button class="exportButton">
+						<span class="export toolTip">Click to export data in xls.</span>
+					</button>
+					<a class="tutorialVideoLink" target="_blank" href="https://youtu.be/gX-b8VRNt2U">
+				      <button class="tutorialVideoIcon">
+				      	<span class="tutorial toolTip">How to generate Automation code.</span>
+				      </button>
+				  	 </a>
+				</th>
+				<th class="selector-header cssSelector-header"><span id="selectorHeader">cssSelector</span>
+					<button class="copyAllBtn cssSelector">
+				      	<span class="copyAll toolTip">Click to copy all the cssSelectors.</span>
+				    </button>
+				</th>
+				<th class="selector-header"><span id="selectorHeader">id</span></th>
+				<th class="selector-header"><span id="selectorHeader">name</span></th>
+				<th class="selector-header"><span id="selectorHeader">class</span></th>
+			    <th class="selector-header"><span id="selectorHeader">linkText</span></th>
+			    <th class="selector-header"><span id="selectorHeader">partialLinkText</span></th>
+			    <th class="selector-header"><span id="selectorHeader">tagName</span></th>
+		    </tr>
+		</thead>
+		<tbody id="tableBody">
+		    <tr style="display: none;">
+		      <td id="s-no" ></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="labelData" class="label editableContent" contenteditable="true"></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="selectorData" class="xpath selectorValue editableContent" contenteditable="true"></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="selectorData" class="cssSelector selectorValue editableContent" contenteditable="true"></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="selectorData" class="id selectorValue editableContent" contenteditable="true"></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="selectorData" class="name selectorValue editableContent" contenteditable="true"></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="selectorData" class="class selectorValue editableContent" contenteditable="true"></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="selectorData" class="linkText selectorValue editableContent" contenteditable="true"></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="selectorData" class="partialLinkText selectorValue editableContent" contenteditable="true"></td>
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="selectorData" class="tagName selectorValue editableContent" contenteditable="true"></td>
+
+		      <td autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" id="actionBtn">
+		      	<!-- <span class="copyToolTip" id="myPopup">copied</span> -->
+		      	<button id="row-copy-btn" title="click to copy relative XPath"></button>
+		      	<button id="row-edit-btn" title="click to edit relative XPath"></button>
+		      	<button id="delButton" title="Click to delete the row."></button>
+		      </td>
+	    	</tr>
+    	</tbody>
+	  </table>
+	  <!-- <div class="tablePlaceholder">No selector recorded yet.<br>Please inspect elements or click on DOM nodes to record selectors.</div> -->
+	  <div class="tablePlaceholder">
+	  	1. Inspect elements or click on DOM nodes one by one to record xpaths for many.<br>
+	  	2. Turn on the driver command to generate xpath with command.<br>
+	  	3. You can also set the attribute to generate xpath.<br>
+	  	4. Click on Copy All button in header to copy all xpaths.<br>
+	  	5. You can also export the recorded in xls by click on export icon.
+	  </div>
+
+	  <!-- Add XPATH modal -->
+	  <div id="addNewModal" class="modal addNewModal">
+			<div class="vertical-alignment-helper">
+				<div class="modal-dialog vertical-align-center">
+					<div class="close">
+						<span id="modalClose">&times;</span>
+					</div>
+					<div class="modal-contents">
+						<div class="modal-header">
+							<p class="modal-title" id="addNewTitle"></p>
+						</div>
+						<div class="modal-body">
+							<div style="margin-top: 10px; display: flex; align-items: center;">
+								<p class="new-title-label" id="addNewTitleLabel"></p>
+								<div style="height: 40px; display: flex; align-items: center;">
+									<span style="font-size: 12px; font-family: sans-serif;">Add command input</span>
+									<div id='inputToggle' class="toggle-btn active" title="click to add labels" >
+										<div class="toggle-circle"></div>
+									</div>
+								</div>
+							</div>
+							<input type="text" placeholder="replace xpath by xpathvalue as keyword in the command." autocomplete="off" autocorrect="off" title='You can change this command, just replace xpath by xpathvalue keyword in the command. For ex- FindBy(xpath="//div") then enter command as FindBy(xpath="xpathvalue") or if xpath is not inside double quotes like FindBy(xpath=//div) then FindBy(xpath=xpathvalue)' spellcheck="false" value='driver.findElement(By.xpath("xpathvalue"))' class="enterLabels" id="customCommand">
+							<p id="commandValidation" style="display: none;">Replace xpath by xpathvalue keyword in the command. For ex- FindBy(xpath="//div") then enter command as FindBy(xpath="xpathvalue") or if xpath is not inside double quotes like FindBy(xpath=//div) then FindBy(xpath=xpathvalue)</p>
+							<!-- <textarea  placeholder="Enter Labels" rows="4" class="enterLabels" id="enterLabels" cols="20"></textarea> -->
+							<textarea placeholder="Paste selectors page or complete script here" rows="4" class="enterNewTitle" id="enterNewTitle" cols="20"></textarea>
+							<input style="display: none;" type="file" name="imgupload" accept=".xls, .xlsx, .csv" id="imgupload">
+						</div>
+						<div class="modal-footer">
+							<button type="button" id="modal-cancel" class="btn-cancel" data-dismiss="modal">Cancel</button>
+							<button type="button" id="btn-submit" class="btn-submit">Ok</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	 
+	</div>
+	
+	<div class="infoPlaceholder">
+		<div>
+			How to use:
+		  	1. Inspect element to get auto suggest while typing.
+		  	2. It will show the auto suggest for inspected element while typing. 
+		  	3. If auto suggest doesn't work while typing, delete the value & type again. 
+		  	4. For more details, pls follow <a target="_blank" href="https://youtu.be/jV84DRg96qs">video tutorial</a> and checkout <a target="_blank" href="https://www.selectorshub.com/faq/">FAQs here.</a>
+	  	</div>
+	</div>
+	<div id="nestedBlock">
+		<button class="copy-btn box nestedCodeCopyBtn"></button>
+		<textarea id="nestedCode" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+	</div>
+	<ul id="selectorsHubEleContainer" placeholder="It will show the auto suggest for inspected element while typing.">
+		
+	</ul>
+	<div class="patronRequest">
+		<button class='closeIcon svgIcon' title="Click to close footer."></button>
+		<span> | </span>
+		<a class="requestHeader" href="https://www.youtube.com/c/SelectorsHubTheXPathTool?sub_confirmation=1" target="_blank" title="Click to watch tutorials">Watch Tutorial.
+		</a>
+		<span> | </span>
+		<a class="requestHeader" href="http://bit.ly/3shWVNB" target="_blank" title="Click to get SelectorsHub Certificate">🏅 Get your SelectorsHub Certificate now 🏆.
+		</a>
+		<span> | </span>
+		<a class="requestHeader" href="https://youtu.be/1b1yfYfnowM" target="_blank" title="Learn how to use on Safari">Try on Safari, its different.
+		</a>
+		
+	</div>
+	<div class="footer">
+
+		<a target="_blank" class="home-link" href="https://www.selectorshub.com/">
+			<button class='homeIcon svgIcon'>
+				<span class="home toolTip">Click to open SelectorsHub home page.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<a target="_blank" class="download-link" href="http://bit.ly/SelectorsHubTelegram">
+			<button class='telegramIcon svgIcon'>
+				<span class="telegram toolTip">Join Telegram Group.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<a target="_blank" class="download-link" href="https://apps.apple.com/in/app/selectorshub/id1549438854?mt=12">
+			<button class='downloadIcon svgIcon'>
+				<span class="download toolTip">Click to add on safari browser.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<a class="videoLink" target="_blank" href="hhttps://youtu.be/jV84DRg96qs">
+			<button class='videoIcon svgIcon'>
+				<span class="tutorial toolTip">Watch this video tutorial to make best use of SH 3.0.</span>
+			</button>
+		</a>
+
+		<span> | </span>
+		<a target="_blank" class="sponsor-link" href="https://testproject.io/?utm_source=selectorshub&utm_medium=blog&utm_campaign=sj">
+			Sponsors:
+			<span class="sponsor toolTip">SelectorsHub Level Sponsor: TestProject, FREE automation tool.</span>
+			<button class='sponsorIcon svgIcon'></button>
+		</a>
+		<span> | </span>
+		<a class="xpathFunctionLink" target="_blank" href="https://www.selectorshub.com/xpath-and-cssselector-functions/">
+			<button class='xpathFunctionIcon svgIcon'>
+				<span class="functionInfo toolTip">Learn more about XPath and cssSelector functions.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<a class="slackLink" target="_blank" href="https://join.slack.com/t/selectorshub/shared_invite/zt-fho3ep1h-mkjFOdKqmtYWwNVyV8tLSg">
+			<button class='slackIcon svgIcon'>
+				<span class="slack toolTip">Click to join SelectorsHub Slack Channel.</span>
+			</button>
+		</a>
+		<span> | </span>
+
+		<a class="faqLink" target="_blank" href="https://www.selectorshub.com/faq/">
+			<span class="faq toolTip">Before raising issue, pls checkout FAQs here.</span>
+			FAQs
+			
+		</a>
+		<span> | </span>
+
+		<a target="_blank" class="download-link" href="https://github.com/SelectorsHub/SelectorsHubIssues/issues">
+			<button class='githubIcon svgIcon'>
+				<span class="github toolTip">Raise your issue here.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<a target="_blank" class="review-link" href="https://chrome.google.com/webstore/detail/selectorshub/ndgimibanhlabgdgjcpbbndiehljcpfh/reviews">
+			<span class="review toolTip">Click to add rating.</span>
+			<button class='reviewIcon svgIcon'></button>
+		</a>
+		<span> | </span>
+		
+		<span class="sponsorHeader">Donate <a target="_blank" href="https://www.paypal.com/paypalme/sanjayselectorshub">PayPal</a>, PayTM/GPay &#8594; 9663877336</span>
+		<!-- <span class="sponsorName">Want to support, checkout sponsorship plan here</span> -->
+
+		<span> | </span>
+		<a target="_blank" class="download-link" href="https://www.linkedin.com/in/chropath-creator/">
+			<button class='creatorIcon svgIcon'>
+				<span class="creator toolTip">Click to know more about SelectorsHub Creator, Sanjay Kumar.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<a target="_blank" class="download-link" href="https://www.linkedin.com/groups/13891621/">
+			<button class='linkedinIcon svgIcon'>
+				<span class="linkedin toolTip">Join LinkedIN Group.</span>
+			</button>
+		</a>
+		<span> | </span>
+
+		<a target="_blank" class="download-link" href="https://www.facebook.com/groups/selectorshub/">
+			<button class='facebookIcon svgIcon'>
+				<span class="facebook toolTip">Join Facebook Group.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<a target="_blank" href="https://bit.ly/tweetSelectorsHub">
+			<button class='twitterIcon svgIcon'>
+				<span class="twitter toolTip">Click to share on twitter.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<a target="_blank" class="download-link" href="https://www.instagram.com/selectorshub/">
+			<button class='instagramIcon svgIcon'>
+				<span class="instagram toolTip">Follow on Instagram.</span>
+			</button>
+		</a>
+		<span> | </span>
+		<span class="version">v 3.0.7</span>
+		
+	</div>
+
+	<!-- The Modal -->
+	<div id="patronModal" class="patronModal">
+	  <!-- Modal content -->
+	  <div class="patron-modal-content">
+	  	<span class="patronClose">&times;</span>
+	  	<ul>
+	  		<li>To get rid off these footer banner, be a patron <a href="https://www.patreon.com/sanjaykumar_selectorshub" target="_blank">here.</a></li>
+	  		<li>On being Patron, you will get a unique key.</li> 
+	  		<li>Paste this key in SH input box (Where you type xpath) & press enter.</li>
+	  		<li>The footer banner will be hidden for forever & you will have the clean view.</li>
+	  	</ul>
+	    
+	  </div>
+	</div>
+
+	<script src="devtools-script.js"></script>
+
+</body>
+</html>
