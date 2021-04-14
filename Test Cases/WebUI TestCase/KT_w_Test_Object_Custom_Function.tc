@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC_getAnyFileOrFolderPath</name>
+   <name>KT_w_Test_Object_Custom_Function</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>bc6b36cf-3f9f-412e-9741-0cf6e4dcf56d</testCaseGuid>
+   <testCaseGuid>b61d74b2-70a2-43b9-a97a-39210e8d6dd5</testCaseGuid>
 </TestCaseEntity>

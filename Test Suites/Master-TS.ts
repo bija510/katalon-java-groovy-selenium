@@ -36,12 +36,6 @@
       <testCaseId>Test Cases/CalenderDatePicker/TC_CalenderDatePicker</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>491b3743-ff0f-41d1-b5bc-ba78dd91c007</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/ChkBxNRadButton/TC-ChkBxNRadButton</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>b72796a9-56eb-4944-8ed9-1adbc638be60</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>

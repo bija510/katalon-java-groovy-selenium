@@ -16,3 +16,24 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+WebUI.openBrowser('http://demo.automationtesting.in/')
+WebUI.deleteAllCookies()
+WebUI.click(findTestObject('DemoAutomationTesting/btn_next_arrow'))
+
+println "Window Title = " + WebUI.getWindowTitle()
+
+WebUI.refresh()
+
+WebUI.back()
+
+WebUI.forward()
+
+'help==>Encrypt text==> '
+'For entering password'
+WebUI.setEncryptedText(findTestObject("RegisterPage/txt_FirstName"), "T98f2dDY+rs=")
+
+'clear & setText & masked'
+WebUI.setMaskedText(findTestObject("RegisterPage/txt_LastName"), "Jackson")
+	
+
+	

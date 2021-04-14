@@ -53,12 +53,38 @@ def test_object_condational_css(){
 
 }
 
+//test_object_condational_xpath
+def test_object_condational_xpath(){
+	def userNameTextBox = new TestObject()
+	userNameTextBox.addProperty('xpath', ConditionType.EQUALS, "//input[@id='email']")
+	
+	WebUI.openBrowser('https://www.facebook.com/')
+	WebUI.setText(userNameTextBox, 'TestUserName')
+}
 
 
+def get_any_attribute_value_from_testObject(){
+/********************************************************************************
+	 import com.kms.katalon.core.testobject.ObjectRepository
+	 import com.kms.katalon.core.testobject.SelectorMethod
+	 import com.kms.katalon.core.testobject.TestObject
+	 import com.kms.katalon.core.testobject.TestObjectProperty4
+	 this 4 or import com.kms.katalon.core.testobject.*
+	 This is how we can print any Attribute form TestObject like:- XPATH, BASIC, CSS
+	 https://forum.katalon.com/t/printing-the-attribute-value-using-println/12913/2
+ *********************************************************************************/
+ 
+ println "===>"+findTestObject("RegisterPage/txt_FirstName").getSelectorCollection().get(SelectorMethod.XPATH)
+ 
+}
 
-
-
-
+def parameterized_test_object(){
+	String lastName = "Last Name"
+	
+	WebUI.openBrowser("http://demo.automationtesting.in/Register.html")
+	WebUI.maximizeWindow()
+	WebUI.setText(findTestObject('RegisterPage/parameterized_TO',[('lastname'):lastName]), "Ram")
+}
 
 
 

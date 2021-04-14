@@ -28,23 +28,28 @@ WebUI.maximizeWindow()
 WebUI.setText(findTestObject('RegisterPage/txt_FirstName'), 'Michal')
 WebUI.sendKeys(findTestObject('RegisterPage/txt_LastName'), 'Jackson')
 
-'4. getText'
+'4.clear Text'
+WebUI.clearText(findTestObject('RegisterPage/txt_LastName'))
+
+'5. getText'
 println "Page Header = " + WebUI.getText(findTestObject('Object Repository/RegisterPage/lbl_Register'))
 
-'5. GetAttribute of value'
+'6. GetAttribute of value'
 println "firstName TextBox attribute value = " + WebUI.getAttribute(findTestObject('RegisterPage/txt_FirstName'), 'value')
 
-'6. Radio Button'
+'7. Radio Button'
 WebUI.click(findTestObject('RegisterPage/rad_Male'))
 
-'7. CheckBox'
+'8. CheckBox'
 WebUI.check(findTestObject('RegisterPage/chk_Movie'))
 WebUI.delay(2)
 WebUI.uncheck(findTestObject('RegisterPage/chk_Movie'))
 
-'8. DropDown'
+'9. DropDown'
 WebUI.selectOptionByLabel(findTestObject('RegisterPage/ddl_skills'), 'C', false)
+WebUI.selectOptionByIndex(findTestObject('RegisterPage/ddl_skills'), '2', false)
+WebUI.selectOptionByValue(findTestObject('RegisterPage/ddl_skills'), 'Android', false)
 
-'9. Close Browser'
+'10. Close Browser'
 WebUI.closeBrowser()
 

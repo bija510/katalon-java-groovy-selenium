@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description></description>
-   <name>TC_GetAnyAttributeValue_FromTestObject</name>
-   <tag></tag>
-   <comment></comment>
-   <testCaseGuid>75074d75-d8a8-4dc6-a0b4-2a03103aff3e</testCaseGuid>
-</TestCaseEntity>
