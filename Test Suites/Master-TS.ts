@@ -15,7 +15,7 @@
       <guid>e61c3a97-49f0-4d23-ad03-511be5eac365</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/WebUI TestCase/KT_04_Variables_Local_Global</testCaseId>
+      <testCaseId>Test Cases/TestCases-WebBrowser/KT_04_Variables_Local_Global</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -28,12 +28,6 @@
          <value></value>
          <variableId>8935d3b9-7693-4003-a2c1-5e55511cc0ab</variableId>
       </variableLink>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e8e2b2f6-8071-4fa5-9f72-e2bf6bd75ffb</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/CalenderDatePicker/TC_CalenderDatePicker</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>b72796a9-56eb-4944-8ed9-1adbc638be60</guid>
@@ -90,81 +84,39 @@
       <testCaseId>Test Cases/DataDriverTesting/TC_ReadWrite_ExcelAndPropertiesFile</testCaseId>
    </testCaseLink>
    <testCaseLink>
-      <guid>5017516c-a29e-4e2e-b015-bb14ec9023b1</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/DownloadNUpload-RobotClass/TC_DownloadFirefox</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a12ab197-688d-45a4-997f-1a7218ef1c73</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/DownloadNUpload-RobotClass/TC_DownloadRC-WIP</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
       <guid>3c925f68-9746-4064-93d1-556a2a518638</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/DownloadNUpload-RobotClass/TC_UploadFileRC</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e6130472-5ab8-4c70-9fd4-026659db1468</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Dropdown/TC_Static_dropdown</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>444a6a08-0a4f-4641-b975-66628f3682fa</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Dropdown/TC_Verify_dropdown</testCaseId>
+      <testCaseId>Test Cases/TestCases-WebBrowser/KT_16_UploadFile</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>0cd2acd9-b5d0-4f5d-a2d4-8c3c5f5ddf60</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Frame/TC_frame-Katalon</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>b0cac40d-6e53-48b4-9150-3118ac85a248</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Frame/TC_Frame-Selenium</testCaseId>
+      <testCaseId>Test Cases/TestCases-WebBrowser/KT_09_Frame</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8456f64c-dd13-49dd-b413-15b7ab81ae18</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/KeyboardMouseEvent/TC_Keyword</testCaseId>
+      <testCaseId>Test Cases/TestCases-WebBrowser/KT_13_KeywordEvents</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8b330569-d63f-459d-921b-594f73b53c11</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/KeyboardMouseEvent/TC_MouseEvent</testCaseId>
+      <testCaseId>Test Cases/TestCases-WebBrowser/KT_14_MouseEvent</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>6296e0e1-26f8-4bb9-9379-2bfa0f81ca46</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/MultipleWindow/TC_ParentChild-Katalon</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>a900dc92-224a-4a6b-b42e-9aa242f8b669</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/MultipleWindow/TC_ParentChild-SelWeb</testCaseId>
+      <testCaseId>Test Cases/TestCases-WebBrowser/KT_10_MultipleWindow</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>a922ed75-bdb5-4ee0-8936-2fba8cdbd603</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/VerifyOrAssert/TC_Verify</testCaseId>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>e77fecab-42ae-4c38-a9f9-0fd0f08db01a</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Waits/TC_KatalonWaits</testCaseId>
+      <testCaseId>Test Cases/TestCases-WebBrowser/KT_06_Verify_Assert</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

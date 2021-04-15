@@ -32,7 +32,7 @@ public class Utils {
 	static def currentDate(){
 		new Date().format('MM/dd/yyyy') //Result 05/21/2020
 	}
-	
+
 	@Keyword
 	static def currentTime(){
 		Date date = new Date();
@@ -42,7 +42,7 @@ public class Utils {
 		//println(sdf1.format(date)); //11:05 PM
 		return sdf.format(date)
 	}
-	
+
 	@Keyword
 	static def get5DigitTimeStamp(){
 		String ts = new Date().format('yyyyMMddHHmmssSSS')

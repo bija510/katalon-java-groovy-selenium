@@ -39,4 +39,19 @@
       <initValue>''</initValue>
       <name>gTestSuiteId</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>1</initValue>
+      <name>smallWaitTime</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>3</initValue>
+      <name>mediumWaitTime</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>6</initValue>
+      <name>largeWaitTime</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

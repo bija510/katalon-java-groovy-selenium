@@ -7,17 +7,16 @@
    <selectorCollection>
       <entry>
          <key>CSS</key>
-         <value></value>
+         <value>span[class='context-menu-one btn btn-neutral']</value>
       </entry>
       <entry>
          <key>BASIC</key>
-         <value></value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>/html/head/script[3]/text()</value>
+         <value></value>
       </entry>
    </selectorCollection>
-   <selectorMethod>XPATH</selectorMethod>
+   <selectorMethod>CSS</selectorMethod>
    <useRalativeImagePath>false</useRalativeImagePath>
 </WebElementEntity>
