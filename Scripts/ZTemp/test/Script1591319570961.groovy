@@ -6,21 +6,27 @@ import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
+import utilites.Utils
 
 
-System.setProperty("webdriver.chrome.driver", DriverFactory.getChromeDriverPath())
-ChromeOptions options = new ChromeOptions()
 
-String extensionPath = RunConfiguration.getProjectDir()+ "/Include/SelectorsHub.crx"
-options.addExtensions(new File(extensionPath))
-options.setCapability(ChromeOptions.CAPABILITY, options)
+/**
+ * TO REPRODUCE THIS EXCEPTION :-
+ * org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+WebUI.openBrowser("https://opensource-demo.orangehrmlive.com/")
 
-WebDriver driver = new ChromeDriver(options)
-DriverFactory.changeWebDriver(driver)
+WebDriver driver = DriverFactory.getWebDriver()
+driver.getTitle()
 
-WebUI.navigateToUrl('https://www.w3schools.com/html/html_tables.asp')
+WebUI.closeBrowser()
+
+driver.getWindowHandle()
+*/
 
 
+
+println Utils.decryptText("+mmvG/CrT7k=")
+println Utils.encryptText("apple")
 
 
 

@@ -18,6 +18,7 @@ import com.kms.katalon.core.testobject.TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
+import com.kms.katalon.util.CryptoUtil
 
 import internal.GlobalVariable
 import java.text.SimpleDateFormat
@@ -97,5 +98,21 @@ public class Utils {
 		}catch (Exception e){
 			KeywordUtil.markFailed("Failed to click on"+ buttonName + " Button")
 		}
+	}
+	
+	/**
+	 * @param text = ex: +mmvG/CrT7k= will give apple
+	 * @return
+	 */
+	static def decryptText(def text){
+		return CryptoUtil.decode(CryptoUtil.getDefault(text))
+	}
+	
+	/**
+	 * @param text = ex: apple will give +mmvG/CrT7k=
+	 * @return
+	 */
+	static def encryptText(def text){
+		return CryptoUtil.encode(CryptoUtil.getDefault(text))
 	}
 }
