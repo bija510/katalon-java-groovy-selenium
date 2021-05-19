@@ -7,7 +7,6 @@ import com.kms.katalon.core.util.KeywordUtil
 
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import org.openqa.selenium.WebElement
-import com.selenium.utils.LinkTestUtils
 import com.kms.katalon.core.testobject.ConditionType
 import com.kms.katalon.core.testobject.TestObject as TestObject
 

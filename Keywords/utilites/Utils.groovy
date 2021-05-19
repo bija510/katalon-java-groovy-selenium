@@ -99,7 +99,7 @@ public class Utils {
 			KeywordUtil.markFailed("Failed to click on"+ buttonName + " Button")
 		}
 	}
-	
+
 	/**
 	 * @param text = ex: +mmvG/CrT7k= will give apple
 	 * @return
@@ -107,7 +107,7 @@ public class Utils {
 	static def decryptText(def text){
 		return CryptoUtil.decode(CryptoUtil.getDefault(text))
 	}
-	
+
 	/**
 	 * @param text = ex: apple will give +mmvG/CrT7k=
 	 * @return
