@@ -4,4 +4,9 @@ import internal.GlobalVariable as GlobalVariable
 import utilites.Utils
 
 WebUI.openBrowser("http://demo.automationtesting.in/Register.html")
-WebUI.takeScreenshot(((GlobalVariable.gScreenshotDir + GlobalVariable.gTestCaseId) +'_Failed_') + Utils.get5DigitTimeStamp()+ '.png', FailureHandling.STOP_ON_FAILURE)
+
+WebUI.takeScreenshot(((GlobalVariable.gScreenshotDir + GlobalVariable.gTestCaseId) +'_Failed_') + Utils.get5DigitTimeStamp()+ '.png',
+	 FailureHandling.STOP_ON_FAILURE)
+
+WebUI.takeFullPageScreenshot(((GlobalVariable.gScreenshotDir + GlobalVariable.gTestCaseId) +'_Failed_') + Utils.get5DigitTimeStamp()+ '.png',
+	 FailureHandling.STOP_ON_FAILURE)

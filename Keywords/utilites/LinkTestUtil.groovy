@@ -17,16 +17,10 @@ public class LinkTestUtils {
 	 * @return  Broken links count
 	 */
 	static int findBrokenLinks(String pageUrl) {
-
-		/*******************************************
-		 Waiting until the page gets stable
-		 *******************************************/
 		WebUI.waitForPageLoad(6)
 		WebUI.delay(5)
-
-		/****************************************************
-		 find all <a> elements with non-null href attribute
-		 ****************************************************/
+	
+		// find all <a> elements with non-null href attribute
 		TestObject tObjAnchors = new TestObject("all anchors").addProperty("xpath", ConditionType.EQUALS, "//a")
 		List<WebElement> anchors = WebUI.findWebElements(tObjAnchors, 10)
 		List<String> hrefs =
@@ -35,25 +29,27 @@ public class LinkTestUtils {
 				.map { we -> we.getAttribute('href') }
 				.collect()
 
-		/***************************
-		 prepare buffer for messages
-		 ***************************/
 		StringBuilder messageBuffer = new StringBuilder()
 		messageBuffer.append("*** All <a> elements in ${pageUrl} ***${System.lineSeparator}")
-
-		/***************************
-		 Now we do the job!
-		 ***************************/
 		int brokenLinksCount = linkTest(hrefs, messageBuffer)
-
-		/***************************
-		 print message
-		 ***************************/
 		print(messageBuffer.toString())
-
 		return brokenLinksCount
 	}
-
+	
+	/**
+	 * @param pageUrl = pass the current page URL(WebUI.getUrl())
+	 * @return  Broken links count
+	 */
+	static int findBrokenLinks2(String pageUrl) {
+		WebUI.waitForPageLoad(6)
+		WebUI.delay(5)
+	
+		StringBuilder messageBuffer = new StringBuilder()
+		messageBuffer.append("*** All <a> elements in ${pageUrl} ***${System.lineSeparator}")
+		int brokenLinksCount = linkTest( WebUI.getAllLinksOnCurrentPage(false, null), messageBuffer)
+		print(messageBuffer.toString())
+		return brokenLinksCount
+	}
 
 
 	static int linkTest(List<String> urls, Appendable messageBuffer) {
@@ -94,7 +90,7 @@ public class LinkTestUtils {
 					System.err.println(url + " ["+statusCode+"]" +" is a broken link");
 					broken_links++;
 				} else {
-					System.out.println(url + " ["+statusCode+"]"  + " valid link");
+					//System.out.println(url + " ["+statusCode+"]"  + " valid link");
 					valid_links++;
 				}
 			} catch (MalformedURLException e) {
