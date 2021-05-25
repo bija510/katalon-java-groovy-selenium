@@ -39,5 +39,4 @@ public class LoginPage {
 	public void clickLoginBtn(){
 		WebUI.click(findTestObject('OrangeHRM/loginPage/btn_login'))
 	}
-	
 }

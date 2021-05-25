@@ -27,17 +27,25 @@ import com.kms.katalon.core.testobject.*
 import internal.GlobalVariable
 
 public class HomePage {
-	public void clickMenuBtn(){
+
+	public static HomePage using() {
+		return new HomePage()
+	}
+
+	public HomePage clickMenuBtn(){
 		WebUI.click(findTestObject('Object Repository/OrangeHRM/homePage/btn_welcomeMenu'))
+		return this
 	}
 
-	public clickLogoutBtn(){
+	public HomePage clickLogoutBtn(){
 		WebUI.click(findTestObject('Object Repository/OrangeHRM/homePage/btn_logout'))
+		return this
 	}
 
-	public void selectAdminTab(String tabName){
+	public HomePage selectAdminTab(String tabName){
 		String commonXpath = findTestObject("OrangeHRM/homePage/tab_Cl_homePage").getSelectorCollection().get(SelectorMethod.XPATH)
 		selectAnyOptionByLabel(commonXpath, tabName).click()
+		return this
 	}
 
 	public WebElement selectAnyOptionByLabel(String commonXpath, String ddlLabel){
