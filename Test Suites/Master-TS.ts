@@ -15,7 +15,7 @@
       <guid>e61c3a97-49f0-4d23-ad03-511be5eac365</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TestCases-WebBrowser/KT_04_Variables_Local_Global</testCaseId>
+      <testCaseId>Test Cases/WebBrowser/KT_04_Variables_Local_Global</testCaseId>
       <variableLink>
          <testDataLinkId></testDataLinkId>
          <type>DEFAULT</type>
@@ -87,36 +87,36 @@
       <guid>3c925f68-9746-4064-93d1-556a2a518638</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TestCases-WebBrowser/KT_16_UploadFile</testCaseId>
+      <testCaseId>Test Cases/WebBrowser/KT_16_UploadFile</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>0cd2acd9-b5d0-4f5d-a2d4-8c3c5f5ddf60</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TestCases-WebBrowser/KT_09_Frame</testCaseId>
+      <testCaseId>Test Cases/WebBrowser/KT_09_Frame</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8456f64c-dd13-49dd-b413-15b7ab81ae18</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TestCases-WebBrowser/KT_13_KeywordEvents</testCaseId>
+      <testCaseId>Test Cases/WebBrowser/KT_13_KeywordEvents</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>8b330569-d63f-459d-921b-594f73b53c11</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TestCases-WebBrowser/KT_14_MouseEvent</testCaseId>
+      <testCaseId>Test Cases/WebBrowser/KT_14_MouseEvent</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>6296e0e1-26f8-4bb9-9379-2bfa0f81ca46</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TestCases-WebBrowser/KT_10_MultipleWindow</testCaseId>
+      <testCaseId>Test Cases/WebBrowser/KT_10_MultipleWindow</testCaseId>
    </testCaseLink>
    <testCaseLink>
       <guid>a922ed75-bdb5-4ee0-8936-2fba8cdbd603</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TestCases-WebBrowser/KT_06_Verify_Assert</testCaseId>
+      <testCaseId>Test Cases/WebBrowser/KT_06_Verify_Assert</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>

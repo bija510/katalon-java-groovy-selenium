@@ -15,6 +15,6 @@
       <guid>7a3807aa-fc87-4458-91ab-6ffda974e477</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/TestCases-WebBrowser/KT_06_Verify_Assert</testCaseId>
+      <testCaseId>Test Cases/WebBrowser/KT_06_Verify_Assert</testCaseId>
    </testCaseLink>
 </TestSuiteEntity>
