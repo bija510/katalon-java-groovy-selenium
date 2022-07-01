@@ -93,3 +93,10 @@ Just run main test case like HP in other browser also choose which cover most Fu
 6. git commit -m "added jmeter file"
 7. git push origin master
  
+ Note for Github
+ Github-->profile--> setting --> developer setting-->personal access token--> generate
+ Logon failed, use ctrl+c to cancel basic credential prompt.
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/bija510/katalon-java-groovy-selenium.git/'
+Pushing to https://github.com/bija510/katalon-java-groovy-selenium.git

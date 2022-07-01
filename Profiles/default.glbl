@@ -54,4 +54,34 @@
       <initValue>6</initValue>
       <name>largeWaitTime</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Api related data</description>
+      <initValue>'TBD'</initValue>
+      <name>gOrg</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'TBD'</initValue>
+      <name>gProject</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'TBD'</initValue>
+      <name>gTeam</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>''</initValue>
+      <name>gwi_id</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>'default'</initValue>
+      <name>gwi_title</name>
+   </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description>Token generated from azure project after put on the basic authentication and it will change that one</description>
+      <initValue>''</initValue>
+      <name>gbasic_auth_pw</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

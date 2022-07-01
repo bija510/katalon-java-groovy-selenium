@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_01_Create Bug</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>7ce52531-6e4a-4f45-b869-a9c59bc1a767</testCaseGuid>
+   <variable>
+      <defaultValue>'default fail msg'</defaultValue>
+      <description></description>
+      <id>2abe999b-8cb1-4040-ba0c-22d151d7f684</id>
+      <masked>false</masked>
+      <name>p_wi_title</name>
+   </variable>
+</TestCaseEntity>
