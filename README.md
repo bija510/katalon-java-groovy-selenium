@@ -100,3 +100,30 @@ remote: Support for password authentication was removed on August 13, 2021. Plea
 remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
 fatal: Authentication failed for 'https://github.com/bija510/katalon-java-groovy-selenium.git/'
 Pushing to https://github.com/bija510/katalon-java-groovy-selenium.git
+
+## How to Automate UWP Desktop Application in Window
+### Introduction
+UWP apps are different from desktop apps in many, many ways.
+One stark difference between the two is that a UWP app doesn't have an EXE. 
+If you want to open a UWP app, you can go through the Start Menu, the apps list in the Start menu,
+you can create a desktop shortcut for them, or add them to the start up folder. 
+If you want to open UWP apps from the command line on Windows, you can.
+The process is a bit complicated but it's possible.
+## Step by Step process
+Go to C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe & CMD there and Write WinAppDriver.exe & hit ENTER to Run The Driver. 
+12# Getting Started with katalon studio This are the step by step to follow.
+
+1.	Open katalon studio & install the WinappDriver [tools-->Windows--> install WinappDriver]
+2.	Type developer settings on window Search & turn on the Developer mode.
+3.	Then Find the Package FamilyName & Application ID. By following
+this link [Tutorial to find Package family name & Application ID](https://www.addictivetips.com/windows-tips/open-uwp-apps-from-command-line-windows-10/#:~:text-Look%20for%20the%20app%20that,Properties%20from%20the%20context%20menu.)
+and
+[Katalon Forum for UWP app](https://forum.katalon.com/t/how-to-start-uwp-application-from-katalon-studio/42598)
+4.	Open the powershell command & type [get-appxpackage > c:\temp\UWP_Apps_List.txt] and hit ENTER.
+5.	It'll create the UWP Apps List.txt inside the path C:\temp if it's hidden then view-->show hidden
+6.  Open that file with notepad++ then search the app by target name [shortcut app--> R-click--> properties--> target name (encrypted name)]
+7.	Then you will find the Package FamilyName & Application ID.
+8.	Then create the test case & Windows.startApplication('PackageFamilyName! Application ID')
+9.	Run as windows & it'll lunch the window application.
+
+
