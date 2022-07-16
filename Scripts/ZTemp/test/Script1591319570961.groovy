@@ -3,6 +3,7 @@ import org.openqa.selenium.chrome.ChromeDriver
 import org.openqa.selenium.chrome.ChromeOptions
 
 import com.kms.katalon.core.configuration.RunConfiguration
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.driver.DriverFactory
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 
@@ -33,23 +34,39 @@ driver.getWindowHandle()
 
 
 
+//
+//def loginPage = new LoginPage()
+//loginPage.openUrl(GlobalVariable.Url)
+//loginPage.enterUserName(GlobalVariable.userName)
+//loginPage.enterPassword(GlobalVariable.password)
+//loginPage.clickLoginBtn()
+//
+//
+//HomePage.using().selectAdminTab("Time")
+//				.clickMenuBtn()
+//				.clickLogoutBtn()
 
-def loginPage = new LoginPage()
-loginPage.openUrl(GlobalVariable.Url)
-loginPage.enterUserName(GlobalVariable.userName)
-loginPage.enterPassword(GlobalVariable.password)
-loginPage.clickLoginBtn()
+50.times{
+KeywordUtil.logInfo(getAlphaNumericString(2))
 
+}
 
-HomePage.using().selectAdminTab("Time")
-				.clickMenuBtn()
-				.clickLogoutBtn()
+def static getAlphaNumericString(int length){
+	String alphaNumericStr= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+	StringBuilder sb = new StringBuilder(length-1)
+	for (int i =0; i< length-1; i++){
+		int index = (int) (alphaNumericStr.length()*Math.random())
+		sb.append(alphaNumericStr.charAt(index))
+	}
+	String NumericStr= "0123456789"
+	StringBuilder sb2 = new StringBuilder(1)
+	int index2 = (int) (NumericStr.length()*Math.random())
+	sb2.append(NumericStr.charAt(index2))
+	
+	String finalStr = sb.toString()+sb2.toString()
 
-
-
-
-
-
+	return finalStr
+}
 
 
 

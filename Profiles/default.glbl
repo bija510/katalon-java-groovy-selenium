@@ -84,4 +84,9 @@
       <initValue>''</initValue>
       <name>gbasic_auth_pw</name>
    </GlobalVariableEntity>
+   <GlobalVariableEntity>
+      <description></description>
+      <initValue>[:]</initValue>
+      <name>jsonData</name>
+   </GlobalVariableEntity>
 </GlobalVariableEntities>

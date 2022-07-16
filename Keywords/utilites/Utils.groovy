@@ -51,7 +51,27 @@ public class Utils {
 	}
 
 	@Keyword
-	def getalphaNumericString(int length){
+	def static getAlphaNumericString(int length){
+		String alphaNumericStr= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+		StringBuilder sb = new StringBuilder(length-1)
+		
+		for (int i =0; i< length-1; i++){
+			int index = (int) (alphaNumericStr.length()*Math.random())
+			sb.append(alphaNumericStr.charAt(index))
+		}
+		
+		String NumericStr= "0123456789"
+		StringBuilder sb2 = new StringBuilder(1)
+		int index2 = (int) (NumericStr.length()*Math.random())
+		sb2.append(NumericStr.charAt(index2))
+		
+		String finalStr = sb.toString()+sb2.toString()
+		return finalStr
+	}
+
+	
+	@Keyword
+	def static getRandomAlphabetString(int length){
 		String alphaNumericStr= "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 		StringBuilder sb =new StringBuilder(length)
 		for (int i =0; i< length; i++){
@@ -60,6 +80,7 @@ public class Utils {
 		}
 		return sb.toString()
 	}
+
 
 	@Keyword
 	public void catch1(String tcId, WebElementNotFoundException e){

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>TC_Read_JsonFile_Using_Listener</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>aba75f84-ca6a-4c9c-8913-68ca317fdfd5</testCaseGuid>
+</TestCaseEntity>

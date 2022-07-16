@@ -3,7 +3,8 @@ import static com.kms.katalon.core.testcase.TestCaseFactory.findTestCase
 import static com.kms.katalon.core.testdata.TestDataFactory.findTestData
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 
-import com.kms.katalon.core.checkpoint.Checkpoint as Checkpoint
+import com.kms.katalon.core.checkpoint.Checkpoint
+import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
@@ -22,6 +23,7 @@ import com.kms.katalon.core.annotation.AfterTestSuite
 import com.kms.katalon.core.context.TestCaseContext
 import com.kms.katalon.core.context.TestSuiteContext
 import utilites.Utils
+import groovy.json.JsonSlurper
 
 class NewTestListener {
 	/**
@@ -36,6 +38,10 @@ class NewTestListener {
 		 tcId = tcId.substring(tcId.lastIndexOf('/'))
 		 
 		 GlobalVariable.gTestCaseId = tcId
+		 
+		 String filePath = RunConfiguration.getProjectDir() + "/Data Files All/JsonPOM.json"
+		 def slurper = new JsonSlurper()
+		 GlobalVariable.jsonData = slurper.parse(new File(filePath))
 	}
 
 	/**
@@ -47,7 +53,7 @@ class NewTestListener {
 		println testCaseContext.getTestCaseId()
 		println testCaseContext.getTestCaseStatus()
 
-		if (testCaseContext.getTestCaseStatus()=="FAILED"){
+		if (! (testCaseContext.getTestCaseStatus()=="PASSED")){
 			try {
 				WebUI.takeScreenshot(((GlobalVariable.gScreenshotDir + GlobalVariable.gTestCaseId) +'_Failed_') + Utils.get5DigitTimeStamp()+ '.png', FailureHandling.STOP_ON_FAILURE)
 

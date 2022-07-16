@@ -10,6 +10,7 @@ Its initial release for internal use was in January 2015.
 3. Web application testing using **TestNG** framework with java demo test cases.
 4. Mobile application testing demo [**Android**] using Katalon Mobile library, which use appium inside.
 5. Window application testing demo test cases using katalon Window library, using _**WinAppDriver**_.
+6. **API** Testing.
 
 
 ## Top 15 UI Test Automation Best Practices You Should Follow
@@ -93,12 +94,12 @@ Just run main test case like HP in other browser also choose which cover most Fu
 6. git commit -m "added jmeter file"
 7. git push origin master
  
- Note for Github
- Github-->profile--> setting --> developer setting-->personal access token--> generate
- Logon failed, use ctrl+c to cancel basic credential prompt.
-remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
-remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
-fatal: Authentication failed for 'https://github.com/bija510/katalon-java-groovy-selenium.git/'
+ ## Note for Github
+ * Github-->profile--> setting --> developer setting-->personal access token--> generate
+ * Logon failed (git pull/push), use ctrl+c to cancel basic credential prompt.remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+* remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: 
+* Authentication failed for 'https://github.com/bija510/katalon-java-groovy-selenium.git/'
 Pushing to https://github.com/bija510/katalon-java-groovy-selenium.git
 
 ## How to Automate UWP Desktop Application in Window
@@ -110,9 +111,10 @@ you can create a desktop shortcut for them, or add them to the start up folder.
 If you want to open UWP apps from the command line on Windows, you can.
 The process is a bit complicated but it's possible.
 ## Step by Step process
-Go to C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe & CMD there and Write WinAppDriver.exe & hit ENTER to Run The Driver. 
-12# Getting Started with katalon studio This are the step by step to follow.
+- Go to C:\Program Files (x86)\Windows Application Driver\WinAppDriver.exe & CMD there and 
+- Write WinAppDriver.exe & hit ENTER to Run The Driver. 
 
+### Getting Started with katalon studio This are the step by step to follow.
 1.	Open katalon studio & install the WinappDriver [tools-->Windows--> install WinappDriver]
 2.	Type developer settings on window Search & turn on the Developer mode.
 3.	Then Find the Package FamilyName & Application ID. By following
