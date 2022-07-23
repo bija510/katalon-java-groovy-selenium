@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>Setup_01_StartWinAppDriver</name>
+   <tag></tag>
+   <comment></comment>
+   <testCaseGuid>e84c6427-961f-4a58-970a-9378543112f7</testCaseGuid>
+</TestCaseEntity>
