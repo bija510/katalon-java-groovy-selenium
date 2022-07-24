@@ -17,15 +17,18 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-Windows.startApplicationWithTitle('Microsoft.MSPaint_8wekyb3d8bbwe!Microsoft.MSPaint', null)
-
-Windows.switchToDesktop()
+Windows.startApplicationWithTitle('C:\\Windows\\System32\\notepad.exe', 'Untitled - Notepad')
+Windows.setText(findWindowsObject('WindowDesktopApps/Notepad/Edit(1)'), 'Writing 111')
 Windows.delay(2)
 
-Windows.click(findWindowsObject('WindowDesktopApps/Desktop/txt_Search'))
-Windows.setText(findWindowsObject('WindowDesktopApps/Desktop/txt_Search'), 'paint')
+Windows.startApplicationWithTitle('C:\\Program Files (x86)\\Notepad++\\notepad++.exe', 'Notepad++')
+Windows.delay(2)
+Windows.setText(findWindowsObject('WindowDesktopApps/notepad_plus-plus/txt_textField'), 'Apple 111')
 
-Windows.click(findWindowsObject('WindowDesktopApps/Desktop/app_paint'))
+// Writing on Notepad
+Windows.switchToWindowTitle('Untitled - Notepad')
+Windows.setText(findWindowsObject('WindowDesktopApps/Notepad/Edit(1)'), 'Writing 222')
 
-Windows.click(findWindowsObject('WindowDesktopApps/Paint/mnu_file'))
-Windows.click(findWindowsObject('WindowDesktopApps/Paint/file_sub_mnu_open'))
+// Writing on Notepad++
+Windows.switchToWindowTitle('Notepad++')
+Windows.setText(findWindowsObject('WindowDesktopApps/notepad_plus-plus/txt_textField'), 'Apple 222')

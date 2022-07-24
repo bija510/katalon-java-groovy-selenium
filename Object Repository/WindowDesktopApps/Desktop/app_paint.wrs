@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowsElementEntity>
+   <description></description>
+   <name>app_paint</name>
+   <tag></tag>
+   <locator>Paint</locator>
+   <locatorStrategy>NAME</locatorStrategy>
+   <properties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Name</name>
+      <type>Main</type>
+      <value>Paint</value>
+      <webElementGuid>f8532a6a-3787-4f4b-b185-1ac354b6dce2</webElementGuid>
+   </properties>
+</WindowsElementEntity>

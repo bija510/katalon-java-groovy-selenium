@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowsElementEntity>
+   <description></description>
+   <name>file_sub_mnu_open</name>
+   <tag></tag>
+   <locator>Open</locator>
+   <locatorStrategy>NAME</locatorStrategy>
+   <properties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Name</name>
+      <type>Main</type>
+      <value>Open</value>
+      <webElementGuid>60270282-fbee-479f-ac2d-c28091683533</webElementGuid>
+   </properties>
+</WindowsElementEntity>

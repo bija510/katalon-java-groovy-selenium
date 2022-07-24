@@ -15,22 +15,16 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
+Windows.startApplicationWithTitle('C:\\Windows\\System32\\notepad.exe', 'Untitled - Notepad')
 
+Windows.setText(findWindowsObject('WindowDesktopApps/Notepad/Edit(1)'), 'Testing the notepad writing feature')
 
-Windows.startApplicationWithTitle('C:\\Program Files (x86)\\Notepad++\\notepad++.exe', '')
-Windows.click(findWindowsObject('WindowDesktopApps/notepad_plus-plus/Btn_maxmizeNew'))
+Windows.switchToDesktop()
+Windows.delay(2)
+Windows.doubleClick(findWindowsObject('Object Repository/WindowDesktopApps/Desktop/folder_homeLoan'))
+
+Windows.switchToApplication()
 Windows.delay(3)
-
-Windows.delay(2)
-Windows.setText(findWindowsObject('WindowDesktopApps/notepad_plus-plus/txt_textField'), 'Apple')
-Windows.click(findWindowsObject('WindowDesktopApps/notepad_plus-plus/MenuItem_file'))
-Windows.delay(1)
-
-Windows.click(findWindowsObject('WindowDesktopApps/notepad_plus-plus/txt_textField'))
-
-Windows.click(findWindowsObject('WindowDesktopApps/notepad_plus-plus/MenuItem_view'))
-Windows.click(findWindowsObject('WindowDesktopApps/notepad_plus-plus/txt_textField'))
-
-Windows.delay(2)
-Windows.closeApplication()
+Windows.clearText(findWindowsObject('WindowDesktopApps/Notepad/Edit(1)'))

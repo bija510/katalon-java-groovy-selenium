@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowsElementEntity>
+   <description></description>
+   <name>mnu_file</name>
+   <tag></tag>
+   <locator>File tab</locator>
+   <locatorStrategy>NAME</locatorStrategy>
+   <properties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Name</name>
+      <type>Main</type>
+      <value>File tab</value>
+      <webElementGuid>d8759c5b-6b1e-4f76-a413-bbd372ce0656</webElementGuid>
+   </properties>
+</WindowsElementEntity>

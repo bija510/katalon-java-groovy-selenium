@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowsElementEntity>
+   <description></description>
+   <name>folder_homeLoan</name>
+   <tag></tag>
+   <locator>home loan</locator>
+   <locatorStrategy>NAME</locatorStrategy>
+   <properties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Name</name>
+      <type>Main</type>
+      <value>home loan</value>
+      <webElementGuid>667de75f-3754-4e34-8b35-f4674cdf57be</webElementGuid>
+   </properties>
+</WindowsElementEntity>

@@ -17,11 +17,15 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-/*
- * Download Mouse Loc 
- * https://www.softpedia.com/get/Desktop-Enhancements/Other-Desktop-Enhancements/MouseLoc.shtml
- */
+/********************************************
+ * Download MPos - Mouse Position
+ * https://sourceforge.net/projects/mpos/
+ ********************************************/
+	Windows.startApplicationWithTitle('C:\\Windows\\System32\\notepad.exe', '')
+	Windows.click(findWindowsObject('WindowDesktopApps/Notepad/btn_maxmize'))
+	Windows.delay(2)
 
-Windows.startApplicationWithTitle('C:\\Windows\\System32\\notepad.exe', '')
-
-Windows.clickElementOffset(findWindowsObject('CenterPoint/ElectionInformationPage/btn_CopyIdentifiers'), 759, -68)
+/*************************************************************
+ * Clicking on the Minimize btn works Tested [07-23-2022]
+ *************************************************************/
+	Windows.clickElementOffset(findWindowsObject('Object Repository/WindowDesktopApps/Notepad/btn_minimize'), 50, -0) 

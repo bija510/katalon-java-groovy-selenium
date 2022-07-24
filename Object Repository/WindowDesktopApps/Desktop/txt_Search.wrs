@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WindowsElementEntity>
+   <description></description>
+   <name>txt_Search</name>
+   <tag></tag>
+   <locator>Type here to search</locator>
+   <locatorStrategy>NAME</locatorStrategy>
+   <properties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>Name</name>
+      <type>Main</type>
+      <value>Type here to search</value>
+      <webElementGuid>df7103ca-9170-47a5-8d21-23f40a01fc66</webElementGuid>
+   </properties>
+</WindowsElementEntity>
