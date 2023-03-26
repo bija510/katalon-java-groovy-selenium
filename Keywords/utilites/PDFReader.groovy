@@ -20,27 +20,17 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 public class PDFReader {
 
 	@Keyword
-	def getPdfFileText(String pdfFilePath){
-
-		String path = pdfFilePath
-		File file  = new File(path)
-
-		FileInputStream fis = new FileInputStream(file)
-
-		PDFParser parser = new PDFParser(fis)
-
-		parser.parse()
-		COSDocument cosDoc = parser.getDocument()
-		PDDocument pdDoc = new PDDocument(cosDoc)
-
+	static def getPdfFileText(String pdfFilePath){
+		File file  = new File(pdfFilePath)
+		PDDocument document = PDDocument.load(file)	
 		PDFTextStripper strip = new PDFTextStripper()
-		String data = strip.getText(pdDoc)
-		//println(data)
+		String data = strip.getText(document)
+		
 		return data
 	}
 
 	@Keyword
-	def getPdfFileText2(String pdfFilePath){
+	static def getPdfFileText2(String pdfFilePath){
 		URL url =new URL(pdfFilePath)
 		InputStream is = url.openStream()
 		BufferedInputStream filePase = new BufferedInputStream(is)
@@ -56,7 +46,7 @@ public class PDFReader {
 	@Keyword
 	def getUrlFromPDF(String path) {
 		WebUI.delay(3)
-		String allText = new common.Util.PDFReader().getPdfFileText2(path)
+		String allText = new utilites.PDFReader().getPdfFileText2(path)
 		String textWithoutBlankLine = allText.replaceAll('[\\\r\\\n]+', '')
 		String[] arrText = textWithoutBlankLine.split(':')
 		String tempLink = 'https:' + (arrText[6])
@@ -67,7 +57,7 @@ public class PDFReader {
 	}
 
 	@Keyword
-	def getHyperlinkUrlFromPDF(String pdfFilePath , String contain_word_onLink) {
+	static def getHyperlinkUrlFromPDF(String pdfFilePath , String contain_word_onLink) {
 		WebUI.delay(3)
 
 		URL url =new URL(pdfFilePath)

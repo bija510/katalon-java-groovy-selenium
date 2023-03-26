@@ -1,7 +1,7 @@
 import org.apache.pdfbox.cos.COSDocument
 import org.apache.pdfbox.pdfparser.PDFParser
 import org.apache.pdfbox.pdmodel.PDDocument
-import org.apache.pdfbox.util.PDFTextStripper
+import org.apache.pdfbox.text.PDFTextStripper
 import org.testng.Assert
 import com.kms.katalon.core.configuration.RunConfiguration
 import com.kms.katalon.core.util.KeywordUtil
@@ -12,46 +12,39 @@ import com.kms.katalon.core.util.KeywordUtil
 	4. Apache PDFBox  » 1.8.1 https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox
 **************************************************************************************/
 
-String filePath = RunConfiguration.getProjectDir() + "/Data Files All/PdfReader/test_text1.pdf"
+String filePath = RunConfiguration.getProjectDir() + "/Data Files All/PdfReader/test for link.pdf"
 
 KeywordUtil.logInfo( "Page Count  = ${get_pageCount(filePath)}" )
 KeywordUtil.logInfo( get_all_text(filePath) )
 
-Assert.assertTrue( get_all_text(filePath).contains("Review of the Literature") )
+Assert.assertTrue( get_all_text(filePath).contains("Katalon Studio"))
 
 Assert.assertTrue( get_all_text(filePath).contains("dsdsfdsf") )
 
 
 public String get_all_text(String filePath){
 	File file = new File(filePath)
-	FileInputStream fis = new FileInputStream(file)
-	
-	PDFParser parser = new PDFParser(fis)
-	parser.parse()
-	
-	COSDocument cosDoc = parser.getDocument()
-	PDDocument pdDoc = new PDDocument(cosDoc)
+
+	PDDocument document = PDDocument.load(file)
 	
 	PDFTextStripper strip = new PDFTextStripper()
-	String data = strip.getText(pdDoc)
+	String data = strip.getText(document)
 	
-	println data.trim() // this will remove the white space
-	Assert.assertTrue(data.contains("Like other schools around the nation"))
+	//println data.trim() // this will remove the white space
+	document.close();
 	return data
+	
 }
 
 public String get_pageCount(String filePath){
 	File file = new File(filePath)
-	FileInputStream fis = new FileInputStream(file)
+	PDDocument document = PDDocument.load(file)
+	int pageCount = document.getNumberOfPages()
 	
-	PDFParser parser = new PDFParser(fis)
-	parser.parse()
-	
-	COSDocument cosDoc = parser.getDocument()
-	PDDocument pdDoc = new PDDocument(cosDoc)
-	int pageCount = pdDoc.getNumberOfPages()
 	String pc = pageCount.toString()
+	document.close();
 	return pc
+	
 }
 
 

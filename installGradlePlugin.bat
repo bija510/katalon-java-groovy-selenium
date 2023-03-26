@@ -1,3 +1,3 @@
-cd C:\Users\Bijaya Chhetri\git\KatalonTest
+cd C:\Users\Bijaya Chhetri\git\katalon-java-groovy-selenium
 
 gradle katalonCopyDependencies
