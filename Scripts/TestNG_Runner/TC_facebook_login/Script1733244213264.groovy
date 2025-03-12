@@ -9,37 +9,19 @@ import com.kms.katalon.core.mobile.keyword.MobileBuiltInKeywords as Mobile
 import com.kms.katalon.core.model.FailureHandling as FailureHandling
 import com.kms.katalon.core.testcase.TestCase as TestCase
 import com.kms.katalon.core.testdata.TestData as TestData
+import com.kms.katalon.core.testng.keyword.TestNGBuiltinKeywords as TestNGKW
 import com.kms.katalon.core.testobject.TestObject as TestObject
 import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
-//additional import
-import com.kms.katalon.core.util.KeywordUtil as KeywordUtil
-import com.kms.katalon.core.webui.driver.DriverFactory
-import com.kms.katalon.core.webui.exception.WebElementNotFoundException as WebElementNotFoundException
-import org.openqa.selenium.support.ui.Select
-import org.openqa.selenium.WebDriver
-import org.openqa.selenium.By;
+
+WebUI.openBrowser("https://www.facebook.com/")
+WebUI.maximizeWindow()
+WebUI.delay(1)
+WebUI.closeBrowser()
 
 
-   /***************************************************
-    * DataDriven or Paramaterization using for loop
-    ***************************************************/
-	WebUI.openBrowser(url)  //or GlobalVariable.url
-	WebUI.maximizeWindow()
-	
-	String userNames ='Adam¤Bija¤Cindey¤David'
-	String []userNameList = userNames.split('¤') //can be split with space or = or anything instead of ¤
-	
-	for (String username : userNameList){
-		
-		def control = CustomKeywords.'com.qa.helpers.UtilitesAllSelenium.getalphaNumericString'(10)+" "+ username
-		WebUI.setText(findTestObject('Page_Facebook/input_concat2'), control)
-		WebUI.delay(2)
-		
-		WebUI.setText(findTestObject('Page_Facebook/input_concat3'), 'abc123')
-			
-	}
-	
+
+

@@ -36,4 +36,4 @@ import org.openqa.selenium.By;
 	
 	WebUI.openBrowser('http://demo.automationtesting.in/FileUpload.html')
 	WebUI.maximizeWindow()
-	CustomKeywords.'helpers.UploadFileRC.uploadFileNew'(findTestObject('Object Repository/UploadFile/frameUpload'), FileUploadPath)
+	CustomKeywords.'com.qa.helpers.UploadFileRC.uploadFileNew'(findTestObject('Object Repository/UploadFile/frameUpload'), FileUploadPath)

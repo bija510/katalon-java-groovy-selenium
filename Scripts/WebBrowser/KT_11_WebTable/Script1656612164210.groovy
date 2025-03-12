@@ -14,7 +14,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 		WebUI.executeJavaScript("window.scrollBy(0, 300)", null)
 		WebUI.delay(2)
 		String actName = 'UK'
-		String expName = CustomKeywords.'utilites.WebTable.getRowColumnValue'(findTestObject('WebORHtmlTable/tbl_w3'), 'UK', 'Country')
+		String expName = CustomKeywords.'com.qa.utils.WebTable.getRowColumnValue'(findTestObject('WebORHtmlTable/tbl_w3'), 'UK', 'Country')
 	    WebUI.verifyMatch(actName, expName, false)
 	}
 	
@@ -24,7 +24,7 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 		WebUI.executeJavaScript("window.scrollBy(0, 300)", null)
 		WebUI.delay(2)
 		
-		println CustomKeywords.'helpers.WebTableHelper.GetValueFromGrid'(findTestObject('WebORHtmlTable/tbl_w3 - Copy'), 2, 2)	
+		println CustomKeywords.'com.qa.helpers.WebTableHelper.GetValueFromGrid'(findTestObject('WebORHtmlTable/tbl_w3 - Copy'), 2, 2)	
 	}
 	
 	

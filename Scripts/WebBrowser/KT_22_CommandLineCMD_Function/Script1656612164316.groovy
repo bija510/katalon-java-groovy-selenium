@@ -50,7 +50,7 @@ def deleteFile(){
 	 * To Delete the file Run this first
 	 * Test Cases/DataDriverTesting/TC_WriteReadTextFile
 	********************************************************/	
-	CustomKeywords.'utilites.CMD.executeCmdCommand'("del /Q \"" + RunConfiguration.getProjectDir() + "/Data Files/TextDataFolder" + "\"")
+	CustomKeywords.'com.qa.utils.CommandLine.executeCmdCommand'("del /Q \"" + RunConfiguration.getProjectDir() + "/Data Files/TextDataFolder" + "\"")
 	
 }
 

@@ -26,7 +26,7 @@ import com.kms.katalon.core.util.KeywordUtil
 	 * READING from excel file outside of katalon
 	 *******************************************************/
 	
-	String[][] arrData = CustomKeywords.'utilites.ExcelFile.readExcelData'(excelFile, sheetName)
+	String[][] arrData = CustomKeywords.'com.qa.utils.ExcelFile.readExcelData'(excelFile, sheetName)
 	
 	/*******************************************************
 	 * WRITING to the excel file outside of katalon
@@ -34,8 +34,8 @@ import com.kms.katalon.core.util.KeywordUtil
 	 * Only read open excel don't matter
 	 * if the excel box already "Blank" then it will fail
 	 *******************************************************/
-	CustomKeywords.'utilites.ExcelFile.writeExcelData'(excelFile, 'Sheet1', 'Blank000', 2, 0)
-	CustomKeywords.'utilites.ExcelFile.writeExcelData'(excelFile, 'Sheet1', 'Blank001', 2, 1)
+	CustomKeywords.'com.qa.utils.ExcelFile.writeExcelData'(excelFile, 'Sheet1', 'Blank000', 2, 0)
+	CustomKeywords.'com.qa.utils.ExcelFile.writeExcelData'(excelFile, 'Sheet1', 'Blank001', 2, 1)
 	     
 	
 //	//or by another way with 3 line

@@ -12,13 +12,13 @@ import com.kms.katalon.core.annotation.Keyword
 import com.kms.katalon.core.webui.driver.DriverFactory
 
 /***********************************************************************************************
-	WebDriver driver = CustomKeywords.'utilites.MobileBrowserEmulator.chromeSetUp'('iPhone X')
+	WebDriver driver = CustomKeywords.'com.qa.utils.MobileBrowserEmulator.chromeSetUp'('iPhone X')
 	DriverFactory.changeWebDriver(driver)
 	WebUI.navigateToUrl('http://demo.automationtesting.in/Register.html')
 	>===> After this setUp we can user WebUI keyword...... all same
 ************************************************************************************************/
 	
-WebDriver driver = CustomKeywords.'utilites.MobileBrowserEmulator.chromeSetUp'('iPhone X')
+WebDriver driver = CustomKeywords.'com.qa.utils.MobileBrowserEmulator.chromeSetUp'('iPhone X')
 	driver.navigate().to("http://demo.automationtesting.in/Register.html");
 		
 	driver.findElement(By.xpath("//input[@type='text']")).sendKeys("ram");
