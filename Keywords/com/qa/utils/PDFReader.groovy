@@ -15,38 +15,85 @@ import org.apache.pdfbox.text.PDFTextStripper
 import org.apache.pdfbox.text.PDFTextStripperByArea;
 
 import com.kms.katalon.core.annotation.Keyword
+import com.kms.katalon.core.util.KeywordUtil
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
+import org.apache.pdfbox.Loader
+import java.io.File
+import java.io.FileInputStream
+import java.io.IOException
 
 public class PDFReader {
 
-	@Keyword
-	static def getPdfFileText(String pdfFilePath){
-		File file  = new File(pdfFilePath)
-		PDDocument document = PDDocument.load(file)	
-		PDFTextStripper strip = new PDFTextStripper()
-		String data = strip.getText(document)
-		
-		return data
-	}
+	/*
+	 * Tested & Work 5/04/2025
+	 * println new com.qa.utils.PDFReader().getPdfFileTextUsingPath(filePath)
+	 */
+	 @Keyword
+    def static String getPdfFileTextUsingPath(String pdfFilePath) throws IOException {
+        File file = new File(pdfFilePath)
+        FileInputStream inputStream = new FileInputStream(file)
 
-	@Keyword
-	static def getPdfFileText2(String pdfFilePath){
-		URL url =new URL(pdfFilePath)
-		InputStream is = url.openStream()
-		BufferedInputStream filePase = new BufferedInputStream(is)
-		PDDocument document =null
+        // Read file into byte array
+        byte[] fileBytes = new byte[(int) file.length()]
+        inputStream.read(fileBytes)
+        inputStream.close()
 
-		document = PDDocument.load(filePase)
-		String pdfContent = new PDFTextStripper().getText(document)
-		//println pdfContent
+        PDDocument document = null
+        try {
+            // Use PDFBox 3.x to load the PDF from byte array
+            document = Loader.loadPDF(fileBytes)
 
-		return pdfContent
-	}
+            PDFTextStripper stripper = new PDFTextStripper()
+            return stripper.getText(document)
+        } finally {
+            if (document != null) {
+                document.close()
+            }
+        }
+    }
+
+	/*
+	 * Tested & Work 5/04/2025
+	 * println new com.qa.utils.PDFReader().getPdfFileTextUsingURL(urlPath)
+	 */
+
+	 @Keyword
+    static def getPdfFileTextUsingURL(String pdfFilePath) {
+        URL url = new URL(pdfFilePath)
+        InputStream is = url.openStream()
+        BufferedInputStream filePase = new BufferedInputStream(is)
+        
+        byte[] byteArray = new byte[1024]
+        ByteArrayOutputStream baos = new ByteArrayOutputStream()
+
+        int bytesRead
+        while ((bytesRead = filePase.read(byteArray)) != -1) {
+            baos.write(byteArray, 0, bytesRead)
+        }
+
+        byte[] pdfBytes = baos.toByteArray()
+
+        PDDocument document = null
+        try {
+            // Load PDF from byte array using PDFBox 3.x
+            document = Loader.loadPDF(pdfBytes)
+
+            // Extract text from the PDF document
+            PDFTextStripper stripper = new PDFTextStripper()
+            return stripper.getText(document)
+        } finally {
+            if (document != null) {
+                document.close()
+            }
+            filePase.close()
+            is.close()
+        }
+    }
 
 	@Keyword
 	def getUrlFromPDF(String path) {
 		WebUI.delay(3)
-		String allText = new utilites.PDFReader().getPdfFileText2(path)
+		String allText = getPdfFileTextUsingPath(path)
 		String textWithoutBlankLine = allText.replaceAll('[\\\r\\\n]+', '')
 		String[] arrText = textWithoutBlankLine.split(':')
 		String tempLink = 'https:' + (arrText[6])
@@ -56,78 +103,63 @@ public class PDFReader {
 		return tempLink
 	}
 
-	@Keyword
-	static def getHyperlinkUrlFromPDF(String pdfFilePath , String contain_word_onLink) {
-		WebUI.delay(3)
-
-		URL url =new URL(pdfFilePath)
-		InputStream is = url.openStream()
-		BufferedInputStream filePase = new BufferedInputStream(is)
-		PDDocument document =null
-
-		document = PDDocument.load(filePase)
-		String uri = null
-
-		for( PDPage page : document.getPages() ) {
-			int pageNum = 0;
-			pageNum++;
-			PDFTextStripperByArea stripper = new PDFTextStripperByArea();
-			List<PDAnnotation> annotations = page.getAnnotations();
-			//first setup text extraction regions
-			for( int j=0; j<annotations.size(); j++ )
-			{
-				PDAnnotation annot = annotations.get(j);
-				if( annot instanceof PDAnnotationLink )
-				{
-					PDAnnotationLink link = (PDAnnotationLink)annot;
-					PDRectangle rect = link.getRectangle();
-					//need to reposition link rectangle to match text space
-					float x = rect.getLowerLeftX();
-					float y = rect.getUpperRightY();
-					float width = rect.getWidth();
-					float height = rect.getHeight();
-					int rotation = page.getRotation();
-					if( rotation == 0 )
-					{
-						PDRectangle pageSize = page.getMediaBox();
-						y = pageSize.getHeight() - y;
-					}
-					else if( rotation == 90 )
-					{
-						//do nothing
-					}
-
-					Rectangle2D.Float awtRect = new Rectangle2D.Float( x,y,width,height );
-					stripper.addRegion( "" + j, awtRect );
-				}
-			}
-
-			stripper.extractRegions( page );
-
-			for( int j=0; j<annotations.size(); j++ )
-			{
-				PDAnnotation annot = annotations.get(j);
-				if( annot instanceof PDAnnotationLink )
-				{
-					PDAnnotationLink link = (PDAnnotationLink)annot;
-					PDAction action = link.getAction();
-					String urlText = stripper.getTextForRegion( "" + j );
-					if( action instanceof PDActionURI )
-					{
-						PDActionURI uris = (PDActionURI)action;
-						//System.out.println( "Page " + pageNum +":'" + urlText.trim() + "'=" + uri.getURI() );
-						uri = uris.getURI();
-						if(uri.contains(contain_word_onLink)) {
-							System.out.println("==>" + uri);
-							break
+	/*
+	 * Tested & Work 5/04/2025
+	 * String filePath = RunConfiguration.getProjectDir() + "/Data Files All/PdfReader/test for link.pdf"
+	 * new com.qa.utils.PDFReader().getHyperlinkUrlFromPDF(filePath, "http")
+	 */
+	static String getHyperlinkUrlFromPDF(String pdfFilePath, String contain_word_onLink) {
+		WebUI.delay(2)
+	
+		File file = new File(pdfFilePath)
+		if (!file.exists()) {
+			KeywordUtil.markFailed("PDF file not found at path: $pdfFilePath")
+			return null
+		}
+	
+		// Load file into byte array
+		FileInputStream inputStream = new FileInputStream(file)
+		byte[] fileBytes = new byte[(int) file.length()]
+		inputStream.read(fileBytes)
+		inputStream.close()
+	
+		PDDocument document = null
+		try {
+			document = Loader.loadPDF(fileBytes)
+			String matchedUri = null
+	
+			for (PDPage page : document.getPages()) {
+				List<PDAnnotation> annotations = page.getAnnotations()
+				for (PDAnnotation annotation : annotations) {
+					if (annotation instanceof PDAnnotationLink) {
+						PDAnnotationLink link = (PDAnnotationLink) annotation
+						PDAction action = link.getAction()
+						if (action instanceof PDActionURI) {
+							String uri = ((PDActionURI) action).getURI()
+							if (uri != null && uri.contains(contain_word_onLink)) {
+								println("Found link: $uri")
+								matchedUri = uri
+								break
+							}
 						}
 					}
 				}
+				if (matchedUri != null) break
+			}
+	
+			if (matchedUri == null) {
+				KeywordUtil.markWarning("No hyperlink containing '$contain_word_onLink' found in PDF.")
+			}
+	
+			return matchedUri
+	
+		} catch (Exception e) {
+			KeywordUtil.markFailed("Error reading PDF: ${e.message}")
+			return null
+		} finally {
+			if (document != null) {
+				document.close()
 			}
 		}
-		return uri
 	}
-
-
-
 }
