@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description></description>
+   <name>PdfReadAndSaveInTextFile</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>eed3095a-3876-4290-9eae-d67582c44b26</testCaseGuid>
+</TestCaseEntity>
