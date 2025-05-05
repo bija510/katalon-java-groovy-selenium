@@ -4,5 +4,6 @@
    <name>TC_ReadWrite_ExcelAndPropertiesFile</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>0f5b884c-b37b-4b7a-9cd1-825ebaf3b462</testCaseGuid>
 </TestCaseEntity>

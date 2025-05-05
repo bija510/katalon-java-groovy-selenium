@@ -4,5 +4,6 @@
    <name>TC_Pdf_ReaderUsingJarFile</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>a9387646-af20-4305-9929-bc6a336fec50</testCaseGuid>
 </TestCaseEntity>

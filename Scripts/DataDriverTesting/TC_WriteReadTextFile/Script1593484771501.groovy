@@ -28,6 +28,6 @@ name = 'Country'
 value = 'USA'
 
 
-new library.UTILITY.UtilitesTextFile(RunConfiguration.getProjectDir()+"/Data Files/TextDataFolder/WriteTextData"+new Date().format('yyyy-MM-dd')+".txt").append(name+' = '+value)
+new com.qa.utils.TextFile(RunConfiguration.getProjectDir()+"/Data Files/TextDataFolder/WriteTextData"+new Date().format('yyyy-MM-dd')+".txt").append(name+' = '+value)
 
 

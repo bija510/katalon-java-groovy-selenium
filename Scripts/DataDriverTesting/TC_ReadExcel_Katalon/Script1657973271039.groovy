@@ -26,20 +26,29 @@ import org.openqa.selenium.By;
 
 
 
-/******************************************************************
- * Reading data from Excel sheet using Katalon built in function
- ******************************************************************/
+/****************************************************************************************************
+ * In Katalon Studio, the "Data Files" folder is primarily used for reading test data, not writing.
+ * **************************************************************************************************
+ * Excel files (.xlsx)
+ * CSV files
+ * Internal data tables
+ * Database connections
+ ****************************************************************************************************/
+TestData data = findTestData('demoSite')
+	
 
-TestData dataFacebook = findTestData('facebook/Data_facebookReg')
-
-def UN = dataFacebook.getValue('userName', 1)
-def password = dataFacebook.getValue('pwd', 1)
-
-
-WebUI.openBrowser('https://www.facebook.com/')
-
-WebUI.setText(findTestObject('Page_Facebook/input_concat2'), UN)
-WebUI.delay(2)
-
-WebUI.setText(findTestObject('Page_Facebook/input_concat3'), password)
+/******************
+ * Register Page
+ ******************/
+	WebUI.openBrowser('https://demo.automationtesting.in/Register.html')
+	
+	WebUI.setText(findTestObject('Object Repository/RegisterPage/txt_FirstName'), data.getValue('firstName', 1))
+	WebUI.delay(2)
+	
+	WebUI.setText(findTestObject('Object Repository/RegisterPage/txt_LastName'), data.getValue('lastName', 1))
+	
+	
+	
+	
+	
 

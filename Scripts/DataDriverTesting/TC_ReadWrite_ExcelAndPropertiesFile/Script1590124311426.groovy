@@ -34,8 +34,8 @@ import com.kms.katalon.core.util.KeywordUtil
 	 * Only read open excel don't matter
 	 * if the excel box already "Blank" then it will fail
 	 *******************************************************/
-	CustomKeywords.'com.qa.utils.ExcelFile.writeExcelData'(excelFile, 'Sheet1', 'Blank000', 2, 0)
-	CustomKeywords.'com.qa.utils.ExcelFile.writeExcelData'(excelFile, 'Sheet1', 'Blank001', 2, 1)
+	CustomKeywords.'com.qa.utils.ExcelFile.writeExcelData'(excelFile, 'Sheet1', 'test54un', 2, 0)
+	CustomKeywords.'com.qa.utils.ExcelFile.writeExcelData'(excelFile, 'Sheet1', 'test54pw', 2, 1)
 	     
 	
 //	//or by another way with 3 line
@@ -47,7 +47,7 @@ import com.kms.katalon.core.util.KeywordUtil
 	
 	//def profFile = 'C:\\Users\\Bijaya Chhetri\\git\\KatalonTest\\Data Files All\\textFile1.properties'
 	def profFile = System.getProperty("user.dir")+"\\Data Files All\\textFile1.properties"
-	def testData = new library.UTILITY.UtilitesTextFile(profFile)
+	def testData = new com.qa.utils.TextFile(profFile)
 	
 	/*******************************************************
 	 * READING from Properties file outside of katalon

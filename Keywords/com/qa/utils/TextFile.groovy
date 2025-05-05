@@ -4,11 +4,30 @@ import java.nio.file.Paths
 import com.kms.katalon.core.annotation.Keyword
 
 
+/**
+ * Utility class for reading, writing, and appending data in a text file.
+ * Commonly used for key-value pair management in test automation scenarios.
+ */
 class TextFile {
+
 	private String txtFile
+
+	/**
+	 * Constructor to initialize the file path.
+	 * @param txtFile Absolute or relative path of the text file.
+	 */
 	public TextFile(String txtFile) {
 		this.txtFile = txtFile
 	}
+
+	/**
+	 * Reads the value for a given key from the text file.
+	 * Ignores commented lines (starting with #).
+	 *
+	 * @param key The key to search for.
+	 * @return The value associated with the key, or null if not found.
+	 * @throws Exception if file read fails.
+	 */
 	@Keyword
 	public String readFromTextFile(String key)throws Exception {
 		List<List<String>> outerList = new ArrayList<List<String>>()
@@ -39,6 +58,17 @@ class TextFile {
 		}
 	}
 
+
+
+
+	/**
+	 * Updates the value for a given key in the text file.
+	 * If the key is found, its value is replaced and the file is rewritten.
+	 *
+	 * @param key The key whose value should be updated.
+	 * @param val The new value to assign to the key.
+	 * @throws Exception if file write fails.
+	 */
 	@Keyword
 	public writeToTextFile(String key, String val) throws Exception{
 		String[] arrLines =null
@@ -70,6 +100,12 @@ class TextFile {
 		}
 	}
 
+	/**
+	 * Appends a new line to the end of the text file.
+	 *
+	 * @param msg The message or content to append.
+	 * @throws Exception if file append fails.
+	 */
 	@Keyword
 	def append(String msg) throws Exception{
 		FileWriter fw = new FileWriter(txtFile, true);

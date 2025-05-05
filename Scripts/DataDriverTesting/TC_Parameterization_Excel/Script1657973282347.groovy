@@ -28,14 +28,14 @@ import org.openqa.selenium.By;
     * DataDriven or Paramaterization using Excel Sheet
     ***************************************************/
 
-    for (def rowNum=1; rowNum<=findTestData('Data Files/facebook/Data_facebookReg').getRowNumbers(); rowNum++){
+    for (def rowNum=1; rowNum<=findTestData('Data Files/facebook/demoSite').getRowNumbers(); rowNum++){
 		WebUI.openBrowser('https://www.facebook.com/')
 		WebUI.maximizeWindow()
 		
-		WebUI.setText(findTestObject('Page_Facebook/input_concat2'), findTestData("facebook/Data_facebookReg").getValue('userName', 1))
+		WebUI.setText(findTestObject('Page_Facebook/input_concat2'), findTestData("facebook/demoSite").getValue('userName', 1))
 		WebUI.delay(2)
 		
-		WebUI.setText(findTestObject('Page_Facebook/input_concat3'), findTestData("facebook/Data_facebookReg").getValue('pwd', 1))
+		WebUI.setText(findTestObject('Page_Facebook/input_concat3'), findTestData("facebook/demoSite").getValue('pwd', 1))
 	
      }
 	

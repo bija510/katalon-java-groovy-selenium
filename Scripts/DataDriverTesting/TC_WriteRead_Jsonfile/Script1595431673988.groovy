@@ -36,25 +36,31 @@ import groovy.json.*
 String fileName = RunConfiguration.getProjectDir() + "/Data Files All/JsonFile.json"
 def slurper = new JsonSlurper()
 Map parsedData = slurper.parse(new File(fileName))
-
-//print Parse data
-println "firstName = " + parsedData.firstName
-println "city = " + parsedData.address.city
-println "Is US Citizen = " + parsedData.get("isUSCitizen")
-
-if (parsedData.phoneNumbers[1].type.toString().equalsIgnoreCase("cell")){
-	println "cell Phone = " + parsedData.phoneNumbers[1].number
-	
-}else{
-	println "Home Phone = " + parsedData.phoneNumbers[0].number
-}
+//
+////print Parse data
+//println "firstName = " + parsedData.firstName
+//println "city = " + parsedData.address.city
+//println "Is US Citizen = " + parsedData.get("isUSCitizen")
+//
+//if (parsedData.phoneNumbers[1].type.toString().equalsIgnoreCase("cell")){
+//	println "cell Phone = " + parsedData.phoneNumbers[1].number
+//	
+//}else{
+//	println "Home Phone = " + parsedData.phoneNumbers[0].number
+//}
 
 //Write
-parsedData.phoneNumbers[1]."type" = "Cell" //To set a Key Value, put the Key name inside Quote
-def json_str = JsonOutput.toJson(parsedData)
-def json_beauty = JsonOutput.prettyPrint(json_str)
-File file = new File(fileName)
-file.write(json_beauty)// no need to close the file because groovy takes care for you
 
+def write(String filePath, String key, String value) {
+	String jsonFile = filePath
+	def slurper = new JsonSlurper()
+	Map parsedData = slurper.parse(new File(jsonFile))
+	parsedData.key = value
+	//parsedData.phoneNumbers[1]."type" = "apple" //To set a Key Value, put the Key name inside Quote
+	def json_str = JsonOutput.toJson(parsedData)
+	def json_beauty = JsonOutput.prettyPrint(json_str)
+	File file = new File(jsonFile)
+	file.write(json_beauty)// no need to close the file because groovy takes care for you
+}
 
 

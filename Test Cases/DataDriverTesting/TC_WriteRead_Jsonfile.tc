@@ -4,5 +4,6 @@
    <name>TC_WriteRead_Jsonfile</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>7294e0cd-1959-4490-bbab-af820154bdfc</testCaseGuid>
 </TestCaseEntity>

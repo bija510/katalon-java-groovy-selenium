@@ -4,5 +4,6 @@
    <name>TC_ReadExcel_Katalon</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>d2d9c323-74e5-4738-82c9-9804ba2cf98c</testCaseGuid>
 </TestCaseEntity>

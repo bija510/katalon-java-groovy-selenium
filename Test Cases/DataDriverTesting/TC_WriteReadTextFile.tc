@@ -4,5 +4,6 @@
    <name>TC_WriteReadTextFile</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>1e181ec7-bbfb-4fdd-8b8e-1aa69a1e8188</testCaseGuid>
 </TestCaseEntity>
