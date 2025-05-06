@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>MobileTesting_UsingBrowser</name>
+   <name>CreateBugTest</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>8cd65682-728f-4469-b1e5-4eba3e28f873</testCaseGuid>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0eec84a5-8756-44b7-93e6-fdc96cf3186c</testCaseGuid>
 </TestCaseEntity>

@@ -4,9 +4,12 @@
    <name>katalon-java-groovy-selenium</name>
    <tag></tag>
    <UUID>19e5b97f-67d4-43c1-a30e-506d1095e3f2</UUID>
+   <freeLicense>true</freeLicense>
    <migratedVersion>5.9.0</migratedVersion>
+   <modifiedEdition>FREE</modifiedEdition>
+   <modifiedVersion>10.2.0</modifiedVersion>
    <pageLoadTimeout>0</pageLoadTimeout>
-   <projectFileLocation>C:\Users\Bijaya Chhetri\git\katalon-java-groovy-selenium\KatalonTest.prj</projectFileLocation>
+   <projectFileLocation>C:\Users\bijas\git\katalon-java-groovy-selenium\KatalonTest.prj</projectFileLocation>
    <sourceContent>
       <sourceFolderList>
          <sourceFolderConfiguration>

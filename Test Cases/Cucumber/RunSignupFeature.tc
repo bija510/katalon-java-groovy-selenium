@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC_02_Bug Caller</name>
+   <name>RunSignupFeature</name>
    <tag></tag>
    <comment></comment>
-   <testCaseGuid>0eec84a5-8756-44b7-93e6-fdc96cf3186c</testCaseGuid>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0428d52c-5c07-4a6b-bea0-fae57c88f3bb</testCaseGuid>
 </TestCaseEntity>

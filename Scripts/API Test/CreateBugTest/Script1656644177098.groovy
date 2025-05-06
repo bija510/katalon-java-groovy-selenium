@@ -24,7 +24,7 @@ String title = "My Work Item title"
 
 1.uptp(2){
 	wiTitle = title +it
-WebUI.callTestCase(findTestCase('API Test/TC_01_Create Bug'), [('p_wi_title') : 'default fail msg'], FailureHandling.STOP_ON_FAILURE)
+WebUI.callTestCase(findTestCase('API Test/CreateBugOnAzureDevopsUsingAPI'), [('p_wi_title') : 'default fail msg'], FailureHandling.STOP_ON_FAILURE)
 
 }
 

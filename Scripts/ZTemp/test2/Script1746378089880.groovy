@@ -36,34 +36,50 @@ import java.io.IOException
 import org.apache.pdfbox.pdmodel.PDDocumentInformation
 
 
-String[] fileNames = ["2006-ALS-MS-Annual-Meeting-Summary-Report.pdf","2016_als_prevalence.pdf"]
+String fileName = "2006-ALS-MS-Annual-Meeting-Summary-Report.pdf"
 
-for (String fileName : fileNames){
-String filePath1 = RunConfiguration.getProjectDir() +"/Data Files All/PDFReader/" +fileName
+
+String filePath = RunConfiguration.getProjectDir() +"/Data Files All/PDFReader/" +fileName
 //String filePath2 = RunConfiguration.getProjectDir() + "/Data Files All/PdfReader/2016_als_prevalence.pdf"
 // String filePath = RunConfiguration.getProjectDir() + "/Data Files All/PdfReader/test for link.pdf"
 //KeywordUtil.logInfo( getPdfFileText2() )
 
 
 
-println new com.qa.utils.PDFReader().getPdfFileTextUsingPath(filePath1)
+//println new com.qa.utils.PDFReader().getPdfFileTextUsingPath(filePath)
 	
-//	
+
+println getPdfFileTextUsingPath2(filePath)
+
 //	String urlPath = "file:///C:/Users/bijas/git/katalon-java-groovy-selenium/Data%20Files%20All/PDfReader/2006-ALS-MS-Annual-Meeting-Summary-Report.pdf"
 //	println new com.qa.utils.PDFReader().getPdfFileTextUsingURL(urlPath)
 //	
 	
-//	new com.qa.utils.PDFReader().getHyperlinkUrlFromPDF(filePath, "http")
-	
 
-//println new com.qa.utils.PDFReader().getPdfTitle(filePath)
+public static String getPdfFileTextUsingPath2(String pdfFilePath) throws IOException {
+	File file = new File(pdfFilePath);
+	FileInputStream inputStream = new FileInputStream(file);
 
-String pdfHeader = new com.qa.utils.PDFReader().getFirstPageHeader(filePath1).replaceAll('[\\r\\n]+', '')
+	// Read file into byte array
+	byte[] fileBytes = new byte[(int) file.length()];
+	inputStream.read(fileBytes);
+	inputStream.close();
 
-new com.qa.utils.TextFile(RunConfiguration.getProjectDir()+"/Data Files All/OutputData/pdfFilesHeader"+new Date().format('yyyy-MM-dd')+".txt").append(fileName+' = '+pdfHeader)
+	PDDocument document = null;
+	try {
+		// Load the PDF from byte array
+		document = Loader.loadPDF(fileBytes);
 
+		PDFTextStripper stripper = new PDFTextStripper();
+		stripper.setStartPage(1);  // Explicitly set to start from page 1
+		stripper.setEndPage(document.getNumberOfPages());  // Ensure it reads to the last page
 
-
+		return stripper.getText(document);
+	} finally {
+		if (document != null) {
+			document.close();
+		}
+	}
 }
 
 

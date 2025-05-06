@@ -17,16 +17,21 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 
+/******************************************************************************************
+ * Required Components for Cucumber Integration:
+ *
+ * 1. **Runner Class** This is essential for executing the Cucumber test suite.
+ * 2. **Feature File** Location: `Include/features/`
+ * 3. **Step Definition File** Location: `Include/scripts/groovy/cucumber/`
+ ******************************************************************************************/
 
-	/*****************************************************************************************
-	 We need 3 Things 
-	 1. Runner_class, 
-	 2. feature_file inside this location "Include/features/" 
-	 3. Step_Defination file inside "Include/scripts/groovy/cucumber"
-	 ====> we can create the sample class for feature file and Step defination so that --help
-	 
-	 --note, feature file senario step name should be same as Function name in step Defination file
-	 auto-connect  CTRL+Click on @given sentence take to the step defination file
-	 ******************************************************************************************/
 
-CucumberKW.runFeatureFile('Include/features/FB_signup.feature')
+// Set glue to the package of your step definitions
+
+CucumberKW.GLUE = ['stepdefinitions']
+
+
+// Run the feature file
+CucumberKW.runFeatureFile('Include/features/SignUp.feature')
+
+

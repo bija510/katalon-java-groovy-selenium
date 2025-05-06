@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC_Pdf_ReaderKat-Plugin</name>
+   <name>BrowserEmulatorTesting</name>
    <tag></tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
-   <testCaseGuid>dc9ff2de-50a5-4a9c-ba70-222fc8cfb776</testCaseGuid>
+   <testCaseGuid>8cd65682-728f-4469-b1e5-4eba3e28f873</testCaseGuid>
 </TestCaseEntity>

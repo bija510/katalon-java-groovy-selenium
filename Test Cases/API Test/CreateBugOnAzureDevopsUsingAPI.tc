@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>TC_01_Create Bug</name>
+   <name>CreateBugOnAzureDevopsUsingAPI</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>7ce52531-6e4a-4f45-b869-a9c59bc1a767</testCaseGuid>
    <variable>
       <defaultValue>'default fail msg'</defaultValue>

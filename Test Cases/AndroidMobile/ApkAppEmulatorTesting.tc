@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description></description>
-   <name>apr_12-2021_demo</name>
+   <name>ApkAppEmulatorTesting</name>
    <tag></tag>
    <comment></comment>
+   <recordOption>OTHER</recordOption>
    <testCaseGuid>a8cd95b6-3c98-49a6-8d5f-a8e19aef8e85</testCaseGuid>
 </TestCaseEntity>

@@ -1,4 +1,4 @@
-package cucumber
+package stepdefinitions
 import static com.kms.katalon.core.testobject.ObjectRepository.findTestObject
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import cucumber.api.java.en.And
@@ -7,7 +7,7 @@ import cucumber.api.java.en.Then
 import cucumber.api.java.en.When
 
 
-class FB_signup_SD {
+class SignupStep {
 	/**
 	 * The step definitions below match with Katalon sample Gherkin steps
 	 */
@@ -31,7 +31,6 @@ class FB_signup_SD {
 	@Then("Close browser")
 	def Then_Close_browser(){
 		WebUI.closeBrowser()
-
 	}
 }
 
